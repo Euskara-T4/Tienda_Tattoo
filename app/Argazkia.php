@@ -10,17 +10,17 @@ class Argazkia extends Model
     protected $table = 'argazkia';
 
     // Primay key de la tabla
-    protected $primaryKey = 'id_img	';
+    protected $primaryKey = 'img_id';
 
-    protected $foreignKey = 'id_langile';
+    protected $foreignKey = 'langile_id';
 
     //nombre de las columna
-    protected $fillable = ['izena','url', 'id_langile'];
+    protected $fillable = ['izena','url', 'langile_id'];
 
       // Relaciones
-      public function usuario() {
+      public function Langilea() {
 
-        return $this->hasOne('App\Langilea', 'id_langile' , 'id_langile');
+        return $this->belongsTo('App\Argazkia');
     }
 
 }

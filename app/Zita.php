@@ -10,17 +10,27 @@ class Zita extends Model
     protected $table = 'zita';
 
     // Primay key de la tabla
-    protected $primaryKey = 'id_zita	';
+    protected $primaryKey = 'zita_id';
 
-    protected $foreignKey = 'id_erabiltzaile';
+    protected $foreignKey = 'erabiltzaile_id';
 
 
     //nombre de las columna
-    protected $fillable = ['izena','url', 'id_langile'];
+    protected $fillable = ['izena','url', 'langile_id'];
 
-      // Relaciones
-      public function usuario() {
+      // Relacione
+    public function Langilea() {
 
-        return $this->hasMany('App\Langilea', 'id_langile' , 'id_langile');
+        return $this->belongsTo('App\Langilea');
+    }
+
+    public function usu() {
+
+        return $this->belongsTo('App\users');
+    }
+
+    public function lana() {
+
+        return $this->belongsTo('App\Lana');
     }
 }

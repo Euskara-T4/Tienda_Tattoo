@@ -10,9 +10,16 @@ class Lana extends Model
 protected $table = 'lana';
 
 // Primay key de la tabla
-protected $primaryKey = 'id_lana';
+protected $primaryKey = 'lana_id';
 
 
 protected $fillable = ['izena'];
+
+
+ // Relaciones
+ public function Zita() {
+
+    return $this->hasMany('App\Zita');
+}
 
 }

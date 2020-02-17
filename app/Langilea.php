@@ -10,16 +10,23 @@ class Langilea extends Model
     protected $table = 'langilea';
 
     // Primay key de la tabla
-    protected $primaryKey = 'id_langile	';
+    protected $primaryKey = 'langile_id	';
 
-    protected $foreignKey = 'id_lana';
+    protected $foreignKey = 'lana_id';
 
     //nombre de las columna
-    protected $fillable = ['izena','abizena', 'id_lana'];
+    protected $fillable = ['izena','abizena', 'lana_id'];
 
       // Relaciones
-      public function usuario() {
+      public function Argazkia() {
 
-        return $this->hasOne('App\Lana', 'id_lana' , 'id_lana');
+        return $this->hasMany('App\Argazkia');
     }
+
+    public function Zita() {
+
+        return $this->hasMany('App\Zita');
+    }
+
+
 }
