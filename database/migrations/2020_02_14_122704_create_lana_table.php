@@ -14,7 +14,7 @@ class CreateLanaTable extends Migration
     public function up()
     {
         Schema::create('lana', function (Blueprint $table) {
-            $table->increments('id_lana');
+            $table->increments('lana_id');
             $table->string('izena');
 
             $table->timestamps();

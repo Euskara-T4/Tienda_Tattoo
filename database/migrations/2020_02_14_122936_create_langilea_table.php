@@ -14,16 +14,16 @@ class CreateLangileaTable extends Migration
     public function up()
     {
         Schema::create('langilea', function (Blueprint $table) {
-            $table->increments('id_langile');
+            $table->increments('langile_id');
             $table->string('izena');
             $table->string('abizena');
 
 
              // campo para clave foraneas
-            $table->integer('id_lana')->unsigned();
+            $table->integer('lana_id')->unsigned();
 
             //relacion
-            $table->foreign('id_lana')->references('id_lana')->on('lana');
+            $table->foreign('lana_id')->references('lana_id')->on('lana');
 
 
 

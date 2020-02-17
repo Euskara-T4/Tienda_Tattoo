@@ -14,10 +14,10 @@ class CreateArgazkiaTable extends Migration
     public function up()
     {
         Schema::create('argazkia', function (Blueprint $table) {
-            $table->increments('id_img');
-            $table->integer('id_langile');
+            $table->increments('img_id');
+            $table->integer('langile_id');
             $table->string('izena');
-            $table->string('rul');
+            $table->string('url');
 
 
 
