@@ -25,7 +25,11 @@ class Langilea extends Model
 
     public function Zita() {
 
-        return $this->hasMany('App\Zita');
+        return $this->hasMany('App\Zita
+
+
+
+        ');
     }
 
 

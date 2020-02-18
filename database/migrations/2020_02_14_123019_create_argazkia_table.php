@@ -15,11 +15,13 @@ class CreateArgazkiaTable extends Migration
     {
         Schema::create('argazkia', function (Blueprint $table) {
             $table->increments('img_id');
-            $table->integer('langile_id');
             $table->string('izena');
             $table->string('url');
 
+            $table->integer('langile_id')->unsigned();
 
+
+            $table->foreign('langile_id')->references('langile_id')->on('langilea');
 
             $table->timestamps();
         });
