@@ -26,7 +26,7 @@ class Zita extends Model
 
     public function usu() {
 
-        return $this->belongsTo('App\users');
+        return $this->belongsTo('App\Users');
     }
 
     public function lana() {
