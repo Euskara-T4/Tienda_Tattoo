@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -21,8 +21,31 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
+    public function welcome() {
+        return view('welcome');
+    }
+
+
+    public function index() {
         return view('home');
     }
+
+
+    // SECCION SOBRE NOSOTROS
+    public function sobreNosotros() {
+        return view('informacion');
+    }
+
+
+    // SECCION PARA COGER LA CITA
+    public function formularioCita() {
+        return view('formularioCita');
+    }
+
+
+    // SECCION PREGUNTAS
+    public function preguntas() {
+        return view('preguntas');
+    }
+
 }

@@ -2,6 +2,6 @@
 
 @section('content')
 
-    <h3> HASIERA </h3>
+    <h3> NUESTROS ARTISTAS </h3>
 
 @endsection

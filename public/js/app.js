@@ -49661,8 +49661,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\xampp\htdocs\TFG\TiendaTattoo\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\TFG\TiendaTattoo\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\xampp\htdocs\Tattoo_Denda\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Tattoo_Denda\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> 980170887172b981c83bfa975f1fcc958dd3ab32
 
 
 /***/ })

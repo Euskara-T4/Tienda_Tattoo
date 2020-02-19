@@ -26,12 +26,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="pasahitza" class="col-md-4 col-form-label text-md-right">{{ __('pasahitza') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="pasahitza" type="password" class="form-control @error('pasahitza') is-invalid @enderror" name="pasahitza" required autocomplete="current-password">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                                @error('pasahitza')
+                                @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

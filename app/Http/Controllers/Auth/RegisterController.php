@@ -51,10 +51,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'izena' => ['required', 'string', 'max:255'],
-            'abizena' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'pasahitza' => ['required', 'string', 'min:4', 'confirmed'],
+            'abizena' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'pasahitza' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+
     }
 
     /**

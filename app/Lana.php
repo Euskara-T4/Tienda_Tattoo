@@ -4,22 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Lana extends Model
-{
-//nombre de la tabla
-protected $table = 'lana';
+class Lana extends Model {
+    //nombre de la tabla
+    protected $table = 'lana';
 
-// Primay key de la tabla
-protected $primaryKey = 'lana_id';
+    // Primary key de la tabla
+    protected $primaryKey = 'lana_id';
+
+    // Datos de la base de datos
+    protected $fillable = ['izena'];
 
 
-protected $fillable = ['izena'];
-
-
- // Relaciones
- public function Zita() {
-
-    return $this->hasMany('App\Zita');
-}
+    // Relaciones
+    public function zita() {
+        return $this->hasMany('App\Zita');
+    }
 
 }

@@ -38,7 +38,6 @@ class User extends Authenticatable
     ];
 
     public function zita() {
-
         return $this->hasMany('App\Zita');
     }
 }
