@@ -5,25 +5,32 @@ namespace App\Http\Controllers;
 use App\Langilea;
 use Illuminate\Http\Request;
 
-class LangileaController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+class LangileaController extends Controller {
+
+    // SECCION TRABAJADORES
+    public function listaTrabajadores() {
+        return view('trabajadores.galeria');
     }
+
+    // TRABAJOS REALIZADOS POR UN TRABAJADOR
+    public function trabajador() {
+        return view('trabajadores.trabajos');
+    }
+
+    // SECCION DE CITAS QUE TIENE
+    public function tablaCitas() {
+        return view('trabajadores.citas');
+    }
+    
+
+    
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
