@@ -11,6 +11,8 @@
 
     <!-- CSS PERSONAL -->
     <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+    <link href='../resources/css/layout.css' rel='stylesheet' type='text/css' media='all'>
+
 
     <title>INK HEART STUDIO TATTOO</title>
     <link rel='shortcut icon' type='image/x-icon' href='../public/img/logo.jpg'/>
@@ -23,7 +25,7 @@
     @include('partials.navbar')
 
     {{-- INCLUIMOS UN CONTAINER QUE CADA PAGINA TENDRÁ SU CONTENIDO --}}
-    <div class="container dataContainer backgroundImg">
+    <div class="container dataContainer">
       @yield('content')
     </div>
 

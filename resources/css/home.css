@@ -1,9 +1,21 @@
-/* NAVBAR */
+body{
+    /* background-color: black !important; */
+}
 
+.dataContainer {
+    max-width: 100%;
+    min-height: 100%;
+    position: relative;
+    padding: 0;
+    padding-bottom: 10%;
+}
+
+/* NAVBAR */
 .navbar {
     background-color: black !important;
     color: white !important;
 }
+
 
 
 /* BACK TO TOP BUTTON */
@@ -53,21 +65,37 @@
 }
 /* -------------------------------------------------------- */
 
+/* PAGINA PRINCIPAL */
+.card-group {
+    padding: 5%;
+}
+
+.card {
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.card-header {
+    margin-top: 2%;
+}
+
+/* -------------------- */
+
 
 /* ABOUT US */
 .aboutUs {
     background-color: #47474742;
-    padding: 5% !important;
+    padding: 10% !important;
     padding-bottom: 0%;
-    margin: 0 auto;
     text-align: center;
-}
-
-.txtAboutUs {
+    margin: 0 auto;
+  }
+  
+  .txtAboutUs {
     text-align: left !important;
     margin-left: 5%;
-
-}
+  }
 
 iframe {
     width: 315px; 
