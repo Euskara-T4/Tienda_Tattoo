@@ -52,6 +52,11 @@
                     </a>
                 </li>
 
+                <li class="nav-item {{ Request::is('formularioCita') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{url('/formularioCita')}}">
+                        <span aria-hidden="true"></span> PIDE TU CITA</a>
+                </li>
+
 
                 {{-- Esto solo tiene que aparecer cuando esta logeado --}}
                 @if(Auth::check())

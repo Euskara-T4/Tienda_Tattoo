@@ -23,3 +23,7 @@ Route::get('/trabajador', 'LangileaController@trabajador')->name('trabajador');
 Route::get('/preguntas', 'HomeController@preguntas')->name('preguntas');
 
 Route::get('/sobreNosotros', 'HomeController@sobreNosotros')->name('sobreNosotros');
+
+Route::get('/formularioCita', 'ZitaController@cita')->name('formularioCita');
+Route::post('/enviarFormulario', 'ZitaController@enviar')->name('enviarFormulario');
+
