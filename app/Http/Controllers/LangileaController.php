@@ -21,9 +21,9 @@ class LangileaController extends Controller {
     public function tablaCitas() {
         return view('trabajadores.citas');
     }
-    
 
-    
+
+
 
     /**
      * Show the form for creating a new resource.

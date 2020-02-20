@@ -5,8 +5,8 @@
             <a class="navbar-brand" href="{{url('/home')}}">
                 <object data="../public/img/logo.svg" type="image/svg+xml" class="logo">
                     <img src="../public/img/logo.jpg"/>
-                </object> 
-                
+                </object>
+
                 <div class="logoTxt loginLink"> INK HEART </div>
             </a>
         </div>
@@ -19,20 +19,23 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item {{ Request::is('home') ? 'active' : ''}}">
                     <a class="nav-link" href="{{url('/home')}}">
-                        <span aria-hidden="true"></span> INICIO 
+                        <span aria-hidden="true"></span> INICIO
                     </a>
                 </li>
-                
+
                 <li class="nav-item dropdown {{Request::is('trabajador') ? 'active' : ''}}">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         ARTISTAS
                     </a>
-                    
+
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                           
-                        {{-- COGER DE LA BD LOS TRABAJADORES --}}
-                        <a class="dropdown-item" href="{{url('/trabajador')}}">Ivan Pelegrin</a>
-                        <div class="dropdown-divider"></div>
+
+                        {{-- COGER DE LA BD LOS TRABAJADORES
+                        @foreach($trabajadores as $trabajador)
+                            <a class="dropdown-item" href="{{url('/trabajador')}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
+                            <div class="dropdown-divider"></div>
+                        @endforeach
+--}}
 
                     </div>
                 </li>
@@ -49,7 +52,7 @@
                     </a>
                 </li>
 
-        
+
                 {{-- Esto solo tiene que aparecer cuando esta logeado --}}
                 @if(Auth::check())
                     <li class="nav-item {{ Request::is('crearPeticion') ? 'active' : ''}}">
@@ -64,14 +67,14 @@
                     <li class="nav-item {{ Request::is('tablaPeticiones') ? 'active' : ''}}">
                         <a class="nav-link" href="{{url('/tablaPeticiones')}}"> Gestionar peticiones </a>
                     </li>
-                @endif                
+                @endif
 
                 <li class="nav-item">
                     {{-- Comprobamos si el usuario esta iniciado --}}
                     @if(Auth::check())
                         <form action="{{ url('/logout') }}" method="POST" class="navForm">
                             {{ csrf_field() }}
-                        
+
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle loginLink" data-toggle="dropdown">
                                         <span class="fa fa-user"></span> 
@@ -106,16 +109,16 @@
                                     </ul>
                                 </li>
                         </form>
-                        
-                    @else        
-                                    
+
+                    @else
+
                         <form action="{{ url('/login') }}" method="GET" class="navForm loginBtn">
                             {{ csrf_field() }}
                             {{-- <button type="submit" class="btn btn-link nav-link fa fa-user loginLink">
                                 Iniciar sesión
                             </button>
                             --}}
-                        </form>                    
+                        </form>
 
                     @endif
 

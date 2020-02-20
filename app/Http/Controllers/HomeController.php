@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Langilea;
 class HomeController extends Controller
 {
     /**
@@ -27,7 +27,10 @@ class HomeController extends Controller
 
 
     public function index() {
-        return view('home');
+
+        $trabajadores = Langilea::all();
+
+        return view('home', compact("trabajadores"));
     }
 
 
@@ -46,6 +49,9 @@ class HomeController extends Controller
     // SECCION PREGUNTAS
     public function preguntas() {
         return view('preguntas');
+
     }
+
+    
 
 }
