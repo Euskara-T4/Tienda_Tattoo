@@ -37,6 +37,12 @@
                     </div>
                 </li>
 
+                <li class="nav-item {{ Request::is('galeria') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{url('/galeria')}}">
+                        <span aria-hidden="true"></span> GALERIA
+                    </a>
+                </li>
+
                 <li class="nav-item {{ Request::is('preguntas') ? 'active' : ''}}">
                     <a class="nav-link" href="{{url('/preguntas')}}">
                         <span aria-hidden="true"></span> PREGUNTAS

@@ -74,6 +74,7 @@ body{
     color: white;
     background-color: transparent;
     border: none;
+    padding: 5%;
 }
 
 .card-header {

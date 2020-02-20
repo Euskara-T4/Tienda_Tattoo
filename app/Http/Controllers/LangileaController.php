@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Langilea;
 use Illuminate\Http\Request;
+use App\Langilea;
+use App\Argazkia;
 
 class LangileaController extends Controller {
 
@@ -20,6 +21,12 @@ class LangileaController extends Controller {
     // SECCION DE CITAS QUE TIENE
     public function tablaCitas() {
         return view('trabajadores.citas');
+    }
+    
+    // SECCION DE TODAS LAS FOTOS
+    public function galeria() {
+        $argazkiak = Argazkia::all();
+        return view('trabajadores.galeria', compact('argazkiak'));
     }
     
 
