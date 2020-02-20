@@ -22,8 +22,8 @@ class Langilea extends Model {
         return $this->hasMany('App\Argazkia');
     }
 
-    public function zita() {
-        return $this->hasMany('App\Zita');
+    public function lana() {
+        return $this->hasMany('App\Lana');
     }
 
 

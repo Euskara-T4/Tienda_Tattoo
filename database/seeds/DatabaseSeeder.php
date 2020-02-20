@@ -12,25 +12,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run() {
 
-        // Llamada al seed de los USUARIOS
-        self::seedUsuarios();
-        $this->command->info('Tabla USUARIOS inicializada con datos!');
+        $this->call(LanaSeeder::class);
+        $this->call(UsuariosSeeder::class);
+
+        $this->call(LangileaSeeder::class);
+
+
     }
 
-    // INSERTAMOS EN LA BASE DE DATOS
-    private function seedUsuarios(){
-        // Borramos la tabla
-        DB::table('users')->delete();
-
-        $admin = new User;
-        $admin->izena = "admin";
-        $admin->abizena = "administrador";
-        $admin->email = "admin@gmail.com";
-        $admin->admin = 1;
-        $admin->pasahitza = bcrypt("adminadmin");
-        $admin->save();
-
-        $this->command->info('Usuario nuevo agregado correctamente!');
-    }
 }
 
