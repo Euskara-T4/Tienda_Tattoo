@@ -20,4 +20,8 @@ class Lana extends Model {
         return $this->hasMany('App\Zita');
     }
 
+    public function langile() {
+        return $this->belongsTo('App\Langilea');
+    }
+
 }

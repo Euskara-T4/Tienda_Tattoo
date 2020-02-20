@@ -10,7 +10,7 @@ class Langilea extends Model {
 
     // Primay key de la tabla
     protected $primaryKey = 'langile_id	';
-  
+
     // Foreign key de la tabla
     protected $foreignKey = 'lana_id';
 
@@ -22,8 +22,8 @@ class Langilea extends Model {
         return $this->hasMany('App\Argazkia');
     }
 
-    public function zita() {
-        return $this->hasMany('App\Zita');
+    public function lana() {
+        return $this->hasMany('App\Lana');
     }
 
 

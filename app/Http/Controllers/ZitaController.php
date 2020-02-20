@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ZitaController extends Controller
 {
+
+    public function cita() {
+        return view('formularioCita');
+    }
     /**
      * Display a listing of the resource.
      *

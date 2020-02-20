@@ -24,3 +24,7 @@ Route::get('/galeria', 'LangileaController@galeria')->name('galeria');
 Route::get('/preguntas', 'HomeController@preguntas')->name('preguntas');
 
 Route::get('/sobreNosotros', 'HomeController@sobreNosotros')->name('sobreNosotros');
+
+Route::get('/formularioCita', 'ZitaController@cita')->name('formularioCita');
+Route::post('/enviarFormulario', 'ZitaController@enviar')->name('enviarFormulario');
+

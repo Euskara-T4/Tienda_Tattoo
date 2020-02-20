@@ -12,12 +12,27 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="izena" class="col-md-4 col-form-label text-md-right">{{ __('izena') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="izena" type="text" class="form-control @error('izena') is-invalid @enderror" name="izena" value="{{ old('izena') }}" required autocomplete="izena" autofocus>
 
-                                @error('name')
+                                @error('izena')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="abizena" class="col-md-4 col-form-label text-md-right">{{ __('abizena') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="abizena" type="text" class="form-control @error('abizena') is-invalid @enderror" name="abizena" value="{{ old('abizena') }}" required autocomplete="abizena" autofocus>
+
+                                @error('abizena')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -40,12 +55,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="pasahitza" class="col-md-4 col-form-label text-md-right">{{ __('pasahitza') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="pasahitza" type="password" class="form-control @error('pasahitza') is-invalid @enderror" name="pasahitza" required autocomplete="new-password">
 
-                                @error('password')
+                                @error('pasahitza')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

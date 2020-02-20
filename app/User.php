@@ -34,8 +34,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+        'email_verified_at' => 'datetime',];
 
     public function zita() {
         return $this->hasMany('App\Zita');
