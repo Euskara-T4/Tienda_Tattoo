@@ -12,10 +12,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run() {
 
-        $this->call(LanaSeeder::class);
-        $this->call(UsuariosSeeder::class);
+        // seeder para insertar trabajos
+       // $this->call(LanaSeeder::class);
 
-        $this->call(LangileaSeeder::class);
+        // seeder para insertar usuarios
+       // $this->call(UsuariosSeeder::class);
+
+      // seeder para introducir trabajadores
+     //$this->call(LangileaSeeder::class);
 
 
     }
