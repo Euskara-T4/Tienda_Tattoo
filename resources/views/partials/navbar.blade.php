@@ -41,10 +41,8 @@
             
             <li><a href='registro.php' title='Sortu'><i class='fa fa-lg fa-user-plus'></i></a></li>
         </ul>
-        <!-- ################################################################################################ -->
     </div>
 </div>
-<!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 
 <!-- LOGIN MODAL -->
@@ -77,16 +75,14 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-
-        <div class="logoDiv">
+        <div id='logo' class='fl_left flex'>
             <a class="navbar-brand" href="{{url('/home')}}">
                 <object data="../public/img/logo.svg" type="image/svg+xml" class="logo">
                     <img src="../public/img/logo.jpg"/>
                 </object>
-
-                <div class="logoTxt loginLink"> INK HEART </div>
             </a>
-        </div>
+            <a class="navbar-brand" href="{{url('/home')}}"> <h1 class="logoTxt loginLink"> INK HEART TATTOO</h1> </a>
+        </div>  
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -94,7 +90,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item {{ Request::is('home') ? 'active' : ''}}">
+                <li class="nav-item {{ Request::is('home') || Request::is('') ?  'active' : ''}}">
                     <a class="nav-link" href="{{url('/home')}}">
                         <span aria-hidden="true"></span> INICIO
                     </a>
@@ -106,14 +102,11 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                        {{-- COGER DE LA BD LOS TRABAJADORES
+                        {{-- COGER DE LA BD LOS TRABAJADORES --}}
                         @foreach($trabajadores as $trabajador)
-                            <a class="dropdown-item" href="{{url('/trabajador')}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
+                            <a class="dropdown-item" href="{{url('/trabajador'. $trabajador->langile_id)}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
                             <div class="dropdown-divider"></div>
                         @endforeach
---}}
-
                     </div>
                 </li>
 

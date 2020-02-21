@@ -70,6 +70,10 @@ body {
 /* -------------------------------------------------------- */
 
 /* PAGINA PRINCIPAL */
+.card-group .card {
+    padding: 5%;
+}
+
 .card-group {
     padding: 5%;
 }
@@ -78,11 +82,25 @@ body {
     color: white;
     background-color: transparent;
     border: none;
-    padding: 5%;
 }
 
 .card-header {
     margin-top: 2%;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo h1 {
+    margin: 0;
+    padding: 0;
+    padding-left: 5% !important;
+    font-size: 22px;
+    text-transform: uppercase;
 }
 
 /* -------------------- */
@@ -90,12 +108,12 @@ body {
 .heading {
     padding-top: 5% !important;
     padding: 2%;
+    text-align: center;
 }
 
 p {
     padding: 2%;
 }
-
 
 /* ABOUT US */
 .aboutUs {
@@ -118,3 +136,29 @@ iframe {
     margin-left: 20%;
 }
 /* ******************* */
+
+.breadcrumb {
+    padding-left: 10%;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+/* Controlar el titulo */
+
+/* MOBILE FIRST */
+
+/* No debe de haber migar en el movil */
+.breadcrumb {
+    display: none;
+}
+
+/* TABLET: */
+@media only screen and (min-width: 550px) {
+    .breadcrumb {
+        display: flex;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 800px) {
+}

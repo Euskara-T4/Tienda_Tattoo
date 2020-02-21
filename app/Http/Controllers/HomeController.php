@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Langilea;
+
 class HomeController extends Controller
 {
     /**
@@ -21,13 +22,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function welcome() {
-        return view('welcome');
-    }
-
 
     public function index() {
-
         $trabajadores = Langilea::all();
 
         return view('home', compact("trabajadores"));
@@ -36,19 +32,25 @@ class HomeController extends Controller
 
     // SECCION SOBRE NOSOTROS
     public function sobreNosotros() {
-        return view('informacion');
+        $trabajadores = Langilea::all();
+
+        return view('informacion', compact("trabajadores"));
     }
 
 
     // SECCION PARA COGER LA CITA
     public function formularioCita() {
-        return view('formularioCita');
+        $trabajadores = Langilea::all();
+
+        return view('formularioCita', compact("trabajadores"));
     }
 
 
     // SECCION PREGUNTAS
     public function preguntas() {
-        return view('preguntas');
+        $trabajadores = Langilea::all();
+
+        return view('preguntas', compact("trabajadores"));
 
     }
 
