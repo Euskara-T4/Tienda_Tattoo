@@ -16,7 +16,7 @@ class Zita extends Model {
 
 
     //nombre de las columna
-    protected $fillable = ['izena','url', 'langile_id'];
+    protected $fillable = ['izena','url', 'descripcion', 'langile_id'];
 
       // Relacione
     public function langilea() {

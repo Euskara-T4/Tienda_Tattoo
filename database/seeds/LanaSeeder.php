@@ -32,6 +32,10 @@ class LanaSeeder extends Seeder
         $escarificacion->izena = "escarificacion";
         $escarificacion->save();
 
+        $eliminacion = new Lana;
+        $eliminacion->izena = "eliminacion de tattoo";
+        $eliminacion->save();
+
         $this->command->info('datos nuevos agregados correctamente!');
     }
 }

@@ -37,12 +37,27 @@ class ZitaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function enviarFormulario(Request $formulario)
     {
-        //
+
+
+        $zita = new Zita();
+
+        $zita->deskripzioa = $formulario->descripcion;
+        $zita->lana_id = $formulario->lana_id;
+        $zita->ordutegia = $formulario->ordutegia;
+
+
+
+        $zita->save();
+
+        return back()->with('enviarFormulario' , 'se ha enviado correctamente');
     }
 
-    /**
+
+
+
+     /**
      * Display the specified resource.
      *
      * @param  \App\Zita  $zita
@@ -86,4 +101,7 @@ class ZitaController extends Controller
     {
         //
     }
-}
+
+
+    }
+

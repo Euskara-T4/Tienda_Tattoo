@@ -26,5 +26,5 @@ Route::get('/preguntas', 'HomeController@preguntas')->name('preguntas');
 Route::get('/sobreNosotros', 'HomeController@sobreNosotros')->name('sobreNosotros');
 
 Route::get('/formularioCita', 'ZitaController@cita')->name('formularioCita');
-Route::post('/enviarFormulario', 'ZitaController@enviar')->name('enviarFormulario');
+Route::post('/enviarFormulario', 'ZitaController@enviarFormulario')->name('enviarFormulario');
 

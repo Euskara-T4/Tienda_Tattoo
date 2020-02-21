@@ -187,7 +187,7 @@ class ArgazkiSeeder extends Seeder
 
          $mike2 = new Argazkia;
          $mike2->izena = "flor";
-         $mike2->url = "../public/img/mike/flor.PNG";
+         $mike2->url = "../public/img/mike/flor.jpg";
          $mike2->langile_id = 2;
 
          $mike2->save();
@@ -195,7 +195,7 @@ class ArgazkiSeeder extends Seeder
 
          $mike3 = new Argazkia;
          $mike3->izena = "flor2";
-         $mike3->url = "../public/img/mike/flor2.PNG";
+         $mike3->url = "../public/img/mike/flor2.jpg";
          $mike3->langile_id = 2;
 
          $mike3->save();

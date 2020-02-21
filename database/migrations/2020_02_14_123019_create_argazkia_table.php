@@ -21,7 +21,7 @@ class CreateArgazkiaTable extends Migration
 
             $table->foreign('langile_id')->references('langile_id')->on('langilea');
 
-            
+
             $table->timestamps();
         });
     }

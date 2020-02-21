@@ -18,7 +18,9 @@ class CreateZitaTable extends Migration
 
             // campo para clave foraneas
             $table->integer('erabiltzailea_id')->unsigned();
-            $table->string('descripcion');
+            $table->string('deskripzioa');
+            $table->dateTime('ordutegia');
+
             $table->integer('lana_id')->unsigned();
 
             //relaciones
