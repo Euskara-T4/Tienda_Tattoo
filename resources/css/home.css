@@ -1,5 +1,11 @@
-body{
-    /* background-color: black !important; */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(43, 43, 43) !important;
+}
+
+#logo {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
 }
 
 .dataContainer {
@@ -15,8 +21,6 @@ body{
     background-color: black !important;
     color: white !important;
 }
-
-
 
 /* BACK TO TOP BUTTON */
 #backtotop {
@@ -83,6 +87,15 @@ body{
 
 /* -------------------- */
 
+.heading {
+    padding-top: 5% !important;
+    padding: 2%;
+}
+
+p {
+    padding: 2%;
+}
+
 
 /* ABOUT US */
 .aboutUs {
@@ -91,17 +104,17 @@ body{
     padding-bottom: 0%;
     text-align: center;
     margin: 0 auto;
-  }
-  
-  .txtAboutUs {
+}
+
+.txtAboutUs {
     text-align: left !important;
     margin-left: 5%;
-  }
+}
 
 iframe {
-    width: 315px; 
-    height: 315px; 
+    width: 315px;
+    height: 315px;
     border: none;
     margin-left: 20%;
 }
-  /* ******************* */
+/* ******************* */

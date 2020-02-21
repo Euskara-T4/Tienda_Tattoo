@@ -1,3 +1,80 @@
+{{-- INFORMAACION PRINCIPAL --}}
+<div class='wrapper row0'>
+    <div id='topbar' class='hoc clear'>
+        <!-- ################################################################################################ -->
+        <ul>
+            <li><i class='fa fa-clock-o'></i> Mon. - Fri. 8am - 5pm</li>
+            <li><i class='fa fa-phone'></i> 944 12 57 12</li>
+            <li><i class='fa fa-envelope-o'></i> idazkaria@fpTXurdinaga.com</li>
+            
+            <!-- ################################################################################################ -->
+            <!-- USER ACTION ICONS -->
+            @if(Auth::check())
+                <li><a href='#' title='Logeatu' id='btnLogin'><i class='fa fa-lg fa-sign-in'></i></a></li>
+            @endif
+
+            <?php
+                if(isset($_SESSION['usuario'])){          
+            ?>
+                    <li><a href='update.php' title='Perfila'><i class='fa fa-lg fa-home'></i></a></li>            
+            <?php
+                    echo $_SESSION['usuario'];
+            ?>
+                    <li><a href='#' title='Irten' id='btnLogout'><i class='fa fa-lg fa-sign-out'></i></a></li>
+            
+            <?php
+                    if($_SESSION['adminRol'] == 1 || $_SESSION['adminRol'] == 2){
+                    ?>
+                        <li><a href='ajusteak.php' title='Ajusteak' id='btnSettings'><i class='fa fa-lg fa-cog'></i></a></li>
+                        <li><a href='addPost.php' title='Posta gehitu' id='btnPost'><i class='fa fa-lg fa-plus-square'></i></a></li>
+    
+                    <?php
+                    }          
+            
+                } else {        
+            ?>
+                <li><a href='#' title='Logeatu' id='btnLogin'><i class='fa fa-lg fa-sign-in'></i></a></li>
+            <?php
+                }
+            ?>
+            <!-- -------------------------------------- -->
+            
+            <li><a href='registro.php' title='Sortu'><i class='fa fa-lg fa-user-plus'></i></a></li>
+        </ul>
+        <!-- ################################################################################################ -->
+    </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+
+<!-- LOGIN MODAL -->
+<div id='loginModal' class='modal'>
+    <form action="{{ url('/login') }}" method="POST" class="modal-content animate">
+        {{ csrf_field() }}
+      
+        <div class='imgcontainer'>
+            <span class='close' id='close' title='Close Modal'>&times;</span>
+            <img src='../public/img/avatar.png' alt='Avatar' class='avatar'>
+        </div>
+
+        <div class='logContainer'>
+            <label for='erabiltzaile_iz'><b>Nombre usuario:</b></label>
+            <input type='text' placeholder='Sartu erabiltzailea' name='erabiltzaile_iz' required>
+
+            <label for='psw'><b>Contraseña:</b></label>
+            <input type='password' placeholder='Sartu pasahitza' name='pasahitza' required>
+            <!-- <label>
+                <input type='checkbox' checked='checked' name='remember'> Remember me
+            </label> -->
+        </div>
+
+        <div class='btnContainer'>
+            <button type="submit" class="loginBtn">Iniciar sesion</button>
+            <button type='button' class='cancelBtn' id='cancelBtn'>Cancelar</button>
+        </div>
+    </form>
+</div>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
 
