@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Zita;
+use App\Langilea;
 use Illuminate\Http\Request;
 
 class ZitaController extends Controller
 {
 
     public function cita() {
-        return view('formularioCita');
+        $trabajadores = Langilea::all();
+
+        return view('formularioCita', compact("trabajadores"));
     }
     /**
      * Display a listing of the resource.

@@ -122,15 +122,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item {{ Request::is('formularioCita') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{url('/formularioCita')}}">
+                        <span aria-hidden="true"></span> PIDE TU CITA</a>
+                </li>
+
                 <li class="nav-item {{ Request::is('sobreNosotros') ? 'active' : ''}}">
                     <a class="nav-link" href="{{url('/sobreNosotros')}}">
                         <span aria-hidden="true"></span> SOBRE NOSOTROS
                     </a>
-                </li>
-
-                <li class="nav-item {{ Request::is('formularioCita') ? 'active' : ''}}">
-                    <a class="nav-link" href="{{url('/formularioCita')}}">
-                        <span aria-hidden="true"></span> PIDE TU CITA</a>
                 </li>
 
 

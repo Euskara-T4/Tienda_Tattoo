@@ -58,9 +58,9 @@ class HomeController extends Controller
 
 
     public function registro() {
+        $trabajadores = Langilea::all();
 
-
-        return view('registro');
+        return view('registro', compact("trabajadores"));
 
     }
     public function registrado(Request $registrado) {
