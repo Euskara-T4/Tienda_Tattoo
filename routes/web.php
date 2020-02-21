@@ -28,3 +28,8 @@ Route::get('/sobreNosotros', 'HomeController@sobreNosotros')->name('sobreNosotro
 Route::get('/formularioCita', 'ZitaController@cita')->name('formularioCita');
 Route::post('/enviarFormulario', 'ZitaController@enviarFormulario')->name('enviarFormulario');
 
+Route::get('/registro', 'HomeController@registro')->name('registro');
+Route::post('/registrado', 'HomeController@registrado')->name('registrado');
+
+
+

@@ -2,6 +2,13 @@
 
 @section('content')
 
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
+            <li class="breadcrumb-item active">Sobre nosotros</li>
+        </ol>
+    </nav>
+
     <div class='bgded overlay' style="background-image:url('../public/img/backgrounds/fondo03.jpg');">
         <div id="footer" class="hoc clear aboutUs">
             <!-- ################################################################################################ -->

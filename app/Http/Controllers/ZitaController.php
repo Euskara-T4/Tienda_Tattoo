@@ -46,9 +46,7 @@ class ZitaController extends Controller
         $zita->deskripzioa = $formulario->descripcion;
         $zita->lana_id = $formulario->lana_id;
         $zita->ordutegia =$formulario->ordutegia;
-
-
-
+        
         $zita->save();
 
         return back()->with('enviarFormulario' , 'se ha enviado correctamente');

@@ -9,7 +9,7 @@ class Langilea extends Model {
     protected $table = 'langilea';
 
     // Primay key de la tabla
-    protected $primaryKey = 'langile_id	';
+    protected $primaryKey = 'langile_id';
 
     // Foreign key de la tabla
     protected $foreignKey = 'lana_id';

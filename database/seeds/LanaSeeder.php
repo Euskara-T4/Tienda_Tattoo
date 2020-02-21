@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Lana;
+
 class LanaSeeder extends Seeder
 {
     /**
@@ -14,27 +15,28 @@ class LanaSeeder extends Seeder
     {
         DB::table('lana')->delete();
 
-       $this->command->info('Tabla inicializada con datos!');
+        $this->command->info('Tabla inicializada con datos!');
 
         $tattoo = new Lana;
         $tattoo->izena = "tattoo";
         $tattoo->save();
 
         $piercing = new Lana;
-        $piercing->izena = "piercing";
+        $piercing->izena = "Piercing";
         $piercing->save();
 
         $microdermal = new Lana;
-        $microdermal->izena = "microdermal";
+        $microdermal->izena = "Microdermal";
         $microdermal->save();
 
         $escarificacion = new Lana;
-        $escarificacion->izena = "escarificacion";
+        $escarificacion->izena = "Escarificacion";
         $escarificacion->save();
 
-        $eliminacion = new Lana;
-        $eliminacion->izena = "eliminacion de tattoo";
-        $eliminacion->save();
+
+        $eliminacionTattoo = new Lana;
+        $eliminacionTattoo->izena = "Eliminacion tattoo";
+        $eliminacionTattoo->save();
 
         $this->command->info('datos nuevos agregados correctamente!');
     }

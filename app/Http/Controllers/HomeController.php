@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Langilea;
+use App\User;
 class HomeController extends Controller
 {
     /**
@@ -21,9 +22,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function welcome() {
-        return view('welcome');
-    }
+
 
 
     public function index() {
@@ -51,6 +50,30 @@ class HomeController extends Controller
         return view('preguntas');
 
     }
+
+
+    public function registro() {
+
+
+        return view('registro');
+
+    }
+    public function registrado(Request $registrado) {
+
+        $user = new user;
+
+
+        $user->izena = $registrado->nombre;
+        $user->abizena = $registrado->apellido;
+        $user->email =$registrado->email;
+        $user->pasahitza = bcrypt($registrado->contraseña); // Se encripta la contraseña usando la función bcrypt().
+        $user->save();
+
+        return back()->with('registrado' , 'usuario registrado correctamente');
+
+    }
+
+
 
 
 

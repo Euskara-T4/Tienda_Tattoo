@@ -31,12 +31,14 @@ class LangileaSeeder extends Seeder
          $IM->lana_id = 1;
          $IM->save();
 
+
          $mike = new Langilea;
          $mike->izena = "Mike";
          $mike->abizena = "Perez";
          $mike->lana_id = 2;
 
          $mike->save();
+
 
          $yannic = new Langilea;
          $yannic->izena = "Yannic";
@@ -45,6 +47,7 @@ class LangileaSeeder extends Seeder
 
          $yannic->save();
 
+         
          $paula = new Langilea;
          $paula->izena = "Paula";
          $paula->abizena = "Goméz";
