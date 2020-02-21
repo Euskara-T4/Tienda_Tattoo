@@ -45,7 +45,7 @@ class ZitaController extends Controller
 
         $zita->deskripzioa = $formulario->descripcion;
         $zita->lana_id = $formulario->lana_id;
-        $zita->ordutegia = $formulario->ordutegia;
+        $zita->ordutegia =$formulario->ordutegia;
 
 
 
