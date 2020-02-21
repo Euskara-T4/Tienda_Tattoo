@@ -68,7 +68,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
         @if (session('enviarFormulario'))
-        <div class="alert alert-dangerg mt-3">
+        <div class="alert alert-danger mt-3">
             {{session('enviarFormulario')}}
         </div>
     @endif
