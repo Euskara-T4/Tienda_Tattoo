@@ -22,11 +22,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> fe9f39a283d927955458c39f9f961e80cefb1a46
 
     public function index() {
         $trabajadores = Langilea::all();

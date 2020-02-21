@@ -14,49 +14,29 @@
             @endif
 
             <?php
-<<<<<<< HEAD
                 if(isset($_SESSION['usuario'])){
             ?>
                     <li><a href='update.php' title='Perfila'><i class='fa fa-lg fa-home'></i></a></li>
-=======
-                if(isset($_SESSION['usuario'])){
-            ?>
-                    <li><a href='update.php' title='Perfila'><i class='fa fa-lg fa-home'></i></a></li>
->>>>>>> fe9f39a283d927955458c39f9f961e80cefb1a46
             <?php
                     echo $_SESSION['usuario'];
             ?>
                     <li><a href='#' title='Irten' id='btnLogout'><i class='fa fa-lg fa-sign-out'></i></a></li>
-<<<<<<< HEAD
-
-=======
-
->>>>>>> fe9f39a283d927955458c39f9f961e80cefb1a46
             <?php
                     if($_SESSION['adminRol'] == 1 || $_SESSION['adminRol'] == 2){
                     ?>
                         <li><a href='ajusteak.php' title='Ajusteak' id='btnSettings'><i class='fa fa-lg fa-cog'></i></a></li>
                         <li><a href='addPost.php' title='Posta gehitu' id='btnPost'><i class='fa fa-lg fa-plus-square'></i></a></li>
-<<<<<<< HEAD
 
                     <?php
                     }
 
                 } else {
-=======
-
-                    <?php
-                    }
-
-                } else {
->>>>>>> fe9f39a283d927955458c39f9f961e80cefb1a46
             ?>
                 <li><a href='#' title='Logeatu' id='btnLogin'><i class='fa fa-lg fa-sign-in'></i></a></li>
             <?php
                 }
             ?>
             <!-- -------------------------------------- -->
-<<<<<<< HEAD
 
             <li><a href="{{url('/registro')}}"     title='Sortu'><i class='fa fa-lg fa-user-plus'></i></a></li>
         </ul>
@@ -65,24 +45,11 @@
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-=======
-
-            <li><a href='registro.php' title='Sortu'><i class='fa fa-lg fa-user-plus'></i></a></li>
-        </ul>
-    </div>
-</div>
-<!-- ################################################################################################ -->
->>>>>>> fe9f39a283d927955458c39f9f961e80cefb1a46
 
 <!-- LOGIN MODAL -->
 <div id='loginModal' class='modal'>
     <form action="{{ url('/login') }}" method="POST" class="modal-content animate">
         {{ csrf_field() }}
-<<<<<<< HEAD
-
-=======
-
->>>>>>> fe9f39a283d927955458c39f9f961e80cefb1a46
         <div class='imgcontainer'>
             <span class='close' id='close' title='Close Modal'>&times;</span>
             <img src='../public/img/avatar.png' alt='Avatar' class='avatar'>
