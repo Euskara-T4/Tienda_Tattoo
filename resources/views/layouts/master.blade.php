@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- CSS PERSONAL -->
-    <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
-    <link href='../resources/css/layout.css' rel='stylesheet' type='text/css' media='all'>
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+    <link href='../public/css/layout.css' rel='stylesheet' type='text/css' media='all'>
 
     <title>INK HEART STUDIO TATTOO</title>
     <link rel='shortcut icon' type='image/x-icon' href='../public/img/logo.jpg'/>
@@ -29,7 +29,7 @@
     </div>
 
     <a id='backtotop' href='#top'><i class='fa fa-chevron-up'></i></a>
-    
+
     {{-- FOOTER --}}
     {{-- <footer class="container-fluid footerBg py-5">
       <div class="container">
@@ -37,7 +37,7 @@
           <div class="col-md-6">
             <div class="row">
               <div class="col-md-5 leftPart">
-                <h6> Echa un vistazo</h6>              
+                <h6> Echa un vistazo</h6>
                   <ul>
                     <li> <a href="https://desayunosfeministascantabria.wordpress.com" target="_blank"> Inicio</a> </li>
                     <li> <a href="https://desayunosfeministascantabria.wordpress.com/entradas/" target="_blank"> ¿Quienes somos? </a> </li>
@@ -45,7 +45,7 @@
                   </ul>
               </div>
 
-              <div class="col-md-6 float-right"> 
+              <div class="col-md-6 float-right">
                 <h6> Redes Sociales</h6>
                 <p>Siguenos en nuestras redes sociales si quieres estar al tanto de lo que hacemos!</p>
                 <div class="social">
@@ -59,7 +59,7 @@
 
           <div class="col-md-5">
             <div class="row">
-              <div class="col-md-6 float-right creadores"> 
+              <div class="col-md-6 float-right creadores">
                 <h6> CREADORES</h6>
                 <ul>
                   <li> Ruben Gonzalez </li>
@@ -80,16 +80,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+
+
     {{-- OUR SCRIPTS --}}
     <script src="../resources/js/backtotop.js"></script>
-    <script src="../resources/js/dropdown.js"></script>
+    {{-- <script src="../resources/js/dropdown.js"></script> --}}
     <script src="../resources/js/login.js"></script>
     <script src="../resources/js/galeria.js"></script>
 

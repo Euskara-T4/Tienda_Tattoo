@@ -18,7 +18,8 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/listaTrabajadores', 'LangileaController@listaTrabajadores')->name('listaTrabajadores');
-Route::get('/trabajador', 'LangileaController@trabajador')->name('trabajador');
+Route::get('/trabajador{id}', 'LangileaController@trabajador')->name('trabajador');
+
 Route::get('/galeria', 'LangileaController@galeria')->name('galeria');
 
 Route::get('/preguntas', 'HomeController@preguntas')->name('preguntas');

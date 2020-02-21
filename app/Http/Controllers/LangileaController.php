@@ -10,23 +10,38 @@ class LangileaController extends Controller {
 
     // SECCION TRABAJADORES
     public function listaTrabajadores() {
-        return view('trabajadores.galeria');
+        $trabajadores = Langilea::all();
+
+        return view('trabajadores.galeria', compact("trabajadores"));
     }
 
     // TRABAJOS REALIZADOS POR UN TRABAJADOR
-    public function trabajador() {
-        return view('trabajadores.trabajos');
+    public function trabajador($id) {
+        // if(Auth::check() ) {
+        //     $usuario = Auth::user();
+        // } else {
+        //     $usuario = "anonimo";
+        // }
+        
+        $trabajadores = Langilea::all();
+        $trabajador = Langilea::findOrFail($id);
+
+        return view('trabajadores.trabajos',  compact("trabajadores", "trabajador"));
     }
 
     // SECCION DE CITAS QUE TIENE
     public function tablaCitas() {
-        return view('trabajadores.citas');
+        $trabajadores = Langilea::all();
+
+        return view('trabajadores.citas', compact("trabajadores"));
     }
     
     // SECCION DE TODAS LAS FOTOS
     public function galeria() {
+        $trabajadores = Langilea::all();
         $argazkiak = Argazkia::all();
-        return view('trabajadores.galeria', compact('argazkiak'));
+
+        return view('trabajadores.galeria', compact('trabajadores', 'argazkiak'));
     }
     
 

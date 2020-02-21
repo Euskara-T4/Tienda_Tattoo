@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $(".dropdown").hover(
         function () {
-            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideDown("fast");
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideDown();
             $(this).toggleClass('open');
         },
         function () {

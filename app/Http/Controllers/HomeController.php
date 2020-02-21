@@ -22,11 +22,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> fe9f39a283d927955458c39f9f961e80cefb1a46
 
     public function index() {
-
         $trabajadores = Langilea::all();
 
         return view('home', compact("trabajadores"));
@@ -35,19 +37,25 @@ class HomeController extends Controller
 
     // SECCION SOBRE NOSOTROS
     public function sobreNosotros() {
-        return view('informacion');
+        $trabajadores = Langilea::all();
+
+        return view('informacion', compact("trabajadores"));
     }
 
 
     // SECCION PARA COGER LA CITA
     public function formularioCita() {
-        return view('formularioCita');
+        $trabajadores = Langilea::all();
+
+        return view('formularioCita', compact("trabajadores"));
     }
 
 
     // SECCION PREGUNTAS
     public function preguntas() {
-        return view('preguntas');
+        $trabajadores = Langilea::all();
+
+        return view('preguntas', compact("trabajadores"));
 
     }
 
