@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Lana;
 use App\Zita;
 use App\Langilea;
 use Illuminate\Http\Request;
@@ -9,11 +10,6 @@ use Illuminate\Http\Request;
 class ZitaController extends Controller
 {
 
-    public function cita() {
-        $trabajadores = Langilea::all();
-
-        return view('formularioCita', compact("trabajadores"));
-    }
     /**
      * Display a listing of the resource.
      *
@@ -45,10 +41,10 @@ class ZitaController extends Controller
 
 
         $zita = new Zita();
-
-        $zita->deskripzioa = $formulario->descripcion;
+        $zita->bezeroa = $formulario->bezeroa;
+        $zita->deskripzioa = $formulario->deskrizpzioa;
         $zita->lana_id = $formulario->lana_id;
-        $zita->ordutegia =$formulario->ordutegia;
+        // $zita->ordutegia = $formulario->ordutegia;
         
         $zita->save();
 

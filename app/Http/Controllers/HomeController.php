@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Lana;
 use Illuminate\Http\Request;
 use App\Langilea;
 use App\User;
@@ -35,8 +36,9 @@ class HomeController extends Controller
     // SECCION SOBRE NOSOTROS
     public function sobreNosotros() {
         $trabajadores = Langilea::all();
+        $lanak = Lana::all();
 
-        return view('informacion', compact("trabajadores"));
+        return view('informacion', compact("trabajadores", "lanak"));
     }
 
 

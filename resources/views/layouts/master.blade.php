@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- CSS PERSONAL -->
-    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../resources/sass/app.scss">
     <link href='../public/css/layout.css' rel='stylesheet' type='text/css' media='all'>
 
     <title>INK HEART STUDIO TATTOO</title>
@@ -23,56 +23,14 @@
     {{-- INCLUDE SIN ; --}}
     @include('partials.navbar')
 
-    {{-- INCLUIMOS UN CONTAINER QUE CADA PAGINA TENDRÁ SU CONTENIDO --}}
-    <div class="container dataContainer">
+    {{-- INCLUIMOS UNA SECTION QUE CADA PAGINA TENDRÁ SU CONTENIDO --}}
+    <section>
       @yield('content')
-    </div>
+    </section>
 
     <a id='backtotop' href='#top'><i class='fa fa-chevron-up'></i></a>
 
-    {{-- FOOTER --}}
-    {{-- <footer class="container-fluid footerBg py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="row">
-              <div class="col-md-5 leftPart">
-                <h6> Echa un vistazo</h6>
-                  <ul>
-                    <li> <a href="https://desayunosfeministascantabria.wordpress.com" target="_blank"> Inicio</a> </li>
-                    <li> <a href="https://desayunosfeministascantabria.wordpress.com/entradas/" target="_blank"> ¿Quienes somos? </a> </li>
-                    <li> <a href="https://desayunosfeministascantabria.wordpress.com/contacto/" target="_blank"> Contacto</a> </li>
-                  </ul>
-              </div>
-
-              <div class="col-md-6 float-right">
-                <h6> Redes Sociales</h6>
-                <p>Siguenos en nuestras redes sociales si quieres estar al tanto de lo que hacemos!</p>
-                <div class="social">
-                  <a href="https://desayunosfeministascantabria.wordpress.com" target="_blank"><i class="fa fa-wordpress" aria-hidden="true"></i></a>
-                  <a href="https://www.facebook.com/desayunos.feministas.188" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-md-5">
-            <div class="row">
-              <div class="col-md-6 float-right creadores">
-                <h6> CREADORES</h6>
-                <ul>
-                  <li> Ruben Gonzalez </li>
-                  <li> Alex Mendiluce </li>
-                  <li> Nahia Maguregui </li>
-                  <li> Gorka Intxausti </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer> --}}
+    {{-- @include('partials.footer') --}}
 
 
     <!-- Optional JavaScript -->

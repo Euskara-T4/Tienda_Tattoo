@@ -1,13 +1,11 @@
 {{-- INFORMAACION PRINCIPAL --}}
 <div class='wrapper row0'>
     <div id='topbar' class='hoc clear'>
-        <!-- ################################################################################################ -->
         <ul>
             <li><i class='fa fa-clock-o'></i> Mon. - Fri. 8am - 5pm</li>
             <li><i class='fa fa-phone'></i> 944 12 57 12</li>
             <li><i class='fa fa-envelope-o'></i> idazkaria@fpTXurdinaga.com</li>
 
-            <!-- ################################################################################################ -->
             <!-- USER ACTION ICONS -->
             @if(Auth::check())
                 <li><a href='#' title='Logeatu' id='btnLogin'><i class='fa fa-lg fa-sign-in'></i></a></li>
@@ -43,8 +41,6 @@
         <!-- ################################################################################################ -->
     </div>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 
 <!-- LOGIN MODAL -->
 <div id='loginModal' class='modal'>
@@ -81,7 +77,7 @@
                     <img src="../public/img/logo.jpg"/>
                 </object>
             </a>
-            <a class="navbar-brand" href="{{url('/home')}}"> <h1 class="logoTxt loginLink"> INK HEART TATTOO</h1> </a>
+            <a class="navbar-brand" href="{{url('/home')}}"> <h1 class="logoTxt loginLink"> INK HEART TATTOO </h1> </a>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -122,14 +118,9 @@
                     </a>
                 </li>
 
-                <li class="nav-item {{ Request::is('formularioCita') ? 'active' : ''}}">
-                    <a class="nav-link" href="{{url('/formularioCita')}}">
-                        <span aria-hidden="true"></span> PIDE TU CITA</a>
-                </li>
-
                 <li class="nav-item {{ Request::is('sobreNosotros') ? 'active' : ''}}">
                     <a class="nav-link" href="{{url('/sobreNosotros')}}">
-                        <span aria-hidden="true"></span> SOBRE NOSOTROS
+                        <span aria-hidden="true"></span> CONTACTANOS
                     </a>
                 </li>
 
