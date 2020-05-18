@@ -1,0 +1,17 @@
+#accordion button { 
+    width: 100%;
+    background-color: rgba(238, 238, 238, 0.904);
+    color: black;
+    border-color:black;
+    text-align: center;
+}
+
+#accordion .card-body {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#accordion img {
+    display: block;
+    margin: auto;
+}

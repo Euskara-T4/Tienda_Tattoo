@@ -27,7 +27,6 @@ class CreateZitaTable extends Migration
             $table->foreign('erabiltzailea_id')->references('erabiltzailea_id')->on('users');
             $table->foreign('lana_id')->references('lana_id')->on('lana');
 
-
             $table->timestamps();
         });
     }

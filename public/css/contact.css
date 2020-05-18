@@ -41,14 +41,7 @@ a {
 	left: 50%;
 	margin-left: -25px;
 }
-.contact {
-	background-image: url(http://placekitten.com/2000/1000);
-	background-size: cover;
-	background-position: center;
-	position: relative;
-	z-index: 2;
-	color: #fff;
-}
+
 .contact-form input,
 textarea {
 	width: 100%;
@@ -59,6 +52,7 @@ textarea {
 	background-color: transparent;
 	color: #fff;
 }
+
 .contact:before {
 	position: absolute;
 	content: "";
@@ -71,6 +65,7 @@ textarea {
 	opacity: .85;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
 }
+
 .single-contact {
 	text-align: left;
 	position: relative;
@@ -78,6 +73,7 @@ textarea {
 	margin-bottom: 50px;
 	margin-top: 10px;
 }
+
 .single-contact i.fa {
 	position: absolute;
 	left: 0;
@@ -122,15 +118,3 @@ iframe {
 	background-color: black !important;
 }
 
-.aboutUs {
-	background-color: #47474742;
-	padding: 10% !important;
-	padding-bottom: 0%;
-	text-align: center;
-	margin: 0 auto;
-}
-
-.txtAboutUs {
-	text-align: left !important;
-	margin-left: 5%;
-}
