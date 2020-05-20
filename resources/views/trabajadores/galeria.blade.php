@@ -13,7 +13,7 @@
         <div class="container">
             <h3 class="text-center heading"> TRABAJOS REALIZADOS POR NUESTROS ARTISTAS </h3>
             <hr/>
-            <p>"Aqui dispones de una amplia galeria de fotografias realizadas por nuestros grandes artistas profesionales.</p>
+            <p>Aqui dispones de una amplia galeria de fotografias realizadas por nuestros grandes artistas profesionales.</p>
             
             <div class="portfolio-item row">
                 @foreach ($argazkiak as $argazkia)

@@ -36,17 +36,9 @@ class HomeController extends Controller
     // SECCION SOBRE NOSOTROS
     public function sobreNosotros() {
         $trabajadores = Langilea::all();
-        $lanak = Lana::all();
+        $trabajos = Lana::all();
 
-        return view('informacion', compact("trabajadores", "lanak"));
-    }
-
-
-    // SECCION PARA COGER LA CITA
-    public function formularioCita() {
-        $trabajadores = Langilea::all();
-
-        return view('formularioCita', compact("trabajadores"));
+        return view('informacion', compact("trabajadores", "trabajos"));
     }
 
 

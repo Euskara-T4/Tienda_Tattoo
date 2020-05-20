@@ -52,8 +52,8 @@
         </div>
 
         <div class='logContainer'>
-            <label for='erabiltzaile_iz'><b>Nombre usuario:</b></label>
-            <input type='text' placeholder='Sartu erabiltzailea' name='erabiltzaile_iz' required>
+            <label for='erabiltzaile_iz'><b>correo:</b></label>
+            <input type='text' id="email" placeholder='introduce tu correo' name='erabiltzaile_iz'  pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"  required>
 
             <label for='psw'><b>Contraseña:</b></label>
             <input type='password' placeholder='Sartu pasahitza' name='pasahitza' required>
@@ -61,9 +61,10 @@
                 <input type='checkbox' checked='checked' name='remember'> Remember me
             </label> -->
         </div>
-
+        
         <div class='btnContainer'>
-            <button type="submit" class="loginBtn">Iniciar sesion</button>
+            <p id="mensajeError"></p>
+            <button type="submit" id="enviar" class="loginBtn">Iniciar sesion</button>
             <button type='button' class='cancelBtn' id='cancelBtn'>Cancelar</button>
         </div>
     </form>
