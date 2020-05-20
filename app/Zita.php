@@ -12,20 +12,13 @@ class Zita extends Model {
     protected $primaryKey = 'zita_id';
 
     // Foreign key de la tabla
-    protected $foreignKey = 'erabiltzaile_id';
+    protected $foreignKey = 'lana_id';
 
 
     //nombre de las columna
-    protected $fillable = ['izena','url', 'descripcion', 'langile_id'];
+    protected $fillable = ['deskripzioa', 'lana_id', 'bezero_izena', 'bezero_email', 'ordutegia'];
 
       // Relacione
-    public function langilea() {
-        return $this->belongsTo('App\Langilea');
-    }
-
-    public function erabiltzailea() {
-        return $this->belongsTo('App\User');
-    }
 
     public function lana() {
         return $this->belongsTo('App\Lana');

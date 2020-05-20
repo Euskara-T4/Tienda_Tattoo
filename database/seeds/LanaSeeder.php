@@ -18,7 +18,7 @@ class LanaSeeder extends Seeder
         $this->command->info('Tabla inicializada con datos!');
 
         $tattoo = new Lana;
-        $tattoo->izena = "tattoo";
+        $tattoo->izena = "Tattoo";
         $tattoo->save();
 
         $piercing = new Lana;

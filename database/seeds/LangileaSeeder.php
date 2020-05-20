@@ -22,6 +22,7 @@ class LangileaSeeder extends Seeder
          $IP->izena = "Ivan";
          $IP->abizena = "Pelegrin";
          $IP->lana_id = 1;
+         $IP->erabiltzailea_id = 2;
          $IP->save();
 
 
@@ -36,6 +37,7 @@ class LangileaSeeder extends Seeder
          $mike->izena = "Mike";
          $mike->abizena = "Perez";
          $mike->lana_id = 2;
+         $mike->erabiltzailea_id = 3;
 
          $mike->save();
 
@@ -52,6 +54,7 @@ class LangileaSeeder extends Seeder
          $paula->izena = "Paula";
          $paula->abizena = "Goméz";
          $paula->lana_id = 4;
+         $paula->erabiltzailea_id = 4;
 
          $paula->save();
 

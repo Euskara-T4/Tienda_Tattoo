@@ -21,9 +21,12 @@ class CreateLangileaTable extends Migration
 
              // campo para clave foraneas
             $table->integer('lana_id')->unsigned();
+            $table->integer('erabiltzailea_id')->unsigned()->nullable();
+
 
             //relacion
             $table->foreign('lana_id')->references('lana_id')->on('lana');
+            $table->foreign('erabiltzailea_id')->references('erabiltzailea_id')->on('users');
 
 
 

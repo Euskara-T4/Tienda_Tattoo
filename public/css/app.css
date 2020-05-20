@@ -1,4 +1,406 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(43, 43, 43) !important;
+}
+
+#logo {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.dataContainer {
+    max-width: 100%;
+    min-height: 100%;
+    position: relative;
+    padding: 0;
+    padding-bottom: 10%;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: black !important;
+    color: white !important;
+}
+
+/* BACK TO TOP BUTTON */
+#backtotop {
+    z-index: 999;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    border-radius: 35px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+#backtotop i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    transition: all 0.3s ease;
+}
+
+#backtotop:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+#backtotop:hover i {
+    color: #fff;
+    top: 5px;
+}
+/* -------------------------------------------------------- */
+
+/* PAGINA PRINCIPAL */
+.card-group .card {
+    padding: 5%;
+}
+
+.card-group {
+    padding: 5%;
+}
+
+.card {
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+.card-header {
+    margin-top: 2%;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo h1 {
+    margin: 0;
+    padding: 0;
+    padding-left: 5% !important;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+/* -------------------- */
+
+.heading {
+    padding-top: 5% !important;
+    padding: 2%;
+    text-align: center;
+}
+
+p {
+    padding: 2%;
+}
+
+
+.breadcrumb {
+    padding-left: 10%;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+/* Controlar el titulo */
+
+/* MOBILE FIRST */
+
+/* No debe de haber migar en el movil */
+.breadcrumb {
+    display: none;
+}
+
+/* TABLET: */
+@media only screen and (min-width: 550px) {
+    .breadcrumb {
+        display: flex;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 800px) {
+}
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    color: black;
+}
+
+fieldset input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    color: black !important;
+    background-color: white !important;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+    background-color: white;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.logContainer {
+    padding: 16px;
+    background-color: black;
+    color: white;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px;
+    background-color: white;
+    color: black;
+}
+
+.loginBtn, .cancelBtn {
+    background-color: grey;
+    color: black;
+    cursor: pointer;
+    border: none;
+    width: auto;
+    font-size: 20px;
+}
+
+
+.flexBtn {
+    background: white !important;
+    color: black !important;
+    padding: 10px 20px !important;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 15px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: black;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    color: white;
+    width: 20%;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.addUser {
+    background-color: #4747475b;
+    padding: 2%;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio-menu {
+    text-align: center;
+}
+
+.portfolio-menu ul li {
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.portfolio-item .item {
+    /*width:303px;*/
+    float: left;
+    margin-bottom: 10px;
+}
+a {
+	text-decoration: none;
+	color: #333;
+	transition: .4s;
+}
+.section-title {
+	position: relative;
+}
+.section-title p {
+	font-size: 16px;
+	margin-bottom: 5px;
+	font-weight: 400;
+}
+.section-title h4 {
+	font-size: 40px;
+	font-weight: 600;
+	text-transform: capitalize;
+	position: relative;
+	padding-bottom: 20px;
+	display: inline-block;
+}
+.section-title h4::before {
+	position: absolute;
+	content: "";
+	width: 80px;
+	height: 2px;
+	background-color: #d8d8d8;
+	bottom: 0;
+	left: 50%;
+	margin-left: -40px;
+}
+.section-title h4::after {
+	position: absolute;
+	content: "";
+	width: 50px;
+	height: 2px;
+	background-color: rgb(112, 114, 113);
+	left: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -25px;
+}
+
+.contact-form input,
+textarea {
+	width: 100%;
+	border: 1px solid #555;
+	padding: 5px 10px;
+	text-transform: capitalize;
+	margin-top: 15px;
+	background-color: transparent;
+	color: #fff;
+}
+
+.contact:before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: #333;
+	z-index: -1;
+	opacity: .85;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
+}
+
+.single-contact {
+	text-align: left;
+	position: relative;
+	padding-left: 70px;
+	margin-bottom: 50px;
+	margin-top: 10px;
+}
+
+.single-contact i.fa {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: rgb(112, 114, 113);
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 3px;
+}
+.single-contact h5 {
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+.single-contact p {
+	font-size: 15px;
+	font-weight: 400;
+}
+.contact-form input[type="submit"] {
+	background-color: rgb(112, 114, 113);
+	border: 0px;
+	cursor: pointer;
+	font-size: 16px;
+	transition: .4s;
+}
+.contact-form input[type="submit"]:hover {
+	background-color: rgb(112, 114, 113);
+}
+.contact-form input:focus,
+textarea:focus {
+	border-color: rgb(112, 114, 113);
+}
+
+iframe {
+	width: 100% !important;
+	height: 100% !important;
+	background-color: black !important;
+}
+
+#accordion button { 
+    width: 100%;
+    background-color: rgba(238, 238, 238, 0.904);
+    color: black;
+    border-color:black;
+    text-align: center;
+}
+
+#accordion .card-body {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#accordion img {
+    display: block;
+    margin: auto;
+}/* INICIO */ 
+
+@charset "UTF-8";
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)

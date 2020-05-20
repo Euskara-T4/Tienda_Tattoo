@@ -18,11 +18,8 @@ class DatabaseSeeder extends Seeder
         // seeder para insertar usuarios
         $this->call(UsuariosSeeder::class);
 
-      // seeder para introducir trabajadores
-     //$this->call(LangileaSeeder::class);
-
-     //seeder para insertar informacion de las fotos
-    // $this->call(ArgazkiSeeder::class);
+         // seeder para introducir trabajadores
+        $this->call(LangileaSeeder::class);
 
         //seeder para insertar informacion de las fotos
         $this->call(ArgazkiSeeder::class);

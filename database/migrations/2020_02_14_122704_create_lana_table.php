@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -16,8 +17,10 @@ class CreateLanaTable extends Migration
         Schema::create('lana', function (Blueprint $table) {
             $table->increments('lana_id');
             $table->string('izena');
+            
 
             $table->timestamps();
+
         });
     }
 

@@ -15,16 +15,17 @@ class CreateZitaTable extends Migration
     {
         Schema::create('zita', function (Blueprint $table) {
             $table->increments('zita_id');
+            
+            $table->string('deskripzioa');
+            $table->string('bezero_izena');
+            $table->string('bezero_email');
+            $table->dateTime('ordutegia')->nullable();
 
             // campo para clave foraneas
-            $table->integer('erabiltzailea_id')->unsigned();
-            $table->string('deskripzioa');
-            $table->dateTime('ordutegia');
-
+           
             $table->integer('lana_id')->unsigned();
 
             //relaciones
-            $table->foreign('erabiltzailea_id')->references('erabiltzailea_id')->on('users');
             $table->foreign('lana_id')->references('lana_id')->on('lana');
 
             $table->timestamps();

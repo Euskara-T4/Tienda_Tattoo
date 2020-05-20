@@ -9,8 +9,9 @@
         </ol>
     </nav>
 
-    <h3 class="heading"> TRABAJOS REALIZADOS POR ARTISTA {{$trabajador->izena}} {{$trabajador->abizena}} </h3>
-
+    <h3 class="heading"> TRABAJOS REALIZADOS POR ARTISTA {{$trabajador->izena}} {{$trabajador->abizena}} {{$trabajador->langile_id}}</h3>
+    
+  
 
 
 
