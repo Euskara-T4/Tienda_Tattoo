@@ -18,9 +18,7 @@ class CreateLanaTable extends Migration
             $table->increments('lana_id');
             $table->string('izena');
             
-
             $table->timestamps();
-
         });
     }
 

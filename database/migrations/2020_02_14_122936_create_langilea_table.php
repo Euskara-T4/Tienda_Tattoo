@@ -18,17 +18,13 @@ class CreateLangileaTable extends Migration
             $table->string('izena');
             $table->string('abizena');
 
-
-             // campo para clave foraneas
+            // Claves foraneas
             $table->integer('lana_id')->unsigned();
             $table->integer('erabiltzailea_id')->unsigned()->nullable();
 
-
-            //relacion
+            // Relacion
             $table->foreign('lana_id')->references('lana_id')->on('lana');
             $table->foreign('erabiltzailea_id')->references('erabiltzailea_id')->on('users');
-
-
 
             $table->timestamps();
         });

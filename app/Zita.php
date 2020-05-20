@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Zita extends Model {
-    //nombre de la tabla
+    // Nombre de la tabla
     protected $table = 'zita';
 
     // Primay key de la tabla
@@ -15,11 +15,10 @@ class Zita extends Model {
     protected $foreignKey = 'lana_id';
 
 
-    //nombre de las columna
+    // Nombre de las columna
     protected $fillable = ['deskripzioa', 'lana_id', 'bezero_izena', 'bezero_email', 'ordutegia'];
 
-      // Relacione
-
+    // Relaciones
     public function lana() {
         return $this->belongsTo('App\Lana');
     }

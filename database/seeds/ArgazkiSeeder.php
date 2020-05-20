@@ -23,7 +23,6 @@ class ArgazkiSeeder extends Seeder
         $ivan1->izena = "chicaLobo";
         $ivan1->url = "../public/img/ivan_morant/chicaLobo.PNG";
         $ivan1->langile_id = 3;
-
         $ivan1->save();
 
 
@@ -31,7 +30,6 @@ class ArgazkiSeeder extends Seeder
         $ivan2->izena = "hombreTigre";
         $ivan2->url = "../public/img/ivan_morant/hombreTigre.PNG";
         $ivan2->langile_id = 3;
-
         $ivan2->save();
 
 
@@ -39,7 +37,6 @@ class ArgazkiSeeder extends Seeder
         $ivan3->izena = "perfil";
         $ivan3->url = "../public/img/ivan_morant/Perfil.jpg";
         $ivan3->langile_id = 3;
-
         $ivan3->save();
 
 
@@ -48,7 +45,6 @@ class ArgazkiSeeder extends Seeder
         $pele->izena = "drStone";
         $pele->url = "../public/img/ivan_pelegrin/drStone.jpg";
         $pele->langile_id = 2;
-
         $pele->save();
 
 
@@ -56,7 +52,6 @@ class ArgazkiSeeder extends Seeder
         $pele2->izena = "gogeta";
         $pele2->url = "../public/img/ivan_pelegrin/gogeta.PNG";
         $pele2->langile_id = 2;
-
         $pele2->save();
 
 
@@ -64,7 +59,6 @@ class ArgazkiSeeder extends Seeder
         $pele3->izena = "inuyasha";
         $pele3->url = "../public/img/ivan_pelegrin/inuyasha.PNG";
         $pele3->langile_id = 2;
-
         $pele3->save();
 
 
@@ -72,7 +66,6 @@ class ArgazkiSeeder extends Seeder
         $pele4->izena = "perfil";
         $pele4->url = "../public/img/ivan_pelegrin/perfil.jpg";
         $pele4->langile_id = 2;
-
         $pele4->save();
 
 
@@ -82,7 +75,6 @@ class ArgazkiSeeder extends Seeder
         $yannick->izena = "columna";
         $yannick->url = "../public/img/yennick/columna.jpg";
         $yannick->langile_id = 4;
-
         $yannick->save();
 
 
@@ -90,7 +82,6 @@ class ArgazkiSeeder extends Seeder
         $yannick2->izena = "cuello";
         $yannick2->url = "../public/img/yennick/cuello.jpg";
         $yannick2->langile_id = 4;
-
         $yannick2->save();
 
 
@@ -98,7 +89,6 @@ class ArgazkiSeeder extends Seeder
         $yannick3->izena = "pomulo";
         $yannick3->url = "../public/img/yennick/pomulo.jpg";
         $yannick3->langile_id = 4;
-
         $yannick3->save();
 
 
@@ -106,7 +96,6 @@ class ArgazkiSeeder extends Seeder
         $yannick4->izena = "espalda";
         $yannick4->url = "../public/img/yennick/espalda.jpg";
         $yannick4->langile_id = 4;
-
         $yannick4->save();
 
 
@@ -114,7 +103,6 @@ class ArgazkiSeeder extends Seeder
         $yannick5->izena = "nariz";
         $yannick5->url = "../public/img/yennick/nariz.jpg";
         $yannick5->langile_id = 4;
-
         $yannick5->save();
 
 
@@ -122,7 +110,6 @@ class ArgazkiSeeder extends Seeder
         $yannick6->izena = "oreja";
         $yannick6->url = "../public/img/yennick/oreja.jpg";
         $yannick6->langile_id = 4;
-
         $yannick6->save();
 
 
@@ -130,17 +117,14 @@ class ArgazkiSeeder extends Seeder
         $yannick7->izena = "pecho";
         $yannick7->url = "../public/img/yennick/pecho.jpg";
         $yannick7->langile_id = 4;
-
         $yannick7->save();
 
 
         // Paula goméz
-
         $paula = new Argazkia;
         $paula->izena = "elimnacion 1";
         $paula->url = "../public/img/paula/1.jpg";
         $paula->langile_id = 1;
-
         $paula->save();
 
 
@@ -148,7 +132,6 @@ class ArgazkiSeeder extends Seeder
         $paula2->izena = "eliminacion 2";
         $paula2->url = "../public/img/paula/2.jpg";
         $paula2->langile_id = 1;
-
         $paula2->save();
 
 
@@ -156,7 +139,6 @@ class ArgazkiSeeder extends Seeder
         $paula3->izena = "eliminacion 3";
         $paula3->url = "../public/img/paula/3.jpg";
         $paula3->langile_id = 1;
-
         $paula3->save();
 
 
@@ -164,7 +146,6 @@ class ArgazkiSeeder extends Seeder
         $paula4->izena = "elimacion 4";
         $paula4->url = "../public/img/paula/4.jpg";
         $paula4->langile_id = 1;
-
         $paula4->save();
 
 
@@ -172,7 +153,6 @@ class ArgazkiSeeder extends Seeder
         $paula5->izena = "perfil";
         $paula5->url = "../public/img/paula/perfil.jpg";
         $paula5->langile_id = 1;
-
         $paula5->save();
 
 
@@ -181,7 +161,6 @@ class ArgazkiSeeder extends Seeder
         $mike->izena = "burjula";
         $mike->url = "../public/img/mike/brujula.jpg";
         $mike->langile_id = 2;
-
         $mike->save();
 
 
@@ -189,7 +168,6 @@ class ArgazkiSeeder extends Seeder
         $mike2->izena = "flor";
         $mike2->url = "../public/img/mike/flor.PNG";
         $mike2->langile_id = 2;
-
         $mike2->save();
 
 
@@ -197,7 +175,6 @@ class ArgazkiSeeder extends Seeder
         $mike3->izena = "flor2";
         $mike3->url = "../public/img/mike/flor2.PNG";
         $mike3->langile_id = 2;
-
         $mike3->save();
 
 
@@ -205,7 +182,6 @@ class ArgazkiSeeder extends Seeder
         $mike4->izena = "escarificacion";
         $mike4->url = "../public/img/mike/escar.jpg";
         $mike4->langile_id = 2;
-
         $mike4->save();
 
 
@@ -213,7 +189,6 @@ class ArgazkiSeeder extends Seeder
         $mike5->izena = "perfil";
         $mike5->url = "../public/img/mike/perfil.jpg";
         $mike5->langile_id = 2;
-
         $mike5->save();
     }
 }

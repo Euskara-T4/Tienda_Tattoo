@@ -17,8 +17,11 @@ class CreateArgazkiaTable extends Migration
             $table->increments('img_id');
             $table->string('izena');
             $table->string('url');
-            $table->integer('langile_id')->unsigned();
 
+            // Claves foraneas           
+            $table->integer('langile_id')->unsigned();
+            
+            // Relaciones
             $table->foreign('langile_id')->references('langile_id')->on('langilea');
 
             $table->timestamps();
