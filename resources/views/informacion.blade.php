@@ -31,11 +31,11 @@
                         @csrf
                         <div class="row">
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" id="nombre" name="bezeroa" placeholder="nombre">
+                                <input type="text" class="form-control" id="nombre" pattern="[A-Z a-z]{3,15}" minlength="3" maxlength="15" name="bezeroa" placeholder="nombre" required>
                             </div>  
 
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" id="móvil" name="mugikorra" placeholder="móvil">
+                                <input type="text" class="form-control" id="movil" pattern="[0-9]{9}" minlength="9" maxlength="9" name="mugikorra" placeholder="móvil" required>
                             </div>
 
                             <div class="col-12 col-xl-6">
@@ -47,12 +47,15 @@
                             </div>                         
 
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" id="email" name="email" placeholder="email">
+                                <input type="text" class="form-control" id="email" pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$" name="email" placeholder="email" required >
                             </div>  
 
+                            
+
                             <div class="col-12 col-xl-12">
-                                <textarea placeholder="message" cols="30" rows="10"></textarea>
-                                <input type="submit" value="send message">
+                                <textarea placeholder="message" cols="30" rows="10" id="mensaje"></textarea>
+                                <p id="mensajeError"></p>
+                                <input type="submit" value="enviar" id="enviar">
                             </div>
                         </div>
                     </form>

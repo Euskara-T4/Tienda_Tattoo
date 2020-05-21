@@ -8,17 +8,17 @@ function validaNombre() {
     var elemento = document.getElementById("nombre");
     if (!elemento.checkValidity()) {
         if (elemento.validity.valueMissing) {
-            error(elemento, "Izena jarri behar duzu.");
+            error(elemento, "introduce un nombre");
             return false;
         }
 
         if (elemento.validity.patternMismatch) {
-            error(elemento, "Izena ezin da izan numerikoa.");
+            error(elemento, "el nombre no es correcto");
             return false;
         }
 
-        if (elemento.value.length < 2) {
-            error(elemento, "Izenaren luzeera 2-20 artean egon behar da.");
+        if (elemento.value.length < 3 || elemento.value.length < 15) {
+            error(elemento, "el nombre no es correcto");
             return false;
         }
 
@@ -27,111 +27,40 @@ function validaNombre() {
 }
 
 
-function validaApellido() {
-    var elemento = document.getElementById("apellido");
+function validaMovil() {
+    var elemento = document.getElementById("movil");
     if (!elemento.checkValidity()) {
         if (elemento.validity.valueMissing) {
-            error(elemento, "Abizena jarri behar duzu.");
+            error(elemento, "introduce un numero de telefono");
             return false;
         }
 
         if (elemento.validity.patternMismatch) {
-            error(elemento, "Abizena ezin da izan numerikoa.");
+            error(elemento, "el telefono no es correcto");
             return false;
         }
-
-        if (elemento.value.length < 2) {
-            error(elemento, "Abizenaren luzeera 2-30 artean egon behar da.");
-            return false;
-        }
-
-        return false;
     }
-    return true;
-}
-
-function validaUsuario() {
-    var elemento = document.getElementById("usuario");
-    if (!elemento.checkValidity()) {
-        if (elemento.validity.valueMissing) {
-            error(elemento, "Erabiltzaile izena jarri behar duzu.");
-            return false;
-        }
-
-        if (elemento.value.length < 5) {
-            error(elemento, "Erabiltzaile luzeera 5-20 artean egon behar da.");
-            return false;
-        }
-
-        return false;
-    }
-
     return true;
 }
 
 function validaCorreo() {
-    var elemento = document.getElementById("correo");
+    var elemento = document.getElementById("email");
     if (!elemento.checkValidity()) {
         if (elemento.validity.valueMissing) {
-            error(elemento, "Emaila jarri behar duzu.")
+            error(elemento, "introduce un email")
         }
 
         if (elemento.validity.patternMismatch) {
-            error(elemento, "Ezin da horrelako emaila izan, example: -------@----.---");
-        }
-
-        if (elemento.value.length < 10) {
-            error(elemento, "Emailaren luzeera 10-50 artean egon behar da.");
+            error(elemento, "el email no es correcto");
             return false;
         }
-
-        return false;
     }
     return true;
 }
-
-function validaContraseña() {
-    var elemento = document.getElementById("contraseña");
-    var elemento2 = document.getElementById("contraseña2");
-
-    if (!elemento.checkValidity()) {
-        if (elemento.validity.valueMissing) {
-            error(elemento, "Pasahitza jarri behar duzu.")
-        }
-
-        if (elemento.value.length < 10) {
-            error(elemento, "Pasahitzaren luzeera 10-50 artean egon behar da.");
-            return false;
-        }
-
-        return false;
-    }
-
-    if (!elemento2.checkValidity()) {
-        if (elemento2.validity.valueMissing) {
-            error(elemento, "Pasahitza jarri behar duzu.")
-        }
-
-        if (elemento.value.length < 10) {
-            error(elemento, "Pasahitzaren luzeera 10-50 artean egon behar da.");
-            return false;
-        }
-
-        return false;
-    }
-
-    if(elemento.value != elemento2.value){
-        error(elemento2, "Pasahiitzak ez dira berdinak!");
-        return false;
-    }
-    
-    return true;
-}
-
 
 function validar(e) {
     borrarError();
-    if (validaNombre() && validaApellido() && validaUsuario() && validaCorreo() && validaContraseña() && confirm("Pulsa aceptar si deseas enviar el formulario")) {
+    if (validaNombre() && validaMovil() && validaCorreo() && confirm("Pulsa aceptar si deseas enviar el formulario")) {
         return true
     } else {
         e.preventDefault();
