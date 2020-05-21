@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 
 use App\Lana;
-use Illuminate\Http\Request;
+use App\Argazkia;
 use App\Langilea;
 use App\User;
+
 class HomeController extends Controller
 {
     /**
@@ -25,30 +27,19 @@ class HomeController extends Controller
      */
 
 
-
     public function index() {
         $trabajadores = Langilea::all();
 
         return view('home', compact("trabajadores"));
     }
 
-
-    // SECCION SOBRE NOSOTROS
-    public function sobreNosotros() {
+     // SECCION DE TODAS LAS FOTOS
+     public function galeria() {
         $trabajadores = Langilea::all();
-        $lanak = Lana::all();
+        $argazkiak = Argazkia::all();
 
-        return view('informacion', compact("trabajadores", "lanak"));
+        return view('galeria', compact('trabajadores', 'argazkiak'));
     }
-
-
-    // SECCION PARA COGER LA CITA
-    public function formularioCita() {
-        $trabajadores = Langilea::all();
-
-        return view('formularioCita', compact("trabajadores"));
-    }
-
 
     // SECCION PREGUNTAS
     public function preguntas() {
@@ -58,6 +49,18 @@ class HomeController extends Controller
 
     }
 
+    // SECCION SOBRE NOSOTROS
+    public function sobreNosotros() {
+        $trabajadores = Langilea::all();
+        $trabajos = Lana::all();
+
+        return view('informacion', compact("trabajadores", "trabajos"));
+    }
+
+
+ 
+
+    /* ESTO EN PRINCIPIO LO HICIMOS PARA AÑADIR LOS TRABAJADORES
 
     public function registro() {
         $trabajadores = Langilea::all();
@@ -65,10 +68,9 @@ class HomeController extends Controller
         return view('registro', compact("trabajadores"));
 
     }
+
     public function registrado(Request $registrado) {
-
         $user = new user;
-
 
         $user->izena = $registrado->nombre;
         $user->abizena = $registrado->apellido;
@@ -77,9 +79,8 @@ class HomeController extends Controller
         $user->save();
 
         return back()->with('registrado' , 'usuario registrado correctamente');
-
     }
-
+    */
 
 
 

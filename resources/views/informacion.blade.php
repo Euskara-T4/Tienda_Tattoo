@@ -39,7 +39,11 @@
                             </div>
 
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" id="concepto" name="lana" placeholder="concepto">
+                                <select name="select" class="form-control">Trabajo: 
+                                    @foreach ($trabajos as $trabajo)
+                                        <option value="{{ $trabajo->id }}"> {{ $trabajo->izena }} </option>
+                                    @endforeach
+                                </select>
                             </div>                         
 
                             <div class="col-12 col-xl-6">

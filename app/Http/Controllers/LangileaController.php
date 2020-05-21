@@ -26,7 +26,7 @@ class LangileaController extends Controller {
         $trabajadores = Langilea::all();
         $trabajador = Langilea::findOrFail($id);
 
-        return view('trabajadores.trabajos',  compact("trabajadores", "trabajador"));
+        return view('trabajadores.perfil',  compact("trabajadores", "trabajador"));
     }
 
     // SECCION DE CITAS QUE TIENE
@@ -36,13 +36,7 @@ class LangileaController extends Controller {
         return view('trabajadores.citas', compact("trabajadores"));
     }
     
-    // SECCION DE TODAS LAS FOTOS
-    public function galeria() {
-        $trabajadores = Langilea::all();
-        $argazkiak = Argazkia::all();
-
-        return view('trabajadores.galeria', compact('trabajadores', 'argazkiak'));
-    }
+   
     
 
 

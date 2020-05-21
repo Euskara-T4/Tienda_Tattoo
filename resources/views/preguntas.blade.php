@@ -20,12 +20,11 @@
           <li class="pb-2">Lavarlo con agua templada y gel neutro con la mano. <strong>Nunca usar esponja.</strong></li>
           <li class="pb-2">Secar cuidadosamente con <strong>papel de cocina</strong> con ligeros toques.</li>
           <li class="pb-2">Una vez limpio y seco aplicar una pequeña cantidad de la <strong>pomada cicatrizante</strong> aconsejada por tu tatuador, extendiéndola con un buen masaje hasta que el tatuaje quede hidratado y brillante.</li>
-        </ol>
-      
+        </ol>     
 
-    <p>Durante el primer mes es prudente no tomar el sol, ni bañarse en playas, piscinas, jacuzzis, lagos ni tomar rayos UVA.
-    <br/>Aún cuando esté totalmente curado, un tatuaje es más sensible a los rayos del sol, por lo que es recomendable utilizar protección solar alta para protegerlo.
-    <br/>Es también importante recordar que las autoridades sanitarias recomiendan no hacerse tatuajes en zonas en las que posteriormente tenga que realizarse una inyección.</p>
+      <p>Durante el primer mes es prudente no tomar el sol, ni bañarse en playas, piscinas, jacuzzis, lagos ni tomar rayos UVA.
+      <br/>Aún cuando esté totalmente curado, un tatuaje es más sensible a los rayos del sol, por lo que es recomendable utilizar protección solar alta para protegerlo.
+      <br/>Es también importante recordar que las autoridades sanitarias recomiendan no hacerse tatuajes en zonas en las que posteriormente tenga que realizarse una inyección.</p>
 
 
       <h2 class="text-center heading"> PREGUNTAS RECIENTES </h2>
