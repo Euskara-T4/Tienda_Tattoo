@@ -31,17 +31,17 @@
                         @csrf
                         <div class="row">
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" id="nombre" pattern="[A-Z a-z]{3,15}" minlength="3" maxlength="15" name="bezeroa" placeholder="nombre" required>
+                                <input type="text" class="form-control" name="nombre" id="nombre" pattern="[A-Za-zñÑ ]{3,15}" minlength="3" maxlength="15" required placeholder="nombre">
                             </div>  
 
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" id="movil" pattern="[0-9]{9}" minlength="9" maxlength="9" name="mugikorra" placeholder="móvil" required>
+                                <input type="text" class="form-control" id="movil" pattern="[0-9]{9}" minlength="9" maxlength="9" name="movil" placeholder="móvil" required>
                             </div>
 
                             <div class="col-12 col-xl-6">
-                                <select name="select" class="form-control" >Trabajo: 
+                                <select name="trabajo" class="form-control" >Trabajo: 
                                     @foreach ($trabajos as $trabajo)
-                                        <option value="{{ $trabajo->id }}"> {{ $trabajo->izena }} </option>
+                                        <option value="{{ $trabajo->lana_id }}"> {{ $trabajo->izena }} </option>
                                     @endforeach
                                 </select>
                             </div>                     
@@ -53,8 +53,10 @@
                             
 
                             <div class="col-12 col-xl-12">
-                                <textarea placeholder="message" cols="30" rows="10" id="mensaje"></textarea>
+                                <textarea placeholder="message" cols="30" rows="10" id="mensaje" name="mensaje"></textarea>
+
                                 <p id="mensajeError"></p>
+
                                 <input type="submit" value="enviar" id="enviar">
                             </div>
                         </div>

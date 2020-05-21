@@ -41,11 +41,12 @@ class ZitaController extends Controller
 
 
         $zita = new Zita();
-        $zita->bezeroa = $formulario->bezeroa;
-        $zita->deskripzioa = $formulario->deskrizpzioa;
-        $zita->lana_id = $formulario->lana_id;
-        // $zita->ordutegia = $formulario->ordutegia;
-        
+        $zita->bezero_izena = $formulario->nombre;
+        $zita->bezero_email = $formulario->email;
+        $zita->deskripzioa = $formulario->mensaje;
+        $zita->lana_id = $formulario->trabajo;
+        $zita->telefonoa = $formulario->movil;
+
         $zita->save();
 
         return back()->with('enviarFormulario' , 'se ha enviado correctamente');
