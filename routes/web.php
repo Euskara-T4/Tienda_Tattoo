@@ -14,7 +14,11 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('index');
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+ 
+// Rutas para logearte
+// Route::get('/login', 'Auth\LoginController@loginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login')->name('login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('home', 'HomeController@index')->name('home');
 
@@ -36,3 +40,7 @@ Route::post('enviarFormulario', 'ZitaController@enviarFormulario')->name('enviar
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

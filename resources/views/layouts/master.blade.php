@@ -50,9 +50,9 @@
     {{-- OUR SCRIPTS --}}
     <script src="../resources/js/backtotop.js"></script>
     {{-- <script src="../resources/js/dropdown.js"></script> --}}
-    <script src="../resources/js/login.js"></script>
     <script src="../resources/js/galeria.js"></script>
-    <script src="../resources/js/validacion.js"></script>
+    {{-- <script src="../resources/js/validacion.js"></script> --}}
+    <script src="../resources/js/login.js"></script>
 
     {{-- <script src="../resources/js/myJavascript.js" ></script>
     <script src="../resources/js/edit.js" ></script>

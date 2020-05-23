@@ -38,8 +38,6 @@ class ZitaController extends Controller
      */
     public function enviarFormulario(Request $formulario)
     {
-
-
         $zita = new Zita();
         $zita->bezeroa = $formulario->bezeroa;
         $zita->deskripzioa = $formulario->deskrizpzioa;
