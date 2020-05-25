@@ -1,10 +1,10 @@
 window.onload = iniciar;
 
 function iniciar() {
-    document
-        .getElementById("login")
-        .addEventListener("click", validarLogin, false);
-    document.getElementById("enviar").addEventListener("click", validar, false);
+    document.getElementById("login").addEventListener("click", validarLogin, false);
+    if (document.getElementById("enviar") != null) {
+        document.getElementById("enviar").addEventListener("click", validar, false);
+    }
 }
 
 function validaNombre() {

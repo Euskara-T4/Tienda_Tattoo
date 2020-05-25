@@ -22,13 +22,17 @@ body {
     padding: 2%;
 }
 
+
 /* NAVBAR */
+
 .navbar {
     background-color: black !important;
     color: white !important;
 }
 
+
 /* BACK TO TOP BUTTON */
+
 #backtotop {
     z-index: 999;
     position: fixed;
@@ -73,9 +77,13 @@ body {
     color: #fff;
     top: 5px;
 }
+
+
 /* -------------------------------------------------------- */
 
+
 /* PAGINA PRINCIPAL */
+
 .card-group .card {
     padding: 5%;
 }
@@ -109,6 +117,7 @@ body {
     text-transform: uppercase;
 }
 
+
 /* -------------------- */
 
 .heading {
@@ -132,40 +141,45 @@ footer {
     padding: 2%;
 }
 
-
-.commentsIcon {
+.citasIcons {
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    align-items: right;
-    width: 5% !important;
-    padding: 2%;
+    justify-content: center;
 }
 
-.commentsIcon button {
+.citasIcons button {
     border: none;
     background-color: transparent;
     cursor: pointer;
     text-align: center;
 }
 
+
 /* RESPONSIVE */
+
+
 /* Controlar el titulo */
+
 
 /* MOBILE FIRST */
 
+
 /* No debe de haber migar en el movil */
+
 .breadcrumb {
     display: none;
 }
 
+
 /* TABLET: */
+
 @media only screen and (min-width: 550px) {
     .breadcrumb {
         display: flex;
     }
 }
 
+
 /* DESKTOP */
-@media screen and (min-width: 800px) {
-}
+
+@media screen and (min-width: 800px) {}

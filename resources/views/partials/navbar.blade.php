@@ -32,7 +32,7 @@
         @csrf
 
         <div class='imgcontainer'>
-            <img src='../public/img/avatar.png' alt='Avatar' class='avatar'>
+            <img src='./img/avatar.png' alt='Avatar' class='avatar'>
         </div>
 
         <div class='logContainer'>
@@ -69,8 +69,8 @@
     <div class="container">
         <div id='logo' class='fl_left flex'>
             <a class="navbar-brand" href="{{url('/home')}}">
-                <object data="../public/img/logo.svg" type="image/svg+xml" class="logo">
-                    <img src="../public/img/logo.jpg"/>
+                <object data="../img/logo.svg" type="image/svg+xml" class="logo">
+                    <img src="./img/logo.jpg"/>
                 </object>
             </a>
             <a class="navbar-brand" href="{{url('/home')}}"> <h1 class="logoTxt loginLink"> INK HEART TATTOO </h1> </a>

@@ -14,7 +14,7 @@
     <link href='./css/layout.css' rel='stylesheet' type='text/css' media='all'>
 
     <title>INK HEART STUDIO TATTOO</title>
-    <link rel='shortcut icon' type='image/x-icon' href='../public/img/logo.jpg'/>
+    <link rel='shortcut icon' type='image/x-icon' href='./img/logo.jpg'/>
 
   </head>
 
@@ -54,17 +54,11 @@
     
     <script src="./js/galeria.js"></script>
     <script src="./js/validacion.js"></script>
-
-    <!-- {{-- OUR SCRIPTS --}}
-    <script src="../resources/js/backtotop.js"></script>
-    <script src="../resources/js/dropdown.js"></script>
-    <script src="../resources/js/galeria.js"></script>
-    <script src="../resources/js/validacion.js"></script>
-    <script src="../resources/js/login.js"></script> -->
+    <script src="./js/edit.js" ></script>
 
 <!--     <script src="../resources/js/myJavascript.js" ></script> --> 
 <!--     <script src="./js/edit.js" ></script> -->
-    <script src="./js/main.js"></script>
-
+{{--     <script src="./js/main.js"></script>
+ --}}
   </body>
 </html>

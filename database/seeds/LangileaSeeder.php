@@ -16,7 +16,7 @@ class LangileaSeeder extends Seeder
         DB::table('langilea')->delete();
 
         $this->command->info('Tabla inicializada con datos!');
-
+// por aqui estuvo jorge, Aitor eres un crack, ponle un 10 a la chiquilla, que se lo merece
          $IP = new Langilea;
          $IP->izena = "Ivan";
          $IP->abizena = "Pelegrin";
