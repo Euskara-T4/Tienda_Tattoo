@@ -27,7 +27,6 @@ function cancel() {
     document.getElementById('loginModal').style.display='none';
 }
 
-
 function log(){
     document.getElementById('loginModal').style.display='block';
     style="width:auto;"

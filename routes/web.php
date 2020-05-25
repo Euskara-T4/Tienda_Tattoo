@@ -14,23 +14,25 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('index');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 
-Route::get('/listaTrabajadores', 'LangileaController@listaTrabajadores')->name('listaTrabajadores');
-Route::get('/trabajador{id}', 'LangileaController@trabajador')->name('trabajador');
+Route::get('listaTrabajadores', 'LangileaController@listaTrabajadores')->name('listaTrabajadores');
+Route::get('trabajador{id}', 'LangileaController@trabajador')->name('trabajador');
 
-Route::get('/galeria', 'LangileaController@galeria')->name('galeria');
+Route::get('galeria', 'HomeController@galeria')->name('galeria');
 
-Route::get('/preguntas', 'HomeController@preguntas')->name('preguntas');
+Route::get('preguntas', 'HomeController@preguntas')->name('preguntas');
 
-Route::get('/sobreNosotros', 'HomeController@sobreNosotros')->name('sobreNosotros');
+Route::get('sobreNosotros', 'HomeController@sobreNosotros')->name('sobreNosotros');
 
-Route::get('/formularioCita', 'ZitaController@cita')->name('formularioCita');
-Route::post('/enviarFormulario', 'ZitaController@enviarFormulario')->name('enviarFormulario');
+Route::get('formularioCita', 'ZitaController@cita')->name('formularioCita');
+Route::post('enviarFormulario', 'ZitaController@enviarFormulario')->name('enviarFormulario');
 
-Route::get('/registro', 'HomeController@registro')->name('registro');
-Route::post('/registrado', 'HomeController@registrado')->name('registrado');
+// Route::get('registro', 'HomeController@registro')->name('registro');
+// Route::post('registrado', 'HomeController@registrado')->name('registrado');
+
 
 
 

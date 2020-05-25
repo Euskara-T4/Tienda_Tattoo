@@ -31,6 +31,7 @@
                         @csrf
                         <div class="row">
                             <div class="col-12 col-xl-6">
+<<<<<<< HEAD
                                 <input type="text" class="form-control" name="nombre" id="nombre" pattern="[A-Za-zñÑ ]{3,15}" minlength="3" maxlength="15" required placeholder="nombre">
                             </div>  
 
@@ -40,17 +41,26 @@
 
                             <div class="col-12 col-xl-6">
                                 <select name="trabajo" class="form-control" >Trabajo: 
+=======
+                                <input type="text" class="form-control" id="nombre" pattern="[A-Z a-z]" minlength="3" maxlength="15" name="bezeroa" placeholder="nombre" required>
+                            </div>  
+
+                            <div class="col-12 col-xl-6">
+                                <input type="text" class="form-control" id="movil" pattern="[0-9]" minlength="9" maxlength="9" name="mugikorra" placeholder="móvil" required>
+                            </div>
+
+                            <div class="col-12 col-xl-6">
+                                <select name="select" class="form-control">Trabajo: 
+>>>>>>> cfbd192bd57e9e3074f140ac586d2c719e787137
                                     @foreach ($trabajos as $trabajo)
                                         <option value="{{ $trabajo->lana_id }}"> {{ $trabajo->izena }} </option>
                                     @endforeach
                                 </select>
-                            </div>                     
+                            </div>                         
 
                             <div class="col-12 col-xl-6">
                                 <input type="text" class="form-control" id="email" pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$" name="email" placeholder="email" required >
                             </div>  
-
-                            
 
                             <div class="col-12 col-xl-12">
                                 <textarea placeholder="message" cols="30" rows="10" id="mensaje" name="mensaje"></textarea>

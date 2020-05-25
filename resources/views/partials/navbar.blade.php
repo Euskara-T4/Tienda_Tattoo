@@ -14,13 +14,21 @@
             <?php
                 if(isset($_SESSION['usuario'])){
             ?>
-                    <li><a href='update.php' title='Perfila'><i class='fa fa-lg fa-home'></i></a></li>
+                    <li class="nav-item {{ Request::is('perfil') || Request::is('') ?  'active' : ''}}">
+                        <a class="nav-link" href="{{url('/perfil')}}">
+                            <i class='fa fa-lg fa-home'></i>    
+                        </a>
+                    </li>
             <?php
                     echo $_SESSION['usuario'];
             ?>
-                    <li><a href='#' title='Irten' id='btnLogout'><i class='fa fa-lg fa-sign-out'></i></a></li>
+                    <li class="nav-item {{ Request::is('logout') || Request::is('') ?  'active' : ''}}">
+                        <a class="nav-link">
+                            <i class='fa fa-lg fa-sign-out'></i>
+                        </a>
+                    </li>
             <?php
-                    if($_SESSION['adminRol'] == 1 || $_SESSION['adminRol'] == 2){
+                    if($_SESSION['admin'] == 1 || $_SESSION['admin'] == 2){
                     ?>
                         <li><a href='ajusteak.php' title='Ajusteak' id='btnSettings'><i class='fa fa-lg fa-cog'></i></a></li>
                         <li><a href='addPost.php' title='Posta gehitu' id='btnPost'><i class='fa fa-lg fa-plus-square'></i></a></li>
@@ -34,11 +42,9 @@
             <?php
                 }
             ?>
-            <!-- -------------------------------------- -->
 
-            <li><a href="{{url('/registro')}}"     title='Sortu'><i class='fa fa-lg fa-user-plus'></i></a></li>
+            {{-- <li><a href="{{url('/registro')}}"     title='Sortu'><i class='fa fa-lg fa-user-plus'></i></a></li> --}}
         </ul>
-        <!-- ################################################################################################ -->
     </div>
 </div>
 
