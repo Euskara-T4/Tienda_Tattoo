@@ -10,24 +10,13 @@ use Illuminate\Http\Request;
 class ZitaController extends Controller
 {
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+    // SECCION DE CITAS QUE TIENE
+    public function tablaCitas() {
+        $trabajadores = Langilea::all();
+        $zitas = Zita::all();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+
+        return view('trabajadores.citas', compact("trabajadores", "zitas"));
     }
 
     /**
@@ -39,28 +28,16 @@ class ZitaController extends Controller
     public function enviarFormulario(Request $formulario)
     {
         $zita = new Zita();
-        $zita->bezeroa = $formulario->bezeroa;
-        $zita->deskripzioa = $formulario->deskrizpzioa;
-        $zita->lana_id = $formulario->lana_id;
-        // $zita->ordutegia = $formulario->ordutegia;
-        
+        $zita->bezero_izena = $formulario->nombre;
+        $zita->bezero_email = $formulario->email;
+        $zita->deskripzioa = $formulario->mensaje;
+        $zita->lana_id = $formulario->trabajo;
+        $zita->telefonoa = $formulario->movil;
+
         $zita->save();
 
+        alert("heeeyyy");
         return back()->with('enviarFormulario' , 'se ha enviado correctamente');
-    }
-
-
-
-
-     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Zita  $zita
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Zita $zita)
-    {
-        //
     }
 
     /**
@@ -69,9 +46,12 @@ class ZitaController extends Controller
      * @param  \App\Zita  $zita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Zita $zita)
+    public function edit($zitaID)
     {
-        //
+        $trabajadores = Langilea::all();
+        $zitaActualizar = Zita::findOrFail($zitaID);
+        
+        return view('trabajadores.editar', compact('zitaActualizar', 'trabajadores'));
     }
 
     /**
@@ -81,9 +61,19 @@ class ZitaController extends Controller
      * @param  \App\Zita  $zita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Zita $zita)
+    public function update(Request $request , $zitaID)
     {
-        //
+        $zita = Zita::findOrFiail($zitaID);
+        $zita->bezero_izena = $request->nombre;
+        $zita->bezero_email = $request->email;
+        $zita->deskripzioa = $request->desk;
+        $zita->lana_id = $request->trabajo;
+        $zita->telefonoa = $request->movil;
+
+        $zita->save();
+
+        return redirect()->route('perfil');
+       
     }
 
     /**
@@ -92,11 +82,12 @@ class ZitaController extends Controller
      * @param  \App\Zita  $zita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Zita $zita)
+    public function destroy($zitaBorrar)
     {
-        //
-    }
+        $zita = Zita::findorFail($zitaBorrar);
+        $zita->delete();
 
+        return back();
+    }   
 
-    }
-
+}

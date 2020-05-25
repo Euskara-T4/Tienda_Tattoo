@@ -18,6 +18,7 @@ class CreateZitaTable extends Migration
             $table->string('deskripzioa');
             $table->string('bezero_izena');
             $table->string('bezero_email');
+            $table->integer('telefonoa');
             $table->dateTime('ordutegia')->nullable();
 
             // Claves foraneas           

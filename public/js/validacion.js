@@ -6,20 +6,22 @@ function iniciar() {
 
 function validaNombre() {
     var elemento = document.getElementById("nombre");
-    if (!elemento.checkValidity()) {
-        if (elemento.validity.valueMissing) {
-            error(elemento, "introduce un nombre");
-            return false;
-        }
+    if (elemento != null) {
+        if (!elemento.checkValidity()) {
+            if (elemento.validity.valueMissing) {
+                error(elemento, "El nombre es obligatorio");
+                return false;
+            }
 
-        if (elemento.validity.patternMismatch) {
-            error(elemento, "el nombre no es correcto");
-            return false;
-        }
+            if (elemento.validity.patternMismatch) {
+                error(elemento, "El nombre no tiene un formato correcto");
+                return false;
+            }
 
-        if (elemento.value.length < 3 || elemento.value.length < 15) {
-            error(elemento, "el nombre no es correcto");
-            return false;
+            if (elemento.value.length < 3 || elemento.value.length > 15) {
+                error(elemento, "Tiene que tener entre 3 y 15 caracteres");
+                return false;
+            }
         }
 
     }
@@ -29,14 +31,22 @@ function validaNombre() {
 
 function validaMovil() {
     var elemento = document.getElementById("movil");
-    if (!elemento.checkValidity()) {
-        if (elemento.validity.valueMissing) {
-            error(elemento, "introduce un numero de telefono");
-            return false;
-        }
+    if (elemento != null) {
+        if (!elemento.checkValidity()) {
+            if (elemento.validity.valueMissing) {
+                error(elemento, "El telefono es obligatorio");
+                return false;
+            }
+            if (elemento.validity.patternMismatch) {
+                error(elemento, "El telefono no puede contener texto");
+                return false;
+            }
 
-        if (elemento.validity.patternMismatch) {
-            error(elemento, "el telefono no es correcto");
+            if (elemento.value.length < 9) {
+                error(elemento, "El telefono tiene que tener 9 digitos");
+                return false;
+            }
+
             return false;
         }
     }
@@ -45,23 +55,49 @@ function validaMovil() {
 
 function validaCorreo() {
     var elemento = document.getElementById("email");
-    if (!elemento.checkValidity()) {
-        if (elemento.validity.valueMissing) {
-            error(elemento, "introduce un email")
-        }
+    if (elemento != null) {
+        if (!elemento.checkValidity()) {
+            if (elemento.validity.valueMissing) {
+                error(elemento, "El correo es obligatorio");
+                return false;
+            }
 
-        if (elemento.validity.patternMismatch) {
-            error(elemento, "el email no es correcto");
-            return false;
+            if (elemento.validity.patternMismatch) {
+                error(elemento, "El correo no cumple las caracteristicas");
+                return false;
+            }
         }
     }
+
+    return true;
+}
+
+
+function validaContraseña() {
+    var elemento = document.getElementById("contraseña");
+    if (elemento != null) {
+        if (!elemento.checkValidity()) {
+            if (elemento.validity.valueMissing) {
+                error(elemento, "La contraseña es obligatoria");
+                return false;
+            }
+        }
+    }
+
     return true;
 }
 
 function validar(e) {
     borrarError();
-    if (validaNombre() && validaMovil() && validaCorreo() && confirm("Pulsa aceptar si deseas enviar el formulario")) {
+
+    if (validaNombre() && validaMovil() && validaCorreo() && validaContraseña()) {
+        alert("El formulario ha sido enviado. Gracias.");
         return true
+
+    } else if (validaNombre() && validaContraseña()) {
+        alert("Login correcto.");
+        return true
+
     } else {
         e.preventDefault();
         return false;
@@ -70,7 +106,7 @@ function validar(e) {
 
 
 function error(elemento, mensaje) {
-    document.getElementById("mensajeError").innerHTML ="** " + mensaje + " **";
+    document.getElementById("mensajeError").innerHTML = "** " + mensaje + " **";
     elemento.className = " error";
     elemento.focus();
 }

@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <section  class="bgded overlay" style="background-image:url('../public/img/backgrounds/fondo3.jpg');" id="contact">
+    <section  class="bgded overlay pb-5 mb-5" style="background-image:url('../public/img/backgrounds/fondo3.jpg');" id="contact">
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-md-6 mx-auto text-center">
@@ -29,19 +29,20 @@
                 <div class="col-md-8">
                     <form action="{{route('enviarFormulario')}}" method="post" class="contact-form">
                         @csrf
+
                         <div class="row">
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" id="nombre" pattern="[A-Z a-z]" minlength="3" maxlength="15" name="bezeroa" placeholder="nombre" required>
+                                <input type="text" class="form-control" name="nombre" id="nombre" pattern="[A-Za-zñÑ ]" minlength="3" maxlength="15" required placeholder="nombre">
                             </div>  
 
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" id="movil" pattern="[0-9]" minlength="9" maxlength="9" name="mugikorra" placeholder="móvil" required>
+                                <input type="text" class="form-control" id="movil" pattern="[0-9]" minlength="9" maxlength="9" name="movil" placeholder="móvil" required>
                             </div>
 
                             <div class="col-12 col-xl-6">
-                                <select name="select" class="form-control">Trabajo: 
+                                <select name="trabajo" class="form-control" >Trabajo: 
                                     @foreach ($trabajos as $trabajo)
-                                        <option value="{{ $trabajo->id }}"> {{ $trabajo->izena }} </option>
+                                        <option value="{{ $trabajo->lana_id }}"> {{ $trabajo->izena }} </option>
                                     @endforeach
                                 </select>
                             </div>                         
@@ -50,10 +51,18 @@
                                 <input type="text" class="form-control" id="email" pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$" name="email" placeholder="email" required >
                             </div>  
 
-                            <div class="col-12 col-xl-12">
-                                <textarea placeholder="message" cols="30" rows="10" id="mensaje"></textarea>
+                            <div class="col-12">
+                                <textarea placeholder="message" cols="30" rows="10" id="mensaje" name="mensaje"></textarea>
+
                                 <p id="mensajeError"></p>
-                                <input type="submit" value="enviar" id="enviar">
+                            </div>  
+
+                            <div class="col-12">
+                                <div class="row">   
+                                    <input class="col-12 col-xl-6" type="reset" value="Borrar">
+
+                                    <input class="col-12 col-xl-6" type="submit" value="Enviar" id="enviar">
+                                </div>
                             </div>
                         </div>
                     </form>

@@ -11,7 +11,7 @@
                 <li><a href='#' title='Login' data-toggle="modal" data-target="#loginModal"><i class='fa fa-lg fa-sign-in'></i></a></li>
             @else
                 <li class="nav-item {{ Request::is('perfil') || Request::is('') ?  'active' : ''}}">
-                    <a class="nav-link" href="{{url('/perfil')}}">
+                    <a class="nav-link" href="{{url('/perfil'.Auth::user()->erabiltzailea_id)}}">
                         <i class='fa fa-lg fa-home'></i>    
                     </a>
                 </li>
@@ -36,11 +36,11 @@
         </div>
 
         <div class='logContainer'>
-            <label for='erabiltzaile_iz'><b>Correo:</b></label>
-            <input type='text' id="email" placeholder='introduce tu correo' name='erabiltzaile_iz'  pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"  required>
+            <label for='erabiltzaile_iz'><b>Nombre usuario:</b></label>
+            <input type='text' id="nombre" placeholder='Introduce tu usuario' name='erabiltzaile_iz' pattern="[A-Za-zñÑ1-9 ]{0,9}"required>
 
             <label for='psw'><b>Contraseña:</b></label>
-            <input type='password' placeholder='Sartu pasahitza' name='pasahitza' required>
+            <input type='password' id="contraseña" placeholder='Introduce tu contraseña' name='pasahitza' required>
             <!-- <label>
                 <input type='checkbox' checked='checked' name='remember'> Remember me
             </label> -->
@@ -60,7 +60,7 @@
 
         <div class='btnContainer'>
             <button type='reset' class='cancelBtn' id='cancelBtn'>Borrar</button>
-            <button type='submit' class='loginBtn' id='loginBtn'>Login</button>
+            <button type='submit' class='loginBtn' id='enviar'>Login</button>
         </div>
     </form>
 </div>
@@ -90,7 +90,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item dropdown {{Request::is('trabajador') ? 'active' : ''}}">
+                <li class="nav-item dropdown {{Request::is('perfil') ? 'active' : ''}}">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         ARTISTAS
                     </a>
@@ -98,7 +98,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {{-- COGER DE LA BD LOS TRABAJADORES --}}
                         @foreach($trabajadores as $trabajador)
-                            <a class="dropdown-item" href="{{url('/trabajador'. $trabajador->langile_id)}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
+                            <a class="dropdown-item" href="{{url('/perfil'. $trabajador->langile_id)}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
                             <div class="dropdown-divider"></div>
                         @endforeach
                     </div>

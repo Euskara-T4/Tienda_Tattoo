@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Langilea;
 use App\Argazkia;
+use App\Zita;
+    
 
 class LangileaController extends Controller {
 
@@ -16,7 +18,7 @@ class LangileaController extends Controller {
     }
 
     // TRABAJOS REALIZADOS POR UN TRABAJADOR
-    public function trabajador($id) {
+    public function perfil($id) {
         // if(Auth::check() ) {
         //     $usuario = Auth::user();
         // } else {
@@ -26,21 +28,9 @@ class LangileaController extends Controller {
         $trabajadores = Langilea::all();
         $trabajador = Langilea::findOrFail($id);
 
-        return view('trabajadores.perfil',  compact("trabajadores", "trabajador"));
+        return view('trabajadores.perfil',  compact("trabajadores", "trabajador"));       
     }
-
-    // SECCION DE CITAS QUE TIENE
-    public function tablaCitas() {
-        $trabajadores = Langilea::all();
-
-        return view('trabajadores.citas', compact("trabajadores"));
-    }
-    
-   
-    
-
-
-
+       
 
     /**
      * Show the form for creating a new resource.

@@ -30,7 +30,7 @@
 
     <a id='backtotop' href='#top'><i class='fa fa-chevron-up'></i></a>
 
-    {{-- @include('partials.footer') --}}
+    @include('partials.footer')
 
 
     <!-- Optional JavaScript -->
@@ -54,15 +54,16 @@
     
     <script src="./js/galeria.js"></script>
     <script src="./js/validacion.js"></script>
+
     <!-- {{-- OUR SCRIPTS --}}
     <script src="../resources/js/backtotop.js"></script>
-    {{-- <script src="../resources/js/dropdown.js"></script> --}}
+    <script src="../resources/js/dropdown.js"></script>
     <script src="../resources/js/galeria.js"></script>
-    {{-- <script src="../resources/js/validacion.js"></script> --}}
+    <script src="../resources/js/validacion.js"></script>
     <script src="../resources/js/login.js"></script> -->
 
 <!--     <script src="../resources/js/myJavascript.js" ></script> --> 
-    <script src="./js/edit.js" ></script>
+<!--     <script src="./js/edit.js" ></script> -->
     <script src="./js/main.js"></script>
 
   </body>
