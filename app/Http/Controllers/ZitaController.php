@@ -35,7 +35,6 @@ class ZitaController extends Controller
         $zita->telefonoa = $formulario->movil;
 
         $zita->save();
-
         return back()->with('enviarFormulario' , 'se ha enviado correctamente');
     }
 
@@ -67,7 +66,7 @@ class ZitaController extends Controller
         $zita->bezero_email = $request->email;
         $zita->deskripzioa = $request->desk;
         $zita->lana_id = $request->trabajo;
-        $zita->telnombreefonoa = $request->movil;
+        $zita->telefonoa = $request->movil;
 
         $zita->save();
 

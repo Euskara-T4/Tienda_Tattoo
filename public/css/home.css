@@ -121,10 +121,15 @@ p {
     padding: 2%;
 }
 
-
 .breadcrumb {
     padding-left: 10%;
     margin: 0;
+}
+
+footer {
+    background-color: black;
+    bottom: 0;
+    padding: 2%;
 }
 
 /* RESPONSIVE */

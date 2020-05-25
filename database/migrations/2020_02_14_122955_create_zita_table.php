@@ -14,7 +14,7 @@ class CreateZitaTable extends Migration
     public function up()
     {
         Schema::create('zita', function (Blueprint $table) {
-            $table->increments('zita_id');            
+            $table->increments('zita_id');
             $table->string('bezero_izena');
             $table->string('bezero_email');
             $table->string('deskripzioa')->nullable();
@@ -24,7 +24,7 @@ class CreateZitaTable extends Migration
             /* $table->dateTime('ordua')->nullable();
             $table->dateTime('eguna')->nullable(); */
 
-            // Claves foraneas           
+            // Claves foraneas
             $table->integer('lana_id')->unsigned();
 
             // Relaciones

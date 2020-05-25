@@ -14,7 +14,7 @@
                                     <span aria-hidden="true"></span> INICIO
                                 </a>
                             </li>
-
+                                
                             <li class="list-item {{ Request::is('trabajador') ? 'active' : ''}}">
                                 <a class="nav-link" href="{{url('/home')}}">
                                     <span aria-hidden="true"></span> ARTISTAS
@@ -47,7 +47,7 @@
                                 <address>
                                     <i class="fa fa fa-envelope"></i> idazkaria@fpTXurdinaga.com
                                     <br />
-                                    <i class="fa fa-phone"></i> 
+                                    <i class="fa fa-phone"></i>
                                     <a href="tel:+34944125712"> (+34) 944 12 57 12</a>
                                     <br />
                                 </address>
