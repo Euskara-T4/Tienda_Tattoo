@@ -17,7 +17,12 @@ class ZitaController extends Controller
      */
     public function index()
     {
-        //
+        
+        $trabajadores = Langilea::all();
+        $zitas = Zita::all();
+
+        // return view('home', compact("trabajadores"));
+        return view('trabajadores.perfil', compact("trabajadores" , "zitas"));
     }
 
     /**
@@ -72,9 +77,13 @@ class ZitaController extends Controller
      * @param  \App\Zita  $zita
      * @return \Illuminate\Http\Response
      */
-    public function edit(Zita $zita)
+    public function edit($zitaID)
     {
-        //
+        $trabajadores = Langilea::all();
+        $zitaActualizar = Zita::findOrFail($zitaID);
+        return view('trabajadores.editar', compact('zitaActualizar', 'trabajadores'));
+
+
     }
 
     /**
@@ -84,9 +93,19 @@ class ZitaController extends Controller
      * @param  \App\Zita  $zita
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Zita $zita)
+    public function update(Request $request , $zitaID)
     {
-        //
+
+        $zita = Zita::findOrFiail($zitaID);
+        $zita->bezero_izena = $request->nombre;
+        $zita->bezero_email = $request->email;
+        $zita->deskripzioa = $request->desk;
+        $zita->lana_id = $request->trabajo;
+        $zita->telefonoa = $request->movil;
+
+        $zita->save();
+        return redirect()->route('trabajadores.perfil');
+       
     }
 
     /**
@@ -95,11 +114,13 @@ class ZitaController extends Controller
      * @param  \App\Zita  $zita
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Zita $zita)
+    public function destroy($zitaBorrar)
+
     {
-        //
-    }
+        $zita = Zita::findorFail($zitaBorrar);
+        $zita->delete();
 
+    return back();
+    }   
 
-    }
-
+}

@@ -30,6 +30,14 @@ Route::get('sobreNosotros', 'HomeController@sobreNosotros')->name('sobreNosotros
 Route::get('formularioCita', 'ZitaController@cita')->name('formularioCita');
 Route::post('enviarFormulario', 'ZitaController@enviarFormulario')->name('enviarFormulario');
 
+Route::get('perfil', 'ZitaController@index')->name('perfil');
+
+Route::get('editar/{zita_id}', 'ZitaController@edit')->name('editar');
+
+Route::put('update/{zita_id}', 'ZitaController@update')->name('update');
+
+Route::delete('eliminar/{zita_id}', 'ZitaController@destroy')->name('eliminar');
+
 // Route::get('registro', 'HomeController@registro')->name('registro');
 // Route::post('registrado', 'HomeController@registrado')->name('registrado');
 
