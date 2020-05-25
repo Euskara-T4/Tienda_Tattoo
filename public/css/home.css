@@ -16,6 +16,12 @@ body {
     padding-bottom: 10%;
 }
 
+.error {
+    text-decoration: solid;
+    color: red !important;
+    padding: 2%;
+}
+
 /* NAVBAR */
 .navbar {
     background-color: black !important;

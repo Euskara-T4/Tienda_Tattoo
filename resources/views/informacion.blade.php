@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <section  class="bgded overlay pb-5 mb-5" style="background-image:url('../public/img/backgrounds/fondo3.jpg');" id="contact">
+    <section  class="bgded overlay pb-5 mb-5" style="background-image:url('./img/backgrounds/fondo3.jpg');" id="contact">
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-md-6 mx-auto text-center">
@@ -23,8 +23,8 @@
                         <h4>Contáctanos</h4>
                     </div>
                 </div>
-            </div>        
-    
+            </div>
+
             <div class="row text-center">
                 <div class="col-md-8">
                     <form action="{{route('enviarFormulario')}}" method="post" class="contact-form">
@@ -32,33 +32,33 @@
 
                         <div class="row">
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" name="nombre" id="nombre" pattern="[A-Za-zñÑ ]" minlength="3" maxlength="15" required placeholder="nombre">
-                            </div>  
-
-                            <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" id="movil" pattern="[0-9]" minlength="9" maxlength="9" name="movil" placeholder="móvil" required>
+                                <input type="text" class="form-control" name="nombre" id="nombre_cliente" pattern="[A-Za-zñÑ ]{3, 15}" minlength="3" maxlength="15" required placeholder="nombre">
                             </div>
 
                             <div class="col-12 col-xl-6">
-                                <select name="trabajo" class="form-control" >Trabajo: 
+                                <input type="mobile" class="form-control" id="movil" pattern="\d{9}" minlength="9" maxlength="9" name="movil" placeholder="ej: 654656248" required>
+                            </div>
+
+                            <div class="col-12 col-xl-6">
+                                <select name="trabajo" class="form-control" >Trabajo:
                                     @foreach ($trabajos as $trabajo)
                                         <option value="{{ $trabajo->lana_id }}"> {{ $trabajo->izena }} </option>
                                     @endforeach
                                 </select>
-                            </div>                         
+                            </div>
 
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" id="email" pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$" name="email" placeholder="email" required >
-                            </div>  
+                                <input type="text" class="form-control" id="email" pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$" name="email" placeholder="ejemplo@gmail.com" required >
+                            </div>
 
                             <div class="col-12">
                                 <textarea placeholder="message" cols="30" rows="10" id="mensaje" name="mensaje"></textarea>
 
-                                <p id="mensajeError"></p>
-                            </div>  
+                                <p class="error" id="mensajeError"></p>
+                            </div>
 
                             <div class="col-12">
-                                <div class="row">   
+                                <div class="row">
                                     <input class="col-12 col-xl-6" type="reset" value="Borrar">
 
                                     <input class="col-12 col-xl-6" type="submit" value="Enviar" id="enviar">
@@ -67,26 +67,26 @@
                         </div>
                     </form>
                 </div>
-    
+
                 <div class="col-md-4">
                     <div class="single-contact">
                         <i class="fa fa-map-marker"></i>
                         <h5>Address</h5>
                         <address> Ornilla Doctor Kalea, 2, 48004 Bilbo, Bizkaia </address>
                     </div>
-    
+
                     <div class="single-contact">
                         <i class="fa fa-phone"></i>
                         <h5>Phone</h5>
                         <a href="tel:+34944125712"> (+34) 944 12 57 12</a>
                     </div>
-                    
+
                     <div class="single-contact">
                         <i class="fa fa-fax"></i></i>
                         <h5>Fax</h5>
                         <p>(+34)  944 731 359</p>
                     </div>
-    
+
                     <div class="single-contact">
                         <i class="fa fa-envelope"></i>
                         <h5>Email</h5>

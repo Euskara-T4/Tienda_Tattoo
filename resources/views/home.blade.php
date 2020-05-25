@@ -13,7 +13,7 @@
   </section>
 
   {{-- SECCION DE INFORMACION --}}
-  <section style="background-image:url('../public/img/backgrounds/fondo2.jpg');" class="overlay" >
+  <section style="background-image:url('./img/backgrounds/fondo2.jpg');" class="overlay" >
     <div class='bgded  container'>
       <div class="card-group">
         <div class="card">
@@ -31,7 +31,7 @@
             <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
           </div>
         </div>
-        
+
         <div class="card">
           <img class="card-img-top" src="..." alt="Card image cap">
           <div class="card-body">

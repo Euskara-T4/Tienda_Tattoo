@@ -36,7 +36,6 @@ class ZitaController extends Controller
 
         $zita->save();
 
-        alert("heeeyyy");
         return back()->with('enviarFormulario' , 'se ha enviado correctamente');
     }
 
@@ -50,7 +49,7 @@ class ZitaController extends Controller
     {
         $trabajadores = Langilea::all();
         $zitaActualizar = Zita::findOrFail($zitaID);
-        
+
         return view('trabajadores.editar', compact('zitaActualizar', 'trabajadores'));
     }
 
@@ -73,7 +72,7 @@ class ZitaController extends Controller
         $zita->save();
 
         return redirect()->route('perfil');
-       
+
     }
 
     /**
@@ -88,6 +87,6 @@ class ZitaController extends Controller
         $zita->delete();
 
         return back();
-    }   
+    }
 
 }

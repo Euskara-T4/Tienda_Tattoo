@@ -9,12 +9,12 @@
         </ol>
     </nav>
 
-    <section style="background-image:url('../public/img/backgrounds/fondo1.jpg');" class="overlay bgded pb-5" >
+    <section style="background-image:url('./img/backgrounds/fondo1.jpg');" class="overlay bgded pb-5" >
         <div class="container">
             <h3 class="text-center heading"> TRABAJOS REALIZADOS POR NUESTROS ARTISTAS </h3>
             <hr/>
             <p>"Aqui dispones de una amplia galeria de fotografias realizadas por nuestros grandes artistas profesionales.</p>
-            
+
             <div class="portfolio-item row">
                 @foreach ($argazkiak as $argazkia)
                     @if ($argazkia->izena != "perfil")

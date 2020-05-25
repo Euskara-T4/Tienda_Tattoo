@@ -12,7 +12,7 @@
             @else
                 <li class="nav-item {{ Request::is('perfil') || Request::is('') ?  'active' : ''}}">
                     <a class="nav-link" href="{{url('/perfil'.Auth::user()->erabiltzailea_id)}}">
-                        <i class='fa fa-lg fa-home'></i>    
+                        <i class='fa fa-lg fa-home'></i>
                     </a>
                 </li>
 
@@ -20,8 +20,8 @@
                     <a class="nav-link">
                         <i class='fa fa-lg fa-sign-out'></i>
                     </a>
-                </li>     
-            @endif  
+                </li>
+            @endif
         </ul>
     </div>
 </div>
@@ -30,7 +30,7 @@
 <div id='loginModal' class='modal'>
     <form method="POST" action="{{ route('login') }}" class="modal-content animate" >
         @csrf
-        
+
         <div class='imgcontainer'>
             <img src='../public/img/avatar.png' alt='Avatar' class='avatar'>
         </div>
@@ -55,12 +55,12 @@
 
             <a class="col-12 mt-2" href="">¿Has olvidado la contraseña?</a>
 
-            <p class="col-12 mt-2" id="mensajeError"></p>
+            <p class="col-12 mt-2 error" id="errorLogin"></p>
         </div>
 
         <div class='btnContainer'>
             <button type='reset' class='cancelBtn' id='cancelBtn'>Borrar</button>
-            <button type='submit' class='loginBtn' id='enviar'>Login</button>
+            <button type='submit' class='loginBtn' id='login'>Login</button>
         </div>
     </form>
 </div>
@@ -80,7 +80,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        
+
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
@@ -120,7 +120,7 @@
                     <a class="nav-link" href="{{url('/sobreNosotros')}}">
                         <span aria-hidden="true"></span> CONTACTANOS
                     </a>
-                </li>            
+                </li>
             </ul>
         </div>
     </div>

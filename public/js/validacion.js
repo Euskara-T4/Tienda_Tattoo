@@ -1,11 +1,36 @@
 window.onload = iniciar;
 
 function iniciar() {
-    document.getElementById("enviar").addEventListener('click', validar, false);
+    document
+        .getElementById("login")
+        .addEventListener("click", validarLogin, false);
+    document.getElementById("enviar").addEventListener("click", validar, false);
 }
 
 function validaNombre() {
     var elemento = document.getElementById("nombre");
+    if (elemento != null) {
+        if (!elemento.checkValidity()) {
+            if (elemento.validity.valueMissing) {
+                errorLogin(elemento, "El nombre es obligatorio");
+                return false;
+            }
+
+            if (elemento.validity.patternMismatch) {
+                errorLogin(elemento, "El nombre no tiene un formato correcto");
+                return false;
+            }
+
+            if (elemento.value.length < 3 || elemento.value.length > 15) {
+                errorLogin(elemento, "Tiene que tener entre 3 y 15 caracteres");
+                return false;
+            }
+        }
+    }
+}
+
+function validaNombreCliente() {
+    var elemento = document.getElementById("nombre_cliente");
     if (elemento != null) {
         if (!elemento.checkValidity()) {
             if (elemento.validity.valueMissing) {
@@ -23,11 +48,10 @@ function validaNombre() {
                 return false;
             }
         }
-
     }
+
     return true;
 }
-
 
 function validaMovil() {
     var elemento = document.getElementById("movil");
@@ -38,11 +62,11 @@ function validaMovil() {
                 return false;
             }
             if (elemento.validity.patternMismatch) {
-                error(elemento, "El telefono no puede contener texto");
+                error(elemento, "El telefono tiene que contener 9 digitos");
                 return false;
             }
 
-            if (elemento.value.length < 9) {
+            if (elemento.value.length > 9 || elemento.value.length < 9) {
                 error(elemento, "El telefono tiene que tener 9 digitos");
                 return false;
             }
@@ -72,13 +96,12 @@ function validaCorreo() {
     return true;
 }
 
-
 function validaContraseña() {
     var elemento = document.getElementById("contraseña");
     if (elemento != null) {
         if (!elemento.checkValidity()) {
             if (elemento.validity.valueMissing) {
-                error(elemento, "La contraseña es obligatoria");
+                errorLogin(elemento, "La contraseña es obligatoria");
                 return false;
             }
         }
@@ -90,23 +113,34 @@ function validaContraseña() {
 function validar(e) {
     borrarError();
 
-    if (validaNombre() && validaMovil() && validaCorreo() && validaContraseña()) {
+    if (validaNombreCliente() && validaMovil() && validaCorreo()()) {
         alert("El formulario ha sido enviado. Gracias.");
-        return true
-
-    } else if (validaNombre() && validaContraseña()) {
-        alert("Login correcto.");
-        return true
-
+        return true;
     } else {
         e.preventDefault();
         return false;
     }
 }
 
+function validarLogin(e) {
+    borrarError();
+
+    if (validaNombre() && validaContraseña()) {
+        return true;
+    } else {
+        e.preventDefault();
+        return false;
+    }
+}
 
 function error(elemento, mensaje) {
     document.getElementById("mensajeError").innerHTML = "** " + mensaje + " **";
+    elemento.className = " error";
+    elemento.focus();
+}
+
+function errorLogin(elemento, mensaje) {
+    document.getElementById("errorLogin").innerHTML = "** " + mensaje + " **";
     elemento.className = " error";
     elemento.focus();
 }
@@ -116,6 +150,4 @@ function borrarError() {
     for (var i = 0; i < formulario.elements.length; i++) {
         formulario.elements[i].className = "";
     }
-
-
 }
