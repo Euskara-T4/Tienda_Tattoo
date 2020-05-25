@@ -7,6 +7,7 @@ use App\Lana;
 use App\Argazkia;
 use App\Langilea;
 use App\User;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -28,9 +29,15 @@ class HomeController extends Controller
 
 
     public function index() {
+        if(Auth::check() ) {
+            $usuario = Auth::user();
+        } else {
+            $usuario = "bezeroa";
+        }
+
         $trabajadores = Langilea::all();
 
-        return view('home', compact("trabajadores"));
+        return view('home', compact("usuario", "trabajadores"));
     }
 
      // SECCION DE TODAS LAS FOTOS
@@ -61,28 +68,18 @@ class HomeController extends Controller
  
 
     /* ESTO EN PRINCIPIO LO HICIMOS PARA AÑADIR LOS TRABAJADORES
-
     public function registro() {
         $trabajadores = Langilea::all();
-
         return view('registro', compact("trabajadores"));
-
     }
-
     public function registrado(Request $registrado) {
         $user = new user;
-
         $user->izena = $registrado->nombre;
         $user->abizena = $registrado->apellido;
         $user->email =$registrado->email;
         $user->pasahitza = bcrypt($registrado->contraseña); // Se encripta la contraseña usando la función bcrypt().
         $user->save();
-
         return back()->with('registrado' , 'usuario registrado correctamente');
     }
     */
-
-
-
-
 }
