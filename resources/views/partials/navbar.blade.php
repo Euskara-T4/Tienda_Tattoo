@@ -58,7 +58,7 @@
         </div>
 
         <div class='logContainer'>
-            <label for='erabiltzaile_iz'><b>correo:</b></label>
+            <label for='erabiltzaile_iz'><b>Correo:</b></label>
             <input type='text' id="email" placeholder='introduce tu correo' name='erabiltzaile_iz'  pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"  required>
 
             <label for='psw'><b>Contraseña:</b></label>
