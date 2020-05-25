@@ -10,7 +10,7 @@ class Argazkia extends Model {
 
   // Primary key de la tabla
   protected $primaryKey = 'img_id';
-  
+
   // Foreign key de la tabla
   protected $foreignKey = 'langile_id';
 

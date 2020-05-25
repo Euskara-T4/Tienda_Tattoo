@@ -132,6 +132,23 @@ footer {
     padding: 2%;
 }
 
+
+.commentsIcon {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: right;
+    width: 5% !important;
+    padding: 2%;
+}
+
+.commentsIcon button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: center;
+}
+
 /* RESPONSIVE */
 /* Controlar el titulo */
 

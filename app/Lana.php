@@ -21,7 +21,7 @@ class Lana extends Model {
     }
 
     public function langile() {
-        return $this->belongsTo('App\Langilea');
+        return $this->belongsTo('App\Langilea', 'lana_id', 'lana_id');
     }
 
 }

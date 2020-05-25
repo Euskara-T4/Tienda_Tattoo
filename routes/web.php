@@ -15,7 +15,7 @@ use App\Http\Middleware\CheckAdmin;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('index');
- 
+
 // Rutas para logearte
 // Route::get('/login', 'Auth\LoginController@loginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');

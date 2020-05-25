@@ -13,7 +13,6 @@
         <h3> TABLA DE CITAS </h3>
 
         <table class="table">
-
             <tr>
                 <th>Nombre</th>
                 <th>Email</th>
@@ -21,53 +20,81 @@
                 <th>Descripcion</th>
                 <th>Trabajo</th>
                 <th>Acciones</th>
-        
             </tr>
-        
+
             @foreach ($zitas as $zita)
                 <tr>
-                    <td><input type="text" name="bezero_izena" value="{{$zita->bezero_izena}}" readonly></td>
-                    <td><input type="text" name="bezero_email" value="{{$zita->bezero_email}}" readonly></td>
-                    <td><input type="text" name="nombre" value="{{$zita->telefonoa}}" readonly></td>
-                    <td><input type="text" name="deskripzioa" value="{{$zita->deskripzioa}}" readonly></td>
-                    <td><input type="text" name="nombre" value="{{$zita->lana}}" readonly></td>
-                    
-                    <td><a href="{{route('editar', $zita->zita_id)}}" class="btn btn-warning">editar</a></td>
-        
-                    <form action="{{route('eliminar', $zita->zita_id)}}" method="POST">
-                        @method('DELETE')
-                        @csrf
+                    <td> {{ $zita->bezero_izena }} </td>
+                    <td> {{ $zita->bezero_email }} </td>
+                    <td> {{ $zita->telefonoa }} </td>
+                    <td> {{ $zita->deskripzioa }} </td>
+                    <td> {{ $zita->lana->izena }}</td>
+                    <td>
+                        <!-- BOTONES DE LAS OPCIONES CORRESPONDIENTES -->
+                        <div class="commentsIcon">
+                            {{-- <a href="{{route('editar', $zita->zita_id)}}"><i class="fa fa-lg fa-edit"></i> </a> --}}
+                            <button data-toggle="modal" data-target="#editModal"><i class="fa fa-lg fa-edit"></i></button>
 
-                        <td><button class="btn btn-warning">borrar</button></td>
-        
-                    </form>
-        
+                            <button data-toggle="modal" data-target="#confirmModal"><i class="fa fa-lg fa-trash-o"></i></button>
+                        </div>
+                    </td>
             @endforeach
-                </tr>    
+                </tr>
         </table>
 
-         {{-- MODAL CONFIRMACION BORRAR
+        {{-- MODAL EDITAR CITA --}}
+        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Confirmacion de borrar cita</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    </div>
 
-            <div class="modal small hide fade confirmModal" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h3 id="confirmModalLabel">Delete Confirmation</h3>
-                </div>
+                    <div class="modal-body">
+                        <p>Estas seguro de que quieres borrar esta cita?</p>
+                    </div>
 
-                <div class="modal-body">
-                    <p class="error-text">Estas seguro de que quieres borrar esta cita?</p>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                        <form action="{{route('eliminar', $zita->zita_id)}}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button class="btn btn-danger" data-dismiss="modal">Borrar</button>
+                        </form>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
-                    <button class="btn btn-danger" data-dismiss="modal">Borrar</button>
+
+        {{-- MODAL CONFIRMACION BORRAR --}}
+        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Confirmacion de borrar cita</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p>Estas seguro de que quieres borrar esta cita?</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                        <form action="{{route('eliminar', $zita->zita_id)}}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button class="btn btn-danger" data-dismiss="modal">Borrar</button>
+                        </form>
+                    </div>
                 </div>
-            </div> --}}
-    
-        {{-- INCLUIMOS UNA SECTION DE LA TABLA PARA EDITAR --}}
-    
-        <section>
+            </div>
+        </div>
+
+        {{-- <section>
             @yield('edit')
-        </section>
+        </section> --}}
     </div>
 @endsection

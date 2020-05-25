@@ -20,6 +20,6 @@ class Zita extends Model {
 
     // Relaciones
     public function lana() {
-        return $this->belongsTo('App\Lana');
+        return $this->belongsTo('App\Lana', 'lana_id', 'lana_id');
     }
 }

@@ -44,13 +44,13 @@ class ZitaController extends Controller
      * @param  \App\Zita  $zita
      * @return \Illuminate\Http\Response
      */
-    public function edit($zitaID)
-    {
-        $trabajadores = Langilea::all();
-        $zitaActualizar = Zita::findOrFail($zitaID);
+    // public function edit($zitaID)
+    // {
+    //     $trabajadores = Langilea::all();
+    //     $zitaActualizar = Zita::findOrFail($zitaID);
 
-        return view('trabajadores.editar', compact('zitaActualizar', 'trabajadores'));
-    }
+    //     return view('trabajadores.editar', compact('zitaActualizar', 'trabajadores'));
+    // }
 
     /**
      * Update the specified resource in storage.
