@@ -67,7 +67,7 @@ class ZitaController extends Controller
         $zita->bezero_email = $request->email;
         $zita->deskripzioa = $request->desk;
         $zita->lana_id = $request->trabajo;
-        $zita->telefonoa = $request->movil;
+        $zita->telnombreefonoa = $request->movil;
 
         $zita->save();
 
