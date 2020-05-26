@@ -23,6 +23,9 @@ Route::get('home', 'HomeController@index')->name('home');
 Route::get('listaTrabajadores', 'LangileaController@listaTrabajadores')->name('listaTrabajadores')->middleware('is_admin');
 Route::get('perfil{id}', 'LangileaController@perfil')->middleware('auth')->name('perfil');
 
+Route::get('cita{zitaID}', 'ZitaController@cita')->middleware('auth')->name('cita');
+
+
 Route::get('galeria', 'HomeController@galeria')->name('galeria');
 Route::get('preguntas', 'HomeController@preguntas')->name('preguntas');
 Route::get('sobreNosotros', 'HomeController@sobreNosotros')->name('sobreNosotros');

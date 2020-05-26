@@ -25,6 +25,14 @@ class ZitaController extends Controller
         return view('trabajadores.perfil', compact("trabajadores" , "zitas"));
     }
 
+    public function cita($zitaID)
+    {
+        $zitaActualizar = Zita::findOrFail($zitaID);
+        $trabajadores = Langilea::all();
+        $zitas = Zita::fi();
+
+        return view('trabajadores.citas', compact("trabajadores" , "zitas","zitaActualizar"));
+    }
     /**
      * Show the form for creating a new resource.
      *
