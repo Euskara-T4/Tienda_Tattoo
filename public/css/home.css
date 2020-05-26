@@ -154,6 +154,15 @@ footer {
     text-align: center;
 }
 
+.inputSettings {
+    background-color: transparent;
+    border: none;
+}
+
+#reset-button {
+    display: none !important;
+}
+
 
 /* RESPONSIVE */
 

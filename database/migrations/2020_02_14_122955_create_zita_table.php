@@ -19,10 +19,8 @@ class CreateZitaTable extends Migration
             $table->string('bezero_email');
             $table->string('deskripzioa')->nullable();
             $table->bigInteger('telefonoa');
-            $table->string('ordua')->nullable();
-            $table->string('eguna')->nullable();
-            /* $table->dateTime('ordua')->nullable();
-            $table->dateTime('eguna')->nullable(); */
+            $table->time('ordua')->nullable();
+            $table->date('eguna')->nullable();
 
             // Claves foraneas
             $table->integer('lana_id')->unsigned();

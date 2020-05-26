@@ -1,8 +1,22 @@
 window.addEventListener("load", hasiera);
 
 function hasiera() {
+    // Format Calendar
+    var dates = document.getElementsByClassName("myDate");
+    var dateValue = document.getElementsByClassName("dateValue");
+    for (var i = 0; i < dates.length; i++) {
+        var str = dateValue[i].value;
+        var date = str.split(" ", 1);
+        dates[i].value = date;
+    }
+
+
     $('.btnDelete').on('click', deleteData);
-    $('.btnEdit').on('click', editData);
+
+    var iconsEditPeti = document.getElementsByClassName("iconEdit");
+    for (var i = 0; i < iconsEditPeti.length; i++) {
+        iconsEditPeti[i].addEventListener("click", editData);
+    }
 }
 
 
@@ -25,26 +39,25 @@ function deleteSubmit() {
 
 
 
-function editData() {
-    var hora = document.getElementById("hora");
-    var dia = document.getElementById("dia");
-    var icon = document.getElementById("iconEdit");
-    var btn = document.getElementById("btnEditUser");
+function editData(e) {
+    var icon = e.target;
+    var zita = e.target.parentNode.className;
+
+    var hora = document.getElementsByClassName(zita)[0];
+    var dia = document.getElementsByClassName(zita)[1];
 
     if (hora.readOnly) {
         hora.readOnly = false;
         dia.readOnly = false;
 
-        // Cambiamos el tipo de icono
-        icon.className = "fa fa-lg fa-save";
-        btn.type = "button";
+        icon.className = "fa fa-lg fa-save iconEdit";
+        icon.parentNode.type = "button";
 
     } else {
         hora.readOnly = true;
         dia.readOnly = true;
 
-        // Cambiamos el tipo de icono
-        icon.className = "fa fa-lg fa-edit";
-        btn.type = "submit";
+        icon.className = "fa fa-lg fa-edit iconEditPeti";
+        icon.parentNode.type = "submit";
     }
 }

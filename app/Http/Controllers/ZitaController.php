@@ -61,16 +61,14 @@ class ZitaController extends Controller
      */
     public function update(Request $request , $zitaID)
     {
-        $zita = Zita::findOrFiail($zitaID);
-        $zita->bezero_izena = $request->nombre;
-        $zita->bezero_email = $request->email;
-        $zita->deskripzioa = $request->desk;
-        $zita->lana_id = $request->trabajo;
-        $zita->telefonoa = $request->movil;
-
+        $zita = Zita::findOrFail($zitaID);
+        echo($request->ordua);
+        $zita->eguna = $request->eguna;
+        $zita->ordua = $request->ordua;
+        
         $zita->save();
 
-        return redirect()->route('perfil');
+        return redirect()->route('citas');
 
     }
 
