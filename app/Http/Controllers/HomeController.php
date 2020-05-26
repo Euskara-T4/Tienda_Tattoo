@@ -18,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -65,21 +65,4 @@ class HomeController extends Controller
     }
 
 
- 
-
-    /* ESTO EN PRINCIPIO LO HICIMOS PARA AÑADIR LOS TRABAJADORES
-    public function registro() {
-        $trabajadores = Langilea::all();
-        return view('registro', compact("trabajadores"));
-    }
-    public function registrado(Request $registrado) {
-        $user = new user;
-        $user->izena = $registrado->nombre;
-        $user->abizena = $registrado->apellido;
-        $user->email =$registrado->email;
-        $user->pasahitza = bcrypt($registrado->contraseña); // Se encripta la contraseña usando la función bcrypt().
-        $user->save();
-        return back()->with('registrado' , 'usuario registrado correctamente');
-    }
-    */
 }

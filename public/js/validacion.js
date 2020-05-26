@@ -7,8 +7,8 @@ function iniciar() {
     }
 }
 
-function validaNombre() {
-    var elemento = document.getElementById("nombre");
+function validaCorreoLog() {
+    var elemento = document.getElementById("email");
     if (elemento != null) {
         if (!elemento.checkValidity()) {
             if (elemento.validity.valueMissing) {
@@ -125,7 +125,7 @@ function validar(e) {
 function validarLogin(e) {
     borrarError();
 
-    if (validaNombre() && validaContraseña()) {
+    if (validaCorreoLog() && validaContraseña()) {
         return true;
     } else {
         e.preventDefault();

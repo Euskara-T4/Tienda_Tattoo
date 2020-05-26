@@ -49,16 +49,10 @@
 
     <!-- {{-- OUR SCRIPTS --}} -->
     <script src="./js/backtotop.js"></script>
-<!-- <script src="./js/dropdown.js"></script> -->
     <script src="./js/login.js"></script>
-    
     <script src="./js/galeria.js"></script>
     <script src="./js/validacion.js"></script>
     <script src="./js/edit.js" ></script>
 
-<!--     <script src="../resources/js/myJavascript.js" ></script> --> 
-<!--     <script src="./js/edit.js" ></script> -->
-{{--     <script src="./js/main.js"></script>
- --}}
   </body>
 </html>

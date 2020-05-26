@@ -12,14 +12,20 @@
             @else
                 <li class="nav-item {{ Request::is('perfil') || Request::is('') ?  'active' : ''}}">
                     <a class="nav-link" href="{{url('/perfil'.Auth::user()->erabiltzailea_id)}}">
-                        <i class='fa fa-lg fa-home'></i>
+                    {{Auth::user()->username }}   <i class='fa fa-lg fa-home'></i>
                     </a>
                 </li>
 
                 <li class="nav-item {{ Request::is('logout') || Request::is('') ?  'active' : ''}}">
-                    <a class="nav-link">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
                         <i class='fa fa-lg fa-sign-out'></i>
                     </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+   
                 </li>
             @endif
         </ul>
@@ -27,6 +33,84 @@
 </div>
 
 {{-- LOGIN MODAL --}}
+<form method="POST" action="{{ route('login') }}">
+    @csrf
+    
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <i class="fa fa-user"></i>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="email" class="col-md-4 col-form-label text-md-right">Correo:</label>
+
+                        <div class="col-md-6">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña:</label>
+
+                        <div class="col-md-6">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-6 offset-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                <label class="form-check-label" for="remember">
+                                    {{ __('Remember Me') }}
+                                </label>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <div class="modal-footer form-group row mb-0">
+                    <div class="col-md-8 offset-md-4">
+                        <button type="submit" class="btn btn-primary">
+                           Login
+                        </button>
+                        <button id="login" type="reset" class="btn btn-primary">
+                            Borrar
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{{-- 
 <div id='loginModal' class='modal'>
     <form method="POST" action="{{ route('login') }}" class="modal-content animate" >
         @csrf
@@ -35,9 +119,18 @@
             <img src='./img/avatar.png' alt='Avatar' class='avatar'>
         </div>
 
-        <div class='logContainer'>
-            <label for='erabiltzaile_iz'><b>Nombre usuario:</b></label>
-            <input type='text' id="nombre" placeholder='Introduce tu usuario' name='erabiltzaile_iz' pattern="[A-Za-zñÑ1-9 ]{0,9}"required>
+        <div class='logContainer row'>
+            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+            <div class="col-12">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  pattern="[A-Za-zñÑ1-9 ]{0,9}" autofocus>
+
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
 
             <label for='psw'><b>Contraseña:</b></label>
             <input type='password' id="contraseña" placeholder='Introduce tu contraseña' name='pasahitza' required>
@@ -64,7 +157,7 @@
         </div>
     </form>
 </div>
-
+ --}}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <div id='logo' class='fl_left flex'>

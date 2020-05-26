@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('erabiltzailea_id'); 
             $table->string('email');
             $table->string('username');
-            $table->string('pasahitza');
+            $table->string('password');
             $table->integer('admin');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

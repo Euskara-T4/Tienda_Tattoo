@@ -9,7 +9,6 @@
     </ol>
 </nav>
 
-<!-- partial -->
 <div class="main-panel perfil">
     <div class="container">
         <div class="row">
@@ -26,8 +25,8 @@
                         </div>
 
                         <div class="profile-content">
-                            <div class="profile-name">Santosh Ghimire</div>
-                            <div class="profile-designation">Webdeveloper</div>
+                        <div class="profile-name">{{$trabajador->izena}}</div>
+                            <div class="profile-designation">{{$trabajador->lana->izena}}</div>
                             <p class="profile-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
                             <ul class="profile-info-list">
                                 <a href="" class="profile-info-list-item"><a href="{{url('/citas')}}"> Seccion citas </a>

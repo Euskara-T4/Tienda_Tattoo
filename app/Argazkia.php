@@ -19,7 +19,7 @@ class Argazkia extends Model {
 
   // Relaciones
   public function langilea() {
-    return $this->belongsTo('App\Argazkia');
+    return $this->hasOne('App\Argazkia');
   }
 
 }

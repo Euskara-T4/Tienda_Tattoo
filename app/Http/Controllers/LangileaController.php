@@ -18,13 +18,7 @@ class LangileaController extends Controller {
     }
 
     // TRABAJOS REALIZADOS POR UN TRABAJADOR
-    public function perfil($id) {
-        // if(Auth::check() ) {
-        //     $usuario = Auth::user();
-        // } else {
-        //     $usuario = "anonimo";
-        // }
-        
+    public function perfil($id) {      
         $trabajadores = Langilea::all();
         $trabajador = Langilea::findOrFail($id);
 

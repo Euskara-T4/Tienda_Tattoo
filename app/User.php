@@ -10,13 +10,14 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $primaryKey = 'erabiltzailea_id';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'pasahitza', 'admin'
+        'username', 'email', 'password', 'admin'
     ];
 
     /**
@@ -25,7 +26,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'pasahitza', 'remember_token',
+        'password', 'remember_token',
     ];
 
     /**
@@ -34,9 +35,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',];
+        'email_verified_at' => 'datetime'
+    ];
+
+ 
 
     public function langilea() {
-        return $this->belongsTo('App\Langilea');
+        return $this->hasOne('App\Langilea');
     }
 }

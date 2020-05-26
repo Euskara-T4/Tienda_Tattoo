@@ -22,28 +22,28 @@ class UsuariosSeeder extends Seeder
         $admin->email = "admin@gmail.com";
         $admin->username = "admin";
         $admin->admin = 1;
-        $admin->pasahitza = bcrypt("adminadmin");
+        $admin->password = bcrypt("admin");
         $admin->save();
 
         $pelegrin = new User;
         $pelegrin->email = "pelegrin@gmail.com";
         $pelegrin->username = "pelegrin";
         $pelegrin->admin = 0;
-        $pelegrin->pasahitza = bcrypt("langile");
+        $pelegrin->password = bcrypt("langilea");
         $pelegrin->save();
 
         $mike = new User;
         $mike->email = "mike@gmail.com";
         $mike->username = "mike";
         $mike->admin = 0;
-        $mike->pasahitza = bcrypt("langile");
+        $mike->password = bcrypt("langilea");
         $mike->save();
 
         $paulag = new User;
         $paulag->email = "paulag@gmail.com";
         $paulag->username = "paulag";
         $paulag->admin = 0;        
-        $paulag->pasahitza = bcrypt("langile");
+        $paulag->password = bcrypt("langilea");
         $paulag->save();
 
         $this->command->info('Usuario nuevo agregado correctamente!');
