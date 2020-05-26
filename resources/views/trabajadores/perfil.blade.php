@@ -37,9 +37,15 @@
                             <div class="profile-name">{{$trabajador->izena}} {{$trabajador->abizena}}</div>
                                 <div class="profile-designation">{{$trabajador->lana->izena}}</div>
                                 <p class="profile-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
+                                
                                 <ul class="profile-info-list">
-                                    <a href="" class="profile-info-list-item"><a href="{{url('/citas/'.$trabajador->lana_id)}}"> Seccion citas </a>
-                                    <a href="" class="profile-info-list-item"><a href="{{url('/home')}}"> Trabajos realizados </a>
+                                    @if(Auth::user()->admin == 1)
+                                        <a href="{{url('/citas')}}" class="profile-info-list-item"> Seccion citas </a>
+                                    @else
+                                        <a href="{{url('/cita/trabajador' . $trabajador->lana_id)}}" class="profile-info-list-item"> Seccion citas </a>
+                                    @endif
+
+                                    <a href="{{url('/home')}}" class="profile-info-list-item"> Trabajos realizados </a>
                                 </ul>
                             </div>
                         </div>

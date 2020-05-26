@@ -10,14 +10,20 @@ use Illuminate\Http\Request;
 class ZitaController extends Controller
 {
 
-    // SECCION DE CITAS QUE TIENE
     public function tablaCitas() {
         $trabajadores = Langilea::all();
         $zitas = Zita::all();
 
-
         return view('trabajadores.citas', compact("trabajadores", "zitas"));
     }
+
+    public function tablaCitaTrabajador($id) {
+        $trabajadores = Langilea::all();
+        $zitas = Zita::where('lana_id', $id)->firstOrFail();
+  
+        return view('trabajadores.citas', compact("trabajadores", "zitas"));
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -39,20 +45,6 @@ class ZitaController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Zita  $zita
-     * @return \Illuminate\Http\Response
-     */
-    // public function edit($zitaID)
-    // {
-    //     $trabajadores = Langilea::all();
-    //     $zitaActualizar = Zita::findOrFail($zitaID);
-
-    //     return view('trabajadores.editar', compact('zitaActualizar', 'trabajadores'));
-    // }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -62,14 +54,11 @@ class ZitaController extends Controller
     public function update(Request $request , $zitaID)
     {
         $zita = Zita::findOrFail($zitaID);
-        echo($request->ordua);
         $zita->eguna = $request->eguna;
-        $zita->ordua = $request->ordua;
-        
+        $zita->ordua = $request->ordua;        
         $zita->save();
 
         return redirect()->route('citas');
-
     }
 
     /**

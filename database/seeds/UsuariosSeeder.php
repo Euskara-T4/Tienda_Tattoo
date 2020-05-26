@@ -32,12 +32,26 @@ class UsuariosSeeder extends Seeder
         $pelegrin->password = bcrypt("langilea");
         $pelegrin->save();
 
+        $ivanM = new User;
+        $ivanM->email = "ivanM@gmail.com";
+        $ivanM->username = "ivanM";
+        $ivanM->admin = 0;
+        $ivanM->password = bcrypt("langilea");
+        $ivanM->save();
+
         $mike = new User;
         $mike->email = "mike@gmail.com";
         $mike->username = "mike";
         $mike->admin = 0;
         $mike->password = bcrypt("langilea");
         $mike->save();
+
+        $yannic = new User;
+        $yannic->email = "yannic@gmail.com";
+        $yannic->username = "yannic";
+        $yannic->admin = 0;
+        $yannic->password = bcrypt("langilea");
+        $yannic->save();
 
         $paulag = new User;
         $paulag->email = "paulag@gmail.com";

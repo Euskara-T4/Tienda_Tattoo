@@ -21,7 +21,7 @@ class LangileaController extends Controller {
     public function perfil($id) {      
         $trabajadores = Langilea::all();
         $trabajador = Langilea::findOrFail($id);
-
+        
         return view('trabajadores.perfil',  compact("trabajadores", "trabajador"));       
     }
        

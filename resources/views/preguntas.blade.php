@@ -5,14 +5,13 @@
     <div class="container">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
-            <li class="breadcrumb-item active">Pgit preguntas</li>
+            <li class="breadcrumb-item active">Preguntas</li>
         </ol>
     </div>
   </nav>
 
   <section style="background-image:url('./img/backgrounds/fondo7.jpg');" class="overlay bgded pb-5" >
     <div class="container">
-
       <h2 class="text-center heading"> CUIDADO DEL TATUAJE </h2>
       <hr/>
       <p>Es recomendable mantener la zona tatuada cubierta con film osmótico durante unas horas para prevenir posibles infecciones. También es recomendable evitar tocar la zona del tatuaje, así como arrancarse las costras. En cuanto al lavado del tatuaje, las primeras veces es altamente recomendable el uso de un jabón bactericida y lavarlo 3 veces al día.</p>
