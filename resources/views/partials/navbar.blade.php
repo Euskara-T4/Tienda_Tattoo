@@ -107,13 +107,13 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {{-- COGER DE LA BD LOS TRABAJADORES --}}
                         @foreach($trabajadores as $trabajador)
-                            <a class="dropdown-item" href="{{url('/trabajador'. $trabajador->langile_id)}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
+                            <a class="dropdown-item" href="{{url('/perfil'. $trabajador->langile_id)}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
                             <div class="dropdown-divider"></div>
                         @endforeach
                     </div>
                 </li>
 
-                <li class="nav-item {{ Request::is('galeria') ? 'active' : ''}}">
+                <li class="nav-item {{ Request::is('galeria') ? 'active' : ''}}"></li>
                     <a class="nav-link" href="{{url('/galeria')}}">
                         <span aria-hidden="true"></span> GALERIA
                     </a>
