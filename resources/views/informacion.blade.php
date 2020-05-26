@@ -2,12 +2,15 @@
 
 @section('content')
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
-            <li class="breadcrumb-item active">Sobre nosotros</li>
-        </ol>
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
+                <li class="breadcrumb-item active">Sobre nosotros</li>
+            </ol>
+        </div>
     </nav>
+
 
     <div class="row no-padding">
         <div class="col-12 mx-auto p-2">

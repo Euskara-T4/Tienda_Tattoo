@@ -130,11 +130,6 @@ p {
     padding: 2%;
 }
 
-.breadcrumb {
-    padding-left: 10%;
-    margin: 0;
-}
-
 footer {
     background-color: black;
     bottom: 0;
@@ -177,6 +172,9 @@ footer {
 
 .breadcrumb {
     display: none;
+    margin: 0;
+    background-color: rgb(31, 31, 31);
+    color: white;
 }
 
 
@@ -191,4 +189,8 @@ footer {
 
 /* DESKTOP */
 
-@media screen and (min-width: 800px) {}
+@media screen and (min-width: 800px) {
+    .breadcrumb {
+        display: flex;
+    }
+}

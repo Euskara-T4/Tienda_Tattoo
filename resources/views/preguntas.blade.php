@@ -1,11 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
-      <li class="breadcrumb-item active">Preguntas</li>
-    </ol>
+  <nav aria-label="breadcrumb" class="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
+            <li class="breadcrumb-item active">Pgit preguntas</li>
+        </ol>
+    </div>
   </nav>
 
   <section style="background-image:url('./img/backgrounds/fondo7.jpg');" class="overlay bgded pb-5" >
