@@ -36,7 +36,6 @@
                             <div class="profile-content">
                             <div class="profile-name">{{$trabajador->izena}} {{$trabajador->abizena}}</div>
                                 <div class="profile-designation">{{$trabajador->lana->izena}}</div>
-                                <p class="profile-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
                                 
                                 <ul class="profile-info-list">
                                     @if(Auth::user()->admin == 1)
@@ -56,6 +55,14 @@
                     <div class="card">
                         <div class="card-body">
                             <p class="card-title font-weight-bold text-uppercase">PERFIL DE {{$trabajador->izena}}</p>
+                            <p>
+                                <div class="citasIcons">
+                                
+                                    
+                                    <button id="btnEdit"><i class="fa fa-lg fa-edit iconEdit"></i></button>
+                                <button data-toggle="modal" data-target="#confirmModal" class="btnDelete"><i class="fa fa-lg fa-trash-o"></i></button>
+                            </div>
+                            </p>
                             <hr>
                             <p class="card-description">Informacion basica</p>
                             <ul class="about">
