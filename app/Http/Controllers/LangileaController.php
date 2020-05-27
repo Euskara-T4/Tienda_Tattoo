@@ -10,29 +10,28 @@ use App\Zita;
 
 class LangileaController extends Controller {
 
-    // SECCION TRABAJADORES
     public function listaTrabajadores() {
         $trabajadores = Langilea::all();
 
         return view('trabajadores.galeria', compact("trabajadores"));
     }
 
-    public function artista($img_id) {
-
-        $foto = Argazkia::all();
+    public function artista($id) {
         $trabajadores = Langilea::all();
-        $trabajador = Langilea::findOrFail($img_id);
+        $trabajador = Langilea::findOrFail($id);
+        $fotos = Argazkia::where('langile_id', $id)->get();
+        //$fotos = $trabajador->argazkiak;
 
-        return view('trabajadores.trabajos',  compact("trabajadores", "trabajador","foto"));
+        return view('trabajadores.trabajos',  compact("trabajadores", "trabajador","fotos"));
     }
     
 
-    // TRABAJOS REALIZADOS POR UN TRABAJADOR
     public function perfil($id) {      
         $trabajadores = Langilea::all();
-        $trabajador = Langilea::findOrFail($id);
-        
-        return view('trabajadores.perfil',  compact("trabajadores", "trabajador"));       
+        $trabajador = Langilea::where('erabiltzailea_id', $id);
+        $foto = Argazkia::where('langile_id', $id)->where('izena', 'perfil')->get();
+
+        return view('trabajadores.perfil',  compact("trabajadores", "trabajador", "foto"));       
     }
        
 

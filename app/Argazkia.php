@@ -15,11 +15,11 @@ class Argazkia extends Model {
   protected $foreignKey = 'langile_id';
 
   // Datos de la base de datos
-  protected $fillable = ['izena','url', 'langile_id'];
+  protected $fillable = ['izena', 'url', 'langile_id'];
 
   // Relaciones
   public function langilea() {
-    return $this->hasOne('App\Argazkia');
+    return $this->hasOne('App\Langilea', 'langile_id', 'langile_id');
   }
 
 }

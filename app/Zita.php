@@ -18,8 +18,6 @@ class Zita extends Model {
     // Nombre de las columna
     protected $fillable = ['lana_id', 'bezero_izena', 'bezero_email', 'telefonoa', 'ordua', 'eguna', 'deskripzioa'];
 
-
-
     // Relaciones
     public function lana() {
         return $this->belongsTo('App\Lana', 'lana_id', 'lana_id');

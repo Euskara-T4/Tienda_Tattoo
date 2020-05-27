@@ -24,11 +24,7 @@
                                     <img src="https://cdn.pixabay.com/photo/2019/10/19/14/16/away-4561518_960_720.jpg" class="img img-fluid">
                                 </div>
                                 <div class="user-image">
-                                    @foreach ($trabajador->argazkiak as $argazkia)
-                                        {{-- @if ($argazkia->izena == "perfil")
-                                            <img class="img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" />
-                                        @endif --}}
-                                    @endforeach                                                                    
+                                    <img class="img-fluid" alt="{{$foto->izena}}" src="{{$foto->url}}" />
 
                                 </div>
                             </div>
@@ -68,8 +64,6 @@
                                 <li class="about-items"><i class="mdi mdi-mail-ru icon-sm "></i><span class="about-item-name">Usuario:</span><span class="about-item-detail">{{$trabajador->erabiltzailea->username}}</span> </li>
                                 <li class="about-items"><i class="mdi mdi-lock-outline icon-sm "></i><span class="about-item-name">Contraseña:</span><span class="about-item-detail">**********</span> </li>
                                 <li class="about-items"><i class="mdi mdi-format-align-left icon-sm "></i><span class="about-item-name">Bio:</span><span class="about-item-detail">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto totam, nemo quidem delectus dolores vero porro inventore perferendis minus perspiciatis.</span> </li>
-
-                            </span> <a href="" class="about-item-edit">View</a></li>
                             </ul>
                             <p class="card-description">Informacion del trabajador</p>
                             <ul class="about">

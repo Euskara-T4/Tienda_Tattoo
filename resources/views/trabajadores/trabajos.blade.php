@@ -16,17 +16,34 @@
         <h1 class="heading"> TRABAJOS REALIZADOS POR {{$trabajador->izena}} {{$trabajador->abizena}}</h1>
         <hr/>
 
-        @foreach ($foto as $argazkia)
-            @if ($argazkia->izena != "perfil")
-                @if ($argazkia->langile_id == $trabajador->langile_id)                
-                    <div class='item selfie col-12'>
-                        <ul> 
-                            <li><p><strong>{{$argazkia->izena}}</strong></p><p><img class="img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" /></p></li>
-                        </ul>        
-                    </div>
-                @endif
-            @endif
-        @endforeach
+
+        <div id="carouselExampleIndicators" class="carousel slide pt-5 bt-5" data-ride="carousel">            
+            <div class="carousel-inner">
+                @foreach($fotos as $id => $argazkia)                
+                    @if ($argazkia->izena != 'perfil')
+                        <div class="carousel-item {{$id == 0 ? 'active' : '' }}">
+                            <img class="mx-auto d-block w-20" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" />
+                            <p class="text-uppercase text-center"><strong>{{$argazkia->izena}}</strong></p>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+
+
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div>
+
+
+        
         </div>
     </section>  
 

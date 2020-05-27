@@ -41,6 +41,6 @@ class User extends Authenticatable
  
 
     public function langilea() {
-        return $this->hasOne('App\Langilea');
+        return $this->belongsTo('App\Langilea', 'erabiltzailea_id', 'erabiltzailea_id');
     }
 }

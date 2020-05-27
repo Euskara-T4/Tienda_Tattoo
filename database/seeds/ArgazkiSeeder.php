@@ -144,7 +144,7 @@ class ArgazkiSeeder extends Seeder
 
         $paula4 = new Argazkia;
         $paula4->izena = "elimacion 4";
-        $paula4->url = "../public/img/paula/4.jpg";
+        $paula4->url = "./img/paula/4.jpg";
         $paula4->langile_id = 5;
         $paula4->save();
 
@@ -159,7 +159,7 @@ class ArgazkiSeeder extends Seeder
         //mike
         $mike = new Argazkia;
         $mike->izena = "brujula";
-        $mike->url = "../public/img/mike/brujula.jpg";
+        $mike->url = "./img/mike/brujula.jpg";
         $mike->langile_id = 3;
         $mike->save();
 

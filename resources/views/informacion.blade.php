@@ -71,27 +71,7 @@
                         </div>
                     </form>
                 </div>
-
-                {{-- MODAL DE ENVIAR --}}
-  
-                <div class="modal fade" id="sendConfirmModal" tabindex="-1" role="dialog" aria-labelledby="sendConfirmModal" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Formulario cita</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
-                            </div>
-
-                            <div class="modal-body">
-                                <p>El formulario de la cita se ha enviado correctamente</p>
-                            </div>
-
-                            <div class="modal-footer">
-                                <button class="btn" data-dismiss="modal" aria-hidden="true">Aceptar</button>                        
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
 
                 <div class="col-md-4">
                     <div class="single-contact">

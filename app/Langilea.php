@@ -28,7 +28,7 @@ class Langilea extends Model {
     }
 
     public function erabiltzailea() {
-        return $this->belongsTo('App\User', 'erabiltzailea_id', 'erabiltzailea_id');
+        return $this->hasOne('App\User', 'erabiltzailea_id', 'erabiltzailea_id');
     }
 
 

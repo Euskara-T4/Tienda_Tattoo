@@ -17,7 +17,7 @@ class Lana extends Model {
 
     // Relaciones
     public function zita() {
-        return $this->hasMany('App\Zita');
+        return $this->hasMany('App\Zita', 'lana_id', 'lana_id');
     }
 
     public function langile() {
