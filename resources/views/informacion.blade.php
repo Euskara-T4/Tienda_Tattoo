@@ -18,7 +18,8 @@
         </div>
     </div>
 
-    <section class="bgded overlay pb-5" style="background-image:url('./img/backgrounds/fondo3.jpg');" id="contact">
+    <section class="bgded overlay pb-5" style="background-image:url('./img/backgrounds/fondo3.jpg');
+    " id="contact">
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-md-6 mx-auto text-center">

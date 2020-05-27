@@ -58,6 +58,7 @@
                                 </div>
                             </p>
                             <hr>
+                            
                             <p class="card-description">Informacion basica</p>
                             <ul class="about">
                                 <li class="about-items"><i class="mdi mdi-account icon-sm "></i><span class="about-item-name">Nombre:</span><span class="about-item-detail">{{$trabajador->izena}}</span></li>

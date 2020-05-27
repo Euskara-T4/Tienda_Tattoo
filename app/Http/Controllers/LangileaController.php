@@ -26,12 +26,14 @@ class LangileaController extends Controller {
     }
     
 
-    public function perfil($id) {      
+    public function perfil($id) {   
+        
+        $zitas = Zita::findOrFail($id);
         $trabajadores = Langilea::all();
         $trabajador = Langilea::where('erabiltzailea_id', $id);
         $foto = Argazkia::where('langile_id', $id)->where('izena', 'perfil')->get();
 
-        return view('trabajadores.perfil',  compact("trabajadores", "trabajador", "foto"));       
+        return view('trabajadores.perfil',  compact("trabajadores", "trabajador", "foto", "zitas"));       
     }
        
 

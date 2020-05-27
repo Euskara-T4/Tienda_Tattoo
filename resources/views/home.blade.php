@@ -3,7 +3,7 @@
 @section('content')
 
   {{-- PAGINA INICIAL --}}
-  <section  style="background-image:url('./img/backgrounds/fondo6.jpg');" class="overlay bgded" >
+  <section  style="background-image:url('./img/backgrounds/fondo6.jpg'); background-attachment: fixed;" class="overlay bgded" >
     <div class="hoc clear text-center">
       <article class="p-5">
         <h3 class="heading"> Ink Heart Tattoo en Bilbao </h3>
@@ -13,7 +13,7 @@
   </section>
 
   {{-- SECCION DE INFORMACION --}}
-  <section style="background-image:url('./img/backgrounds/fondo2.jpg');" class="overlay" >
+  <section style="background-image:url('./img/backgrounds/fondo2.jpg');background-attachment: fixed; " class="overlay" >
     <div class='bgded  container'>
       <div class="card-group">
         <div class="card">
