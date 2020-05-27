@@ -27,7 +27,8 @@ class UsuariosSeeder extends Seeder
 
         $pelegrin = new User;
         $pelegrin->email = "pelegrin@gmail.com";
-        $pelegrin->username = "pelegrin";
+        $pelegrin->username = "
+        ";
         $pelegrin->admin = 0;
         $pelegrin->password = bcrypt("langilea");
         $pelegrin->save();
