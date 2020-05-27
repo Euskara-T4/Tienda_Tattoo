@@ -22,9 +22,8 @@
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-md-6 mx-auto text-center">
-                    <div class="section-title">
-                        <h4>Contáctanos</h4>
-                    </div>
+                    <h3 class="text-center heading"> CONTACTANOS </h3>
+                    <hr/>
                 </div>
             </div>
 

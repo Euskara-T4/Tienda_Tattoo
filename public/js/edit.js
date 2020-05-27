@@ -17,6 +17,7 @@ function hasiera() {
     for (var i = 0; i < iconsEditPeti.length; i++) {
         iconsEditPeti[i].addEventListener("click", editData);
     }
+
 }
 
 
@@ -38,7 +39,6 @@ function deleteSubmit() {
 }
 
 
-
 function editData(e) {
     var icon = e.target;
     var zita = e.target.parentNode.className;
@@ -50,14 +50,14 @@ function editData(e) {
         hora.readOnly = false;
         dia.readOnly = false;
 
-        icon.className = "fa fa-lg fa-save iconEdit";
+        icon.className = "fa fa-lg fa-save";
         icon.parentNode.type = "button";
 
     } else {
         hora.readOnly = true;
         dia.readOnly = true;
 
-        icon.className = "fa fa-lg fa-edit iconEditPeti";
+        icon.className = "fa fa-lg fa-edit";
         icon.parentNode.type = "submit";
     }
 }

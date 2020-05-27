@@ -16,7 +16,7 @@ class Langilea extends Model {
 
 
     // Datos de la base de datos
-    protected $fillable = ['izena','abizena', 'lana_id', 'erabiltzailea_id'];
+    protected $fillable = ['izena', 'abizena', 'lana_id', 'erabiltzailea_id'];
 
     // Relaciones
     public function argazkiak() {

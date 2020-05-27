@@ -21,16 +21,19 @@
                         <div class="profile-card">
                             <div class="profile-header">
                                 <div class="cover-image">
-                                    <img src="https://cdn.pixabay.com/photo/2019/10/19/14/16/away-4561518_960_720.jpg" class="img img-fluid">
+                                    @foreach($fotos as $argazkia)                                       
+                                        @if ($argazkia->langile_id == $trabajador->langile_id && $argazkia->izena == 'perfil')
+                                            <img class="img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" />
+                                        @endif
+                                    @endforeach             
                                 </div>
-                                <div class="user-image">
-                                    <img class="img-fluid" alt="{{$foto->izena}}" src="{{$foto->url}}" />
-
-                                </div>
+            
                             </div>
 
                             <div class="profile-content">
-                            <div class="profile-name">{{$trabajador->izena}} {{$trabajador->abizena}}</div>
+                            <div class="profile-name text-uppercase citasIcons">{{$trabajador->izena}} {{$trabajador->abizena}}  
+                                <button><i class="fa fa-lg fa-edit" id="editPerfil"></i></button>
+                            </div>
                                 <div class="profile-designation">{{$trabajador->lana->izena}}</div>
                                 
                                 <ul class="profile-info-list">
@@ -50,13 +53,7 @@
                 <div class="col-md-8 grid-margin stretch-card">
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-title font-weight-bold text-uppercase">PERFIL DE {{$trabajador->izena}}</p>
-                            <p>
-                                <div class="citasIcons">                                                                 
-                                    <button id="btnEdit"><i class="fa fa-lg fa-edit iconEdit"></i></button>
-                                    <button data-toggle="modal" data-target="#confirmModal" class="btnDelete"><i class="fa fa-lg fa-trash-o"></i></button>
-                                </div>
-                            </p>
+                            <p class="card-title font-weight-bold text-uppercase">PERFIL DE {{$trabajador->izena}} </p>
                             <hr>
                             <p class="card-description">Informacion basica</p>
                             <ul class="about">
@@ -69,12 +66,12 @@
                             <ul class="about">
                                 <li class="about-items"><i class="mdi mdi-phone icon-sm "></i><span class="about-item-name">Telefono:</span><span class="about-item-detail">+34 238 456 954</span></li>
                                 <li class="about-items"><i class="mdi mdi-map-marker icon-sm "></i><span class="about-item-name">Direccion:</span><span class="about-item-detail">254 National Highway , Hisar India</span> </li>
-                                {{-- <li class="about-items"><i class="mdi mdi-email-outline icon-sm "></i><span class="about-item-name">Email:</span><span class="about-item-detail"><a href="">{{$usuario->email}}</a></span> </li> --}}
+                                <li class="about-items"><i class="mdi mdi-email-outline icon-sm "></i><span class="about-item-name">Email:</span><span class="about-item-detail"><a href="">{{$trabajador->erabiltzailea->email}}</a></span> </li>
                             </ul>
                             <p class="card-description">Information extra</p>
                             <ul class="about">
                                 <li class="about-items"><i class="mdi mdi-cake icon-sm "></i><span class="about-item-name">Cumpleañs:</span><span class="about-item-detail">Aug 3 , 1998</span></li>
-                                {{-- <li class="about-items"><i class="mdi mdi-clipboard-account icon-sm "></i><span class="about-item-name">Especializacion:</span><span class="about-item-detail">{{$usuario->lana->izena}}</span> </li> --}}
+                                <li class="about-items"><i class="mdi mdi-clipboard-account icon-sm "></i><span class="about-item-name">Especializacion:</span><span class="about-item-detail">{{$trabajador->lana->izena}}</span> </li>
                                 <li class="about-items"><i class="mdi mdi-human-male-female icon-sm "></i><span class="about-item-name">Relationship Status:</span><span class="about-item-detail">Single</span> </li>
                             </ul>
                         </div>

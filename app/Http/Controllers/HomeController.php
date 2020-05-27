@@ -28,16 +28,10 @@ class HomeController extends Controller
      */
 
 
-    public function index() {
-        if(Auth::check() ) {
-            $usuario = Auth::user();
-        } else {
-            $usuario = "bezeroa";
-        }
-
+    public function index() {        
         $trabajadores = Langilea::all();
 
-        return view('home', compact("usuario", "trabajadores"));
+        return view('home', compact("trabajadores"));
     }
 
      // SECCION DE TODAS LAS FOTOS

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Langilea;
 use App\Argazkia;
 use App\Zita;
@@ -26,56 +27,17 @@ class LangileaController extends Controller {
     }
     
 
-    public function perfil($id) {      
+    public function perfil($id) {     
         $trabajadores = Langilea::all();
-        $trabajador = Langilea::where('erabiltzailea_id', $id);
-        $foto = Argazkia::where('langile_id', $id)->where('izena', 'perfil')->get();
+        $trabajador = Auth::user()->langilea;      
+        $fotos = Argazkia::all();
 
-        return view('trabajadores.perfil',  compact("trabajadores", "trabajador", "foto"));       
+        // $trabajador = Langilea::where('erabiltzailea_id','=', $id)->get();
+        //$fotos = Argazkia::where('langile_id', $id)->get();
+
+        return view('trabajadores.perfil',  compact("trabajadores", "trabajador", "fotos"));       
     }
        
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create() {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Langilea  $langilea
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Langilea $langilea)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Langilea  $langilea
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Langilea $langilea)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -84,9 +46,18 @@ class LangileaController extends Controller {
      * @param  \App\Langilea  $langilea
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Langilea $langilea)
+    public function update(Request $request, $langilea_id)
     {
-        //
+        $langilea = Langilea::findOrFail($langilea_id);
+        $langilea->izena = $request->izena;
+        /* $langilea->abizena = $request->abizena;   
+        $langilea->erabiltzailea->username = $request->username;        
+        $langilea->erabiltzailea->email = $request->email;        
+ */
+        $langilea->save();
+
+        return redirect()->route('perfil');
+    
     }
 
     /**
