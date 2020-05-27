@@ -20,7 +20,7 @@
             <div class="galleryFlex">
                 <ul>
                     @foreach ($argazkiak as $argazkia)
-                        @if ($argazkia->izena != "perfil")
+                        @if ($argazkia->izena != "perfil" && $argazkia->izena != "avatar")
                             <li>
                                 <a href="{{$argazkia->url}}" class="fancylight popup-btn" data-fancybox-group="light">
                                     <img class="img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" />

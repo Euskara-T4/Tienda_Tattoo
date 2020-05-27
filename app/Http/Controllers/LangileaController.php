@@ -30,18 +30,18 @@ class LangileaController extends Controller {
     public function perfil($id) {     
         $trabajadores = Langilea::all();
        
-        if(Auth::user()->admin == 0 ){
+      /*   if(Auth::user()->admin == 0 ){
             $trabajador = Auth::user();      
         } else {
             $trabajador = Auth::user()->langilea;    
-        }
-
+        } */
+        $usuario = Auth::user();      
         $fotos = Argazkia::all();
 
         // $trabajador = Langilea::where('erabiltzailea_id','=', $id)->get();
         //$fotos = Argazkia::where('langile_id', $id)->get();
 
-        return view('trabajadores.perfil',  compact("trabajadores", "trabajador", "fotos"));       
+        return view('trabajadores.perfil',  compact("trabajadores", "usuario", "fotos"));       
     }
        
 

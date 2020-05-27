@@ -143,8 +143,11 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {{-- COGER DE LA BD LOS TRABAJADORES --}}
                         @foreach($trabajadores as $trabajador)
-                            <a class="dropdown-item" href="{{url('/trabajos'. $trabajador->langile_id)}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
-                            <div class="dropdown-divider"></div>
+                            @if($trabajador->abizena != 'Admin')
+                                <a class="dropdown-item" href="{{url('/trabajos'. $trabajador->langile_id)}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
+                                <div class="dropdown-divider"></div>
+                            @endif
+
                         @endforeach
                     </div>
                 </li>

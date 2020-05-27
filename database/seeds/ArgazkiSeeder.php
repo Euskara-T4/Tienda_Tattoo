@@ -20,7 +20,7 @@ class ArgazkiSeeder extends Seeder
 
         // Admin
         $admin = new Argazkia;
-        $admin->izena = "chicaLobo";
+        $admin->izena = "avatar";
         $admin->url = "./img/avatar.png";
         $admin->save();
 

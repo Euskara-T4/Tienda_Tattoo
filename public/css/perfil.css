@@ -6,7 +6,7 @@
     word-wrap: break-word;
     background-color: rgba(255, 255, 255, 0.205);
     background-clip: border-box;
-    border: 1px solid #e7eaed;
+    font-size: 20px !important;
     border-radius: 0;
 }
 
@@ -110,6 +110,7 @@
     list-style: none;
     color: black;
     padding: 0;
+    font-size: 15px !important;
 }
 
 .perfil li.about-items {
@@ -130,6 +131,10 @@ span.about-item-name {
 span.about-item-detail {
     display: inline-flex;
     width: calc(100% - 160px);
+}
+
+.about-item-detail a {
+    color: black;
 }
 
 span.about-item-detail>button {
