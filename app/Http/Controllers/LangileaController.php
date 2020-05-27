@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Langilea;
 use App\Argazkia;
+use App\Zita;
 
 class LangileaController extends Controller {
 
@@ -13,6 +14,16 @@ class LangileaController extends Controller {
         $trabajadores = Langilea::all();
 
         return view('trabajadores.galeria', compact("trabajadores"));
+    }
+
+    // TRABAJOS REALIZADOS POR UN TRABAJADOR
+    public function perfil($id) {     
+        $zitas = Zita::findOrFail($id);
+
+        $trabajadores = Langilea::all();
+        $trabajador = Langilea::findOrFail($id);
+        
+        return view('trabajadores.perfil',  compact("trabajadores", "trabajador" ,"zitas"));       
     }
 
     public function artista($img_id) {
