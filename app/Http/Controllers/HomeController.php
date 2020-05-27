@@ -42,6 +42,7 @@ class HomeController extends Controller
 
      // SECCION DE TODAS LAS FOTOS
      public function galeria() {
+         
         $trabajadores = Langilea::all();
         $argazkiak = Argazkia::all();
 

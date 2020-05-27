@@ -17,6 +17,16 @@ class LangileaController extends Controller {
         return view('trabajadores.galeria', compact("trabajadores"));
     }
 
+    public function artista($img_id) {
+
+        $foto = Argazkia::all();
+        $trabajadores = Langilea::all();
+        $trabajador = Langilea::findOrFail($img_id);
+
+        return view('trabajadores.trabajos',  compact("trabajadores", "trabajador","foto"));
+    }
+    
+
     // TRABAJOS REALIZADOS POR UN TRABAJADOR
     public function perfil($id) {      
         $trabajadores = Langilea::all();

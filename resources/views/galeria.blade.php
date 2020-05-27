@@ -20,10 +20,10 @@
             <div class="portfolio-item row">
                 @foreach ($argazkiak as $argazkia)
                     @if ($argazkia->izena != "perfil")
-                    
+                     
                         <div class='item selfie col-lg-3 col-md-4 col-6 col-sm'>
                             <a href="{{$argazkia->url}}" class="fancylight popup-btn" data-fancybox-group="light">
-                                <img class="img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" />
+                                <img class="img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" width="150"/>
                             </a>
                         </div>
                     @endif

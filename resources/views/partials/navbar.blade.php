@@ -109,55 +109,7 @@
         </div>
     </div>
 </form>
-
-{{-- 
-<div id='loginModal' class='modal'>
-    <form method="POST" action="{{ route('login') }}" class="modal-content animate" >
-        @csrf
-
-        <div class='imgcontainer'>
-            <img src='./img/avatar.png' alt='Avatar' class='avatar'>
-        </div>
-
-        <div class='logContainer row'>
-            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-            <div class="col-12">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"  pattern="[A-Za-zñÑ1-9 ]{0,9}" autofocus>
-
-                @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-
-            <label for='psw'><b>Contraseña:</b></label>
-            <input type='password' id="contraseña" placeholder='Introduce tu contraseña' name='pasahitza' required>
-            <!-- <label>
-                <input type='checkbox' checked='checked' name='remember'> Remember me
-            </label> -->
-        </div>
-
-        <div class="form-check row">
-            <input class="col-12 form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-            <label class="col-12 form-check-label" for="remember">
-                {{ __('Recordar contraseña') }}
-            </label>
-
-            <a class="col-12 mt-2" href="">¿Has olvidado la contraseña?</a>
-
-            <p class="col-12 mt-2 error" id="errorLogin"></p>
-        </div>
-
-        <div class='btnContainer'>
-            <button type='reset' class='cancelBtn' id='cancelBtn'>Borrar</button>
-            <button type='submit' class='loginBtn' id='login'>Login</button>
-        </div>
-    </form>
-</div>
- --}}
+ 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <div id='logo' class='fl_left flex'>
@@ -191,13 +143,13 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {{-- COGER DE LA BD LOS TRABAJADORES --}}
                         @foreach($trabajadores as $trabajador)
-                            <a class="dropdown-item" href="{{url('/perfil'. $trabajador->langile_id)}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
+                            <a class="dropdown-item" href="{{url('/trabajos'. $trabajador->langile_id)}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
                             <div class="dropdown-divider"></div>
                         @endforeach
                     </div>
                 </li>
 
-                <li class="nav-item {{ Request::is('galeria') ? 'active' : ''}}">
+                <li class="nav-item {{ Request::is('galeria') ? 'active' : ''}}"></li>
                     <a class="nav-link" href="{{url('/galeria')}}">
                         <span aria-hidden="true"></span> GALERIA
                     </a>

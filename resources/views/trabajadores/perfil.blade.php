@@ -44,7 +44,7 @@
                                         <a href="{{url('/cita/trabajador' . $trabajador->lana_id)}}" class="profile-info-list-item"> Seccion citas </a>
                                     @endif
 
-                                    <a href="{{url('/home')}}" class="profile-info-list-item"> Trabajos realizados </a>
+                                    <a href="{{url('/trabajos' . $trabajador->lana_id)}}" class="profile-info-list-item"> Trabajos realizados </a>
                                 </ul>
                             </div>
                         </div>
@@ -56,12 +56,10 @@
                         <div class="card-body">
                             <p class="card-title font-weight-bold text-uppercase">PERFIL DE {{$trabajador->izena}}</p>
                             <p>
-                                <div class="citasIcons">
-                                
-                                    
+                                <div class="citasIcons">                                                                 
                                     <button id="btnEdit"><i class="fa fa-lg fa-edit iconEdit"></i></button>
-                                <button data-toggle="modal" data-target="#confirmModal" class="btnDelete"><i class="fa fa-lg fa-trash-o"></i></button>
-                            </div>
+                                    <button data-toggle="modal" data-target="#confirmModal" class="btnDelete"><i class="fa fa-lg fa-trash-o"></i></button>
+                                </div>
                             </p>
                             <hr>
                             <p class="card-description">Informacion basica</p>
