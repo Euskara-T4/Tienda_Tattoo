@@ -7,81 +7,115 @@
             <li><i class='fa fa-envelope-o'></i> idazkaria@fpTXurdinaga.com</li>
 
             <!-- USER ACTION ICONS -->
-            @if(Auth::check())
-                <li><a href='#' title='Logeatu' id='btnLogin'><i class='fa fa-lg fa-sign-in'></i></a></li>
+            @if(!Auth::check())
+                <li><a href='#' title='Login' data-toggle="modal" data-target="#loginModal"><i class='fa fa-lg fa-sign-in'></i></a></li>
+            @else
+                <li class="nav-item {{ Request::is('perfil') || Request::is('') ?  'active' : ''}}">
+                    <a class="nav-link" href="{{url('/perfil'.Auth::user()->erabiltzailea_id)}}">
+                    {{Auth::user()->username }}   <i class='fa fa-lg fa-home'></i>
+                    </a>
+                </li>
+
+                <li class="nav-item {{ Request::is('logout') || Request::is('') ?  'active' : ''}}">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                        <i class='fa fa-lg fa-sign-out'></i>
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+   
+                </li>
             @endif
-
-            <?php
-                if(isset($_SESSION['usuario'])){
-            ?>
-                    <li class="nav-item {{ Request::is('perfil') || Request::is('') ?  'active' : ''}}">
-                        <a class="nav-link" href="{{url('/perfil')}}">
-                            <i class='fa fa-lg fa-home'></i>    
-                        </a>
-                    </li>
-            <?php
-                    echo $_SESSION['usuario'];
-            ?>
-                    <li class="nav-item {{ Request::is('logout') || Request::is('') ?  'active' : ''}}">
-                        <a class="nav-link">
-                            <i class='fa fa-lg fa-sign-out'></i>
-                        </a>
-                    </li>
-            <?php
-                    if($_SESSION['admin'] == 1 || $_SESSION['admin'] == 2){
-                    ?>
-                        <li><a href='ajusteak.php' title='Ajusteak' id='btnSettings'><i class='fa fa-lg fa-cog'></i></a></li>
-                        <li><a href='addPost.php' title='Posta gehitu' id='btnPost'><i class='fa fa-lg fa-plus-square'></i></a></li>
-
-                    <?php
-                    }
-
-                } else {
-            ?>
-                <li><a href='#' title='Logeatu' id='btnLogin'><i class='fa fa-lg fa-sign-in'></i></a></li>
-            <?php
-                }
-            ?>
-
-            {{-- <li><a href="{{url('/registro')}}"     title='Sortu'><i class='fa fa-lg fa-user-plus'></i></a></li> --}}
         </ul>
     </div>
 </div>
 
-<!-- LOGIN MODAL -->
-<div id='loginModal' class='modal'>
-    <form action="{{ url('/login') }}" method="POST" class="modal-content animate">
-        {{ csrf_field() }}
-        <div class='imgcontainer'>
-            <span class='close' id='close' title='Close Modal'>&times;</span>
-            <img src='../public/img/avatar.png' alt='Avatar' class='avatar'>
-        </div>
+{{-- LOGIN MODAL --}}
+<form method="POST" action="{{ route('login') }}">
+    @csrf
+    
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <i class="fa fa-user"></i>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                </div>
 
-        <div class='logContainer'>
-            <label for='erabiltzaile_iz'><b>correo:</b></label>
-            <input type='text' id="email" placeholder='introduce tu correo' name='erabiltzaile_iz'  pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"  required>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label for="email" class="col-md-4 col-form-label text-md-right">Correo:</label>
 
-            <label for='psw'><b>Contraseña:</b></label>
-            <input type='password' placeholder='Sartu pasahitza' name='pasahitza' required>
-            <!-- <label>
-                <input type='checkbox' checked='checked' name='remember'> Remember me
-            </label> -->
-        </div>
-        
-        <div class='btnContainer'>
-            <p id="mensajeError"></p>
-            <button type="submit" id="enviar" class="loginBtn">Iniciar sesion</button>
-            <button type='button' class='cancelBtn' id='cancelBtn'>Cancelar</button>
-        </div>
-    </form>
-</div>
+                        <div class="col-md-6">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="password" class="col-md-4 col-form-label text-md-right">Contraseña:</label>
+
+                        <div class="col-md-6">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-6 offset-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                <label class="form-check-label" for="remember">
+                                    {{ __('Remember Me') }}
+                                </label>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <div class="modal-footer form-group row mb-0">
+                    <div class="col-md-8 offset-md-4">
+                        <button type="submit" class="btn btn-primary">
+                           Login
+                        </button>
+                        <button id="login" type="reset" class="btn btn-primary">
+                            Borrar
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+ 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <div id='logo' class='fl_left flex'>
             <a class="navbar-brand" href="{{url('/home')}}">
-                <object data="../public/img/logo.svg" type="image/svg+xml" class="logo">
-                    <img src="../public/img/logo.jpg"/>
+                <object data="../img/logo.svg" type="image/svg+xml" class="logo">
+                    <img src="./img/logo.jpg"/>
                 </object>
             </a>
             <a class="navbar-brand" href="{{url('/home')}}"> <h1 class="logoTxt loginLink"> INK HEART TATTOO </h1> </a>
@@ -91,6 +125,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item {{ Request::is('home') || Request::is('') ?  'active' : ''}}">
@@ -99,7 +135,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item dropdown {{Request::is('trabajador') ? 'active' : ''}}">
+                <li class="nav-item dropdown {{Request::is('perfil') ? 'active' : ''}}">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         ARTISTAS
                     </a>
@@ -107,7 +143,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {{-- COGER DE LA BD LOS TRABAJADORES --}}
                         @foreach($trabajadores as $trabajador)
-                            <a class="dropdown-item" href="{{url('/perfil'. $trabajador->langile_id)}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
+                            <a class="dropdown-item" href="{{url('/trabajos'. $trabajador->langile_id)}}"> {{$trabajador->izena }} {{$trabajador->abizena }}</a>
                             <div class="dropdown-divider"></div>
                         @endforeach
                     </div>
@@ -129,78 +165,6 @@
                     <a class="nav-link" href="{{url('/sobreNosotros')}}">
                         <span aria-hidden="true"></span> CONTACTANOS
                     </a>
-                </li>
-
-
-                {{-- Esto solo tiene que aparecer cuando esta logeado --}}
-                @if(Auth::check())
-                    <li class="nav-item {{ Request::is('crearPeticion') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/crearPeticion')}}">
-                            <span>&#10010</span> Añadir mujer
-                        </a>
-                    </li>
-                @endif
-
-                {{-- Esto solo tiene que aparecer cuando esta logeado el ADMIN --}}
-                @if(Auth::check() && Auth::user()->admin==1)
-                    <li class="nav-item {{ Request::is('tablaPeticiones') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/tablaPeticiones')}}"> Gestionar peticiones </a>
-                    </li>
-                @endif
-
-                <li class="nav-item">
-                    {{-- Comprobamos si el usuario esta iniciado --}}
-                    @if(Auth::check())
-                        <form action="{{ url('/logout') }}" method="POST" class="navForm">
-                            {{ csrf_field() }}
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle loginLink" data-toggle="dropdown">
-                                        <span class="fa fa-user"></span> 
-                                        <strong>{{$usuario->name ?? ''}}</strong>
-                                        <span class="glyphicon glyphicon-chevron-down"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <div class="navbar-login">
-                                                <div class="row">
-                                                    <div class="col-lg-4">
-                                                        <p class="text-center">
-                                                            <span class="fa fa-user icon-size"></span>
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-lg-8">
-                                                        <p class="text-left small">{{$usuario->email ?? ''}}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li>
-                                            <div class="navbar-login navbar-login-session">
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <button type="submit" class="btn btn-block cerrarBtn"> Cerrar sesión </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                        </form>
-
-                    @else
-
-                        <form action="{{ url('/login') }}" method="GET" class="navForm loginBtn">
-                            {{ csrf_field() }}
-                            {{-- <button type="submit" class="btn btn-link nav-link fa fa-user loginLink">
-                                Iniciar sesión
-                            </button>
-                            --}}
-                        </form>
-
-                    @endif
-
                 </li>
             </ul>
         </div>

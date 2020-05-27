@@ -1,6 +1,5 @@
 <?php
 
-use App\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,6 +23,8 @@ class DatabaseSeeder extends Seeder
         //seeder para insertar informacion de las fotos
         $this->call(ArgazkiSeeder::class);
 
+        //seeder para insertar informacion de las citas
+        $this->call(ZitaSeeder::class);
 
     }
 

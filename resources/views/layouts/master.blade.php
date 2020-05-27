@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- CSS PERSONAL -->
-    <link rel="stylesheet" type="text/css" href="../resources/sass/app.scss">
-    <link href='../public/css/layout.css' rel='stylesheet' type='text/css' media='all'>
+    <link rel="stylesheet" type="text/css" href="./sass/app.scss">
+    <link href='./css/layout.css' rel='stylesheet' type='text/css' media='all'>
 
     <title>INK HEART STUDIO TATTOO</title>
-    <link rel='shortcut icon' type='image/x-icon' href='../public/img/logo.jpg'/>
+    <link rel='shortcut icon' type='image/x-icon' href='./img/logo.jpg'/>
 
   </head>
 
@@ -30,7 +30,7 @@
 
     <a id='backtotop' href='#top'><i class='fa fa-chevron-up'></i></a>
 
-    {{-- @include('partials.footer') --}}
+    @include('partials.footer')
 
 
     <!-- Optional JavaScript -->
@@ -47,17 +47,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
 
 
-    {{-- OUR SCRIPTS --}}
-    <script src="../resources/js/backtotop.js"></script>
-    <script src="../resources/js/login.js"></script>
-    <script src="../resources/js/galeria.js"></script>
-    <script src="../resources/js/validacion.js"></script>
-
-
-    {{-- <script src="../resources/js/myJavascript.js" ></script>
-    <script src="../resources/js/edit.js" ></script>
-    <script src="../resources/js/main.js"></script>
-     --}}
+    <!-- {{-- OUR SCRIPTS --}} -->
+    <script src="./js/backtotop.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/galeria.js"></script>
+    <script src="./js/validacion.js"></script>
+    <script src="./js/edit.js" ></script>
 
   </body>
 </html>

@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 use App\Http\Middleware\CheckAdmin;
 
 Auth::routes();
@@ -21,9 +20,8 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('listaTrabajadores', 'LangileaController@listaTrabajadores')->name('listaTrabajadores')->middleware('is_admin');
-Route::get('perfil{id}', 'LangileaController@perfil')->name('perfil');
-
-Route::get('cita{zitaID}', 'ZitaController@cita')->name('cita');
+Route::get('perfil{id}', 'LangileaController@perfil')->middleware('auth')->name('perfil');
+Route::get('trabajos{langile_id}', 'LangileaController@artista')->name('trabajos');
 
 
 Route::get('galeria', 'HomeController@galeria')->name('galeria');
@@ -32,10 +30,9 @@ Route::get('sobreNosotros', 'HomeController@sobreNosotros')->name('sobreNosotros
 
 Route::get('formularioCita', 'ZitaController@cita')->name('formularioCita');
 Route::post('enviarFormulario', 'ZitaController@enviarFormulario')->name('enviarFormulario');
-
 Route::get('citas', 'ZitaController@tablaCitas')->middleware('is_admin')->name('citas');
-Route::get('cita/trabajador{id}', 'ZitaController@tablaCitaTrabajador')->middleware('auth')->name('citaTrabajador');
-
+//Route::get('cita/trabajador{id}', 'ZitaController@tablaCitaTrabajador')->middleware('auth')->name('citaTrabajador');
+Route::get('cita{zitaID}', 'ZitaController@cita')->middleware('auth')->name('cita');
 Route::get('editar/{zita_id}', 'ZitaController@edit')->name('editar');
 Route::put('update/{zita_id}', 'ZitaController@update')->name('update');
 Route::delete('eliminar/{zita_id}', 'ZitaController@destroy')->name('eliminar');
@@ -45,7 +42,6 @@ Route::delete('eliminar/{zita_id}', 'ZitaController@destroy')->name('eliminar');
 // Route::get('registro', 'HomeController@registro')->name('registro');
 // Route::post('registrado', 'HomeController@registrado')->name('registrado');
 
-Route::get('trabajos{langile_id}', 'LangileaController@artista')->name('trabajos');
 
 
 

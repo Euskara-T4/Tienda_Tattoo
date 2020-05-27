@@ -20,27 +20,46 @@ class UsuariosSeeder extends Seeder
 
         $admin = new User;
         $admin->email = "admin@gmail.com";
+        $admin->username = "admin";
         $admin->admin = 1;
-        $admin->pasahitza = bcrypt("adminadmin");
+        $admin->password = bcrypt("admin");
         $admin->save();
 
-        $admin = new User;
-        $admin->email = "pelegrin@gmail.com";
-        $admin->admin = 1;
-        $admin->pasahitza = bcrypt("langile");
-        $admin->save();
+        $pelegrin = new User;
+        $pelegrin->email = "pelegrin@gmail.com";
+        $pelegrin->username = "
+        ";
+        $pelegrin->admin = 0;
+        $pelegrin->password = bcrypt("langilea");
+        $pelegrin->save();
 
-        $admin = new User;
-        $admin->email = "mike@gmail.com";
-        $admin->admin = 1;
-        $admin->pasahitza = bcrypt("langile");
-        $admin->save();
+        $ivanM = new User;
+        $ivanM->email = "ivanM@gmail.com";
+        $ivanM->username = "ivanM";
+        $ivanM->admin = 0;
+        $ivanM->password = bcrypt("langilea");
+        $ivanM->save();
 
-        $admin = new User;
-        $admin->email = "paulag@gmail.com";
-        $admin->admin = 1;
-        $admin->pasahitza = bcrypt("langile");
-        $admin->save();
+        $mike = new User;
+        $mike->email = "mike@gmail.com";
+        $mike->username = "mike";
+        $mike->admin = 0;
+        $mike->password = bcrypt("langilea");
+        $mike->save();
+
+        $yannic = new User;
+        $yannic->email = "yannic@gmail.com";
+        $yannic->username = "yannic";
+        $yannic->admin = 0;
+        $yannic->password = bcrypt("langilea");
+        $yannic->save();
+
+        $paulag = new User;
+        $paulag->email = "paulag@gmail.com";
+        $paulag->username = "paulag";
+        $paulag->admin = 0;        
+        $paulag->password = bcrypt("langilea");
+        $paulag->save();
 
         $this->command->info('Usuario nuevo agregado correctamente!');
 

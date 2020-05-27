@@ -16,13 +16,23 @@ body {
     padding-bottom: 10%;
 }
 
+.error {
+    text-decoration: solid;
+    color: red !important;
+    padding: 2%;
+}
+
+
 /* NAVBAR */
+
 .navbar {
     background-color: black !important;
     color: white !important;
 }
 
+
 /* BACK TO TOP BUTTON */
+
 #backtotop {
     z-index: 999;
     position: fixed;
@@ -67,9 +77,13 @@ body {
     color: #fff;
     top: 5px;
 }
+
+
 /* -------------------------------------------------------- */
 
+
 /* PAGINA PRINCIPAL */
+
 .card-group .card {
     padding: 5%;
 }
@@ -103,6 +117,7 @@ body {
     text-transform: uppercase;
 }
 
+
 /* -------------------- */
 
 .heading {
@@ -115,29 +130,67 @@ p {
     padding: 2%;
 }
 
-
-.breadcrumb {
-    padding-left: 10%;
-    margin: 0;
+footer {
+    background-color: black;
+    bottom: 0;
+    padding: 2%;
 }
 
+.citasIcons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.citasIcons button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: center;
+}
+
+.inputSettings {
+    background-color: transparent;
+    border: none;
+}
+
+#reset-button {
+    display: none !important;
+}
+
+
 /* RESPONSIVE */
+
+
 /* Controlar el titulo */
+
 
 /* MOBILE FIRST */
 
+
 /* No debe de haber migar en el movil */
+
 .breadcrumb {
     display: none;
+    margin: 0;
+    background-color: rgb(31, 31, 31);
+    color: white;
 }
 
+
 /* TABLET: */
+
 @media only screen and (min-width: 550px) {
     .breadcrumb {
         display: flex;
     }
 }
 
+
 /* DESKTOP */
+
 @media screen and (min-width: 800px) {
+    .breadcrumb {
+        display: flex;
+    }
 }

@@ -6,64 +6,34 @@ use Illuminate\Http\Request;
 use App\Langilea;
 use App\Argazkia;
 use App\Zita;
+    
 
 class LangileaController extends Controller {
 
-    // SECCION TRABAJADORES
     public function listaTrabajadores() {
         $trabajadores = Langilea::all();
 
         return view('trabajadores.galeria', compact("trabajadores"));
     }
 
-    // TRABAJOS REALIZADOS POR UN TRABAJADOR
-    public function perfil($id) {     
-        $zitas = Zita::findOrFail($id);
-
+    public function artista($id) {
         $trabajadores = Langilea::all();
         $trabajador = Langilea::findOrFail($id);
-        
-        return view('trabajadores.perfil',  compact("trabajadores", "trabajador" ,"zitas"));       
-    }
+        $fotos = Argazkia::where('langile_id', $id)->get();
+        //$fotos = $trabajador->argazkiak;
 
-    public function artista($img_id) {
-
-
-       $foto = Argazkia::all();
-        $trabajadores = Langilea::all();
-        $trabajador = Langilea::findOrFail($img_id);
-
-        return view('trabajadores.trabajos',  compact("trabajadores", "trabajador","foto"));
+        return view('trabajadores.trabajos',  compact("trabajadores", "trabajador","fotos"));
     }
     
 
-    // TRABAJOS REALIZADOS POR UN TRABAJADOR
-    public function trabajador($id) {
-        // if(Auth::check() ) {
-        //     $usuario = Auth::user();
-        // } else {
-        //     $usuario = "anonimo";
-        // }
-        
+    public function perfil($id) {      
         $trabajadores = Langilea::all();
-        $trabajador = Langilea::findOrFail($id);
+        $trabajador = Langilea::where('erabiltzailea_id', $id);
+        $foto = Argazkia::where('langile_id', $id)->where('izena', 'perfil')->get();
 
-        return view('trabajadores.perfil',  compact("trabajadores", "trabajador"));
+        return view('trabajadores.perfil',  compact("trabajadores", "trabajador", "foto"));       
     }
-
-    // SECCION DE CITAS QUE TIENE
-    public function tablaCitas() {
-        $trabajadores = Langilea::all();
-
-        return view('trabajadores.citas', compact("trabajadores"));
-    }
-
-
-    
-    
-
-
-
+       
 
     /**
      * Show the form for creating a new resource.

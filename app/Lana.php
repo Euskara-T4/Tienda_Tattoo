@@ -17,11 +17,11 @@ class Lana extends Model {
 
     // Relaciones
     public function zita() {
-        return $this->hasMany('App\Zita');
+        return $this->hasMany('App\Zita', 'lana_id', 'lana_id');
     }
 
     public function langile() {
-        return $this->belongsTo('App\Langilea');
+        return $this->hasOne('App\Langilea', 'lana_id', 'lana_id');
     }
 
 }

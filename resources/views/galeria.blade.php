@@ -2,31 +2,59 @@
 
 @section('content')
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
-            <li class="breadcrumb-item active">Galeria</li>
-        </ol>
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
+                <li class="breadcrumb-item active">Galeria</li>
+            </ol>
+        </div>
     </nav>
 
-    <section style="background-image:url('../public/img/backgrounds/fondo1.jpg');" class="overlay bgded pb-5" >
+    <section style="background-image:url('./img/backgrounds/fondo1.jpg');" class="overlay bgded pb-5" >
         <div class="container">
             <h3 class="text-center heading"> TRABAJOS REALIZADOS POR NUESTROS ARTISTAS </h3>
             <hr/>
-            <p>"Aqui dispones de una amplia galeria de fotografias realizadas por nuestros grandes artistas profesionales.</p>
-            
-            <div class="portfolio-item row">
+            <p class="text-center">Aqui dispones de una amplia galeria de fotografias realizadas por nuestros grandes artistas.</p>
+           
+           {{--  @foreach($argazkiak->chunk(3) as $chunk)
+                <div class="portfolio-item d-flex flex-row">
+                    @foreach($chunk as $argazkia)
+                        @if ($argazkia->izena != "perfil")
+                            <div class=" d-flex flex-column-4 item">
+                                <a href="{{$argazkia->url}}" class="fancylight popup-btn" data-fancybox-group="light">
+                                    <img class="img-responsive img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" width="150"/>
+                                </a>  
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+            @endforeach --}}
+            <div class="galleryFlex">
+                <ul>
+                    @foreach ($argazkiak as $argazkia)
+                        @if ($argazkia->izena != "perfil")
+                            <li>
+                                <a href="{{$argazkia->url}}" class="fancylight popup-btn" data-fancybox-group="light">
+                                    <img class="img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" />
+                                </a>  
+                            </li>                        
+                        @endif
+                    @endforeach               
+                </ul>
+            </div>
+
+           {{--  <div class="portfolio-item galleryFlex">
                 @foreach ($argazkiak as $argazkia)
                     @if ($argazkia->izena != "perfil")
-                     
-                        <div class='item selfie col-lg-3 col-md-4 col-6 col-sm'>
+                        <div class='item'>
                             <a href="{{$argazkia->url}}" class="fancylight popup-btn" data-fancybox-group="light">
-                                <img class="img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" width="150"/>
+                                <img class="img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" />
                             </a>
                         </div>
                     @endif
                 @endforeach
-            </div>
+            </div> --}}
         </div>
     </section>
 

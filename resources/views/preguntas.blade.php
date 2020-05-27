@@ -1,26 +1,27 @@
 @extends('layouts.master')
 
 @section('content')
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
-      <li class="breadcrumb-item active">Preguntas</li>
-    </ol>
+  <nav aria-label="breadcrumb" class="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{url('/home')}}">Inicio</a></li>
+            <li class="breadcrumb-item active">Preguntas</li>
+        </ol>
+    </div>
   </nav>
 
-  <section style="background-image:url('../public/img/backgrounds/fondo7.jpg');" class="overlay bgded pb-5" >
-    <div class="container">  
-      
+  <section style="background-image:url('./img/backgrounds/fondo7.jpg');" class="overlay bgded pb-5" >
+    <div class="container">
       <h2 class="text-center heading"> CUIDADO DEL TATUAJE </h2>
       <hr/>
       <p>Es recomendable mantener la zona tatuada cubierta con film osmótico durante unas horas para prevenir posibles infecciones. También es recomendable evitar tocar la zona del tatuaje, así como arrancarse las costras. En cuanto al lavado del tatuaje, las primeras veces es altamente recomendable el uso de un jabón bactericida y lavarlo 3 veces al día.</p>
-                
+
       <p>Procedimiento a seguir para lavar el tatuaje:</p>
         <ol>
           <li class="pb-2">Lavarlo con agua templada y gel neutro con la mano. <strong>Nunca usar esponja.</strong></li>
           <li class="pb-2">Secar cuidadosamente con <strong>papel de cocina</strong> con ligeros toques.</li>
           <li class="pb-2">Una vez limpio y seco aplicar una pequeña cantidad de la <strong>pomada cicatrizante</strong> aconsejada por tu tatuador, extendiéndola con un buen masaje hasta que el tatuaje quede hidratado y brillante.</li>
-        </ol>     
+        </ol>
 
       <p>Durante el primer mes es prudente no tomar el sol, ni bañarse en playas, piscinas, jacuzzis, lagos ni tomar rayos UVA.
       <br/>Aún cuando esté totalmente curado, un tatuaje es más sensible a los rayos del sol, por lo que es recomendable utilizar protección solar alta para protegerlo.
@@ -63,7 +64,7 @@
             <div class="card-body">
                 Sí claro, siempre y cuando sea después de 3, 6 o hasta 12 meses. La sangre no se contamina con las tintas a menos que el proceso no se lleve a cabo con la higiene adecuada,
                 por eso es importante que te lo hagas en un estudio profesional, que te informes bien y que verifiques que su área de trabajo sea la adecuada. Si en un banco de sangre no te aceptan,
-                  están discriminándote. 
+                  están discriminándote.
                   <br/>  <br/>
                   Depende el país en donde estés, es que se da un periodo de espera ante una situación de riesgo, misma que puede ser por relaciones sexuales sin protección, compartir agujas etc
             </div>
