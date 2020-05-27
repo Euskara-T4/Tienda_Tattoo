@@ -19,7 +19,7 @@ class CreateLangileaTable extends Migration
             $table->string('abizena');
 
             // Claves foraneas
-            $table->integer('lana_id')->unsigned();
+            $table->integer('lana_id')->unsigned()->nullable();
             $table->integer('erabiltzailea_id')->unsigned()->nullable();
 
             // Relacion

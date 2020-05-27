@@ -18,6 +18,12 @@ class ArgazkiSeeder extends Seeder
 
         $this->command->info('Tabla inicializada con datos!');
 
+        // Admin
+        $admin = new Argazkia;
+        $admin->izena = "chicaLobo";
+        $admin->url = "./img/avatar.png";
+        $admin->save();
+
         // Ivan morant
         $ivan1 = new Argazkia;
         $ivan1->izena = "chicaLobo";

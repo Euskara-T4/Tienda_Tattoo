@@ -16,6 +16,12 @@ class LangileaSeeder extends Seeder
         DB::table('langilea')->delete();
 
         $this->command->info('Tabla inicializada con datos!');
+        $admin = new Langilea;
+        $admin->izena = "Super";
+        $admin->abizena = "Admin";
+        $admin->erabiltzailea_id = 1;
+        $admin->save();
+
         $IP = new Langilea;
         $IP->izena = "Ivan";
         $IP->abizena = "Pelegrin";

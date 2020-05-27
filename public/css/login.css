@@ -47,28 +47,6 @@ img.avatar {
     color: black;
 }
 
-.loginBtn,
-.cancelBtn {
-    background-color: grey;
-    color: black;
-    cursor: pointer;
-    border: none;
-    width: auto;
-    font-size: 20px;
-}
-
-.flexBtn {
-    background: white !important;
-    color: black !important;
-    padding: 10px 20px !important;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 15px !important;
-    margin-left: 10px !important;
-    margin-right: 10px !important;
-}
-
 .modal {
     display: none;
     position: fixed;
@@ -87,6 +65,16 @@ img.avatar {
     border: 1px solid #888;
     color: white;
     /* width: 20%; */
+}
+
+.modal-footer {
+    margin: 0;
+}
+
+.modal-footer button {
+    background-color: grey;
+    color: black;
+    border: none;
 }
 
 .close {

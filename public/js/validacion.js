@@ -78,7 +78,7 @@ function validaMovil() {
 }
 
 function validaCorreo() {
-    var elemento = document.getElementById("email");
+    var elemento = document.getElementById("emailForm");
     if (elemento != null) {
         if (!elemento.checkValidity()) {
             if (elemento.validity.valueMissing) {
@@ -113,8 +113,8 @@ function validaContraseña() {
 function validar(e) {
     borrarError();
 
-    if (validaNombreCliente() && validaMovil() && validaCorreo()()) {
-        alert("El formulario ha sido enviado. Gracias.");
+    if (validaNombreCliente() && validaMovil() && validaCorreo()) {
+        //alert("El formulario ha sido enviado. Gracias.");
         return true;
     } else {
         e.preventDefault();

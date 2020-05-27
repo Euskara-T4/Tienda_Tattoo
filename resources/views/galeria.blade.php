@@ -11,7 +11,7 @@
         </div>
     </nav>
 
-    <section style="background-image:url('./img/backgrounds/fondo1.jpg');" class="overlay bgded pb-5" >
+    <section style="background-image:url('./img/backgrounds/fondo1.jpg'); " class="overlay bgded pb-5" >
         <div class="container">
             <h3 class="text-center heading"> TRABAJOS REALIZADOS POR NUESTROS ARTISTAS </h3>
             <hr/>

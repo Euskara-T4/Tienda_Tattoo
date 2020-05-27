@@ -14,7 +14,7 @@
     <link href='./css/layout.css' rel='stylesheet' type='text/css' media='all'>
 
     <title>INK HEART STUDIO TATTOO</title>
-    <link rel='shortcut icon' type='image/x-icon' href='./img/logo.jpg'/>
+    <link rel='shortcut icon' type='image/x-icon' href='./img/logo.png'/>
 
   </head>
 

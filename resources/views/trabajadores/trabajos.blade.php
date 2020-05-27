@@ -10,7 +10,7 @@
         </div>
     </nav>
 
-    <section style="background-image:url('./img/backgrounds/fondo1.jpg');" class="overlay bgded pb-5" >
+    <section style="background-image:url('./img/backgrounds/fondo1.jpg');background-attachment: fixed;" class="overlay bgded pb-5" >
         <div class="container">
 
         <h1 class="heading"> TRABAJOS REALIZADOS POR {{$trabajador->izena}} {{$trabajador->abizena}}</h1>

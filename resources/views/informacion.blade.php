@@ -18,7 +18,8 @@
         </div>
     </div>
 
-    <section class="bgded overlay pb-5" style="background-image:url('./img/backgrounds/fondo3.jpg');" id="contact">
+    <section class="bgded overlay pb-5" style="background-image:url('./img/backgrounds/fondo3.jpg');
+    " id="contact">
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-md-6 mx-auto text-center">
@@ -34,7 +35,7 @@
 
                         <div class="row">
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" name="nombre" id="nombre_cliente" pattern="[A-Za-zñÑ ]{3, 15}" minlength="3" maxlength="15" required placeholder="nombre">
+                                <input type="text" class="form-control" name="nombre" id="nombre_cliente" pattern="[A-Za-zñÑ ]{3,15}" minlength="3" maxlength="15" required placeholder="nombre">
                             </div>
 
                             <div class="col-12 col-xl-6">
@@ -50,7 +51,7 @@
                             </div>
 
                             <div class="col-12 col-xl-6">
-                                <input type="text" class="form-control" id="email" pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$" name="email" placeholder="ejemplo@gmail.com" required >
+                                <input type="text" class="form-control" id="emailForm" pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$" name="email" placeholder="ejemplo@gmail.com" required >
                             </div>
 
                             <div class="col-12">

@@ -1,9 +1,13 @@
 // Si bajamos la pagina que aparezca la flecha
 $(window).scroll(function() {
-    if ($(this).scrollTop() >= 100) { 
+    if ($(this).scrollTop() >= 100) {
         $('#backtotop').fadeIn(200);
+        $("#backtotop").addClass("visible");
+
     } else {
         $('#backtotop').fadeOut(200);
+        $("#backtotop").removeClass("visible");
+
     }
 });
 
@@ -11,6 +15,6 @@ $(window).scroll(function() {
 // Cuando clickamos la flecha
 $('#backtotop').click(function() {
     $('body,html').animate({
-        scrollTop : 0                     
+        scrollTop: 0
     }, 500);
 });

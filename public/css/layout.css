@@ -748,7 +748,7 @@ nav ol {
 /* Back to Top */
 
 #backtotop {
-    z-index: 999;
+    z-index: 9999999;
     display: inline-block;
     position: fixed;
     visibility: hidden;
@@ -771,7 +771,7 @@ nav ol {
 
 #backtotop.visible {
     visibility: visible;
-    opacity: .5;
+    opacity: 5;
 }
 
 #backtotop:hover {
@@ -1147,7 +1147,7 @@ textarea:focus,
 
 #backtotop {
     color: #FFFFFF;
-    background-color: rgba(0, 0, 0, 0.493);
+    background-color: color;
 }
 
 

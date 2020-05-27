@@ -19,7 +19,7 @@ class CreateArgazkiaTable extends Migration
             $table->string('url');
 
             // Claves foraneas           
-            $table->integer('langile_id')->unsigned();
+            $table->integer('langile_id')->unsigned()->nullable();
             
             // Relaciones
             $table->foreign('langile_id')->references('langile_id')->on('langilea');

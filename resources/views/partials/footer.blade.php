@@ -15,20 +15,15 @@
                                 </a>
                             </li>
                                 
-                            <li class="list-item {{ Request::is('trabajador') ? 'active' : ''}}">
-                                <a class="nav-link" href="{{url('/home')}}">
-                                    <span aria-hidden="true"></span> ARTISTAS
-                                </a>
-                            </li>
 
-                            <li class="list-item {{ Request::is('home') ? 'active' : ''}}">
-                                <a class="nav-link" href="{{url('/home')}}">
+                            <li class="list-item {{ Request::is('galeria') ? 'active' : ''}}">
+                                <a class="nav-link" href="{{url('/galeria')}}">
                                     <span aria-hidden="true"></span> GALERIA
                                 </a>
                             </li>
 
-                            <li class="list-item {{ Request::is('home') ? 'active' : ''}}">
-                                <a class="nav-link" href="{{url('/home')}}">
+                            <li class="list-item {{ Request::is('preguntas') ? 'active' : ''}}">
+                                <a class="nav-link" href="{{url('/preguntas')}}">
                                     <span aria-hidden="true"></span> PREGUNTAS
                                 </a>
                             </li>
@@ -60,7 +55,7 @@
 
         <div class="row copyright ">
             <div class="col-md-12">
-                <h6> COPYRIGHT @ 2020 INK HEART </h6>
+                <h6 class="text-center mt-2"> COPYRIGHT @ 2020 INK HEART </h6>
             </div>
         </div>
     </div>

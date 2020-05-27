@@ -29,7 +29,13 @@ class LangileaController extends Controller {
 
     public function perfil($id) {     
         $trabajadores = Langilea::all();
-        $trabajador = Auth::user()->langilea;      
+       
+        if(Auth::user()->admin == 0 ){
+            $trabajador = Auth::user();      
+        } else {
+            $trabajador = Auth::user()->langilea;    
+        }
+
         $fotos = Argazkia::all();
 
         // $trabajador = Langilea::where('erabiltzailea_id','=', $id)->get();

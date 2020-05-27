@@ -40,7 +40,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <i class="fa fa-user"></i>
+                    <p>LOGIN MODAL</p>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
                 </div>
 
@@ -82,11 +82,11 @@
                                     {{ __('Remember Me') }}
                                 </label>
 
-                                @if (Route::has('password.request'))
+                                {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
-                                @endif
+                                @endif --}}
                             </div>
                         </div>
 
@@ -96,12 +96,14 @@
 
                 <div class="modal-footer form-group row mb-0">
                     <div class="col-md-8 offset-md-4">
-                        <button type="submit" class="btn btn-primary">
-                           Login
-                        </button>
+                       
                         <button id="login" type="reset" class="btn btn-primary">
                             Borrar
                         </button>
+
+                        <button type="submit" class="btn btn-primary">
+                            Login
+                         </button>
 
                     </div>
                 </div>
@@ -112,10 +114,10 @@
  
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <div id='logo' class='fl_left flex'>
+        <div class='fl_left flex'>
             <a class="navbar-brand" href="{{url('/home')}}">
-                <object data="../img/logo.svg" type="image/svg+xml" class="logo">
-                    <img src="./img/logo.jpg"/>
+                <object data="../img/logo.svg" type="image/svg+xml" class="logoImg">
+                    <img src="./img/logo.png"/>
                 </object>
             </a>
             <a class="navbar-brand" href="{{url('/home')}}"> <h1 class="logoTxt loginLink"> INK HEART TATTOO </h1> </a>
@@ -124,8 +126,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
