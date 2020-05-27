@@ -16,19 +16,19 @@
                             </li>
                                 
                             <li class="list-item {{ Request::is('trabajador') ? 'active' : ''}}">
-                                <a class="nav-link" href="{{url('/home')}}">
+                                <a class="nav-link" href="{{url('/galeria')}}">
                                     <span aria-hidden="true"></span> ARTISTAS
                                 </a>
                             </li>
 
                             <li class="list-item {{ Request::is('home') ? 'active' : ''}}">
-                                <a class="nav-link" href="{{url('/home')}}">
+                                <a class="nav-link" href="{{url('/galeria')}}">
                                     <span aria-hidden="true"></span> GALERIA
                                 </a>
                             </li>
 
                             <li class="list-item {{ Request::is('home') ? 'active' : ''}}">
-                                <a class="nav-link" href="{{url('/home')}}">
+                                <a class="nav-link" href="{{url('/preguntas')}}">
                                     <span aria-hidden="true"></span> PREGUNTAS
                                 </a>
                             </li>
