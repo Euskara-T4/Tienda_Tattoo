@@ -25,7 +25,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
-   
+
                 </li>
             @endif
         </ul>
@@ -35,7 +35,7 @@
 {{-- LOGIN MODAL --}}
 <form method="POST" action="{{ route('login') }}">
     @csrf
-    
+
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -90,13 +90,13 @@
                             </div>
                         </div>
 
-                        
+
                     </div>
                 </div>
 
                 <div class="modal-footer form-group row mb-0">
                     <div class="col-md-8 offset-md-4">
-                       
+
                         <button id="login" type="reset" class="btn btn-primary">
                             Borrar
                         </button>
@@ -111,12 +111,12 @@
         </div>
     </div>
 </form>
- 
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <div class='fl_left flex'>
-            <a class="navbar-brand" href="{{url('/home')}}">
-                <object data="../img/logo.svg" type="image/svg+xml" class="logoImg">
+            <a class="navbar-brand logoImg" href="{{url('/home')}}">
+                <object data="../img/logo.svg" type="image/svg+xml">
                     <img src="./img/logo.png"/>
                 </object>
             </a>

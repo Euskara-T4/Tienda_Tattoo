@@ -21,33 +21,33 @@
                         <div class="profile-card">
                             <div class="profile-header">
                                 <div class="cover-image">
-                                    @foreach($fotos as $argazkia)  
+                                    @foreach($fotos as $argazkia)
                                         @if ($argazkia->langile_id != null)
                                             @if ($argazkia->langile_id == $usuario->langile_id && $argazkia->izena == 'perfil')
                                                 <img class="img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" />
-                                            @endif                                        
+                                            @endif
                                         @else
                                             <img class="img-fluid" alt="{{$argazkia->izena}}" src="{{$argazkia->url}}" />
-                                        @endif                                   
-                                    @endforeach             
+                                        @endif
+                                    @endforeach
                                 </div>
-            
+
                             </div>
 
                             <div class="profile-content">
-                            <div class="profile-name text-uppercase citasIcons">{{$usuario->langilea->izena}} {{$usuario->langilea->abizena}}  
+                            <div class="profile-name text-uppercase citasIcons">{{$usuario->langilea->izena}} {{$usuario->langilea->abizena}}
                                 <button><i class="fa fa-lg fa-edit" id="editPerfil"></i></button>
                             </div>
-                                {{-- @if(Auth::user()->admin != 1)
-                                    <div class="profile-designation">{{$usuario->lana->izena}}</div>
-                                @endif --}}
-                                
+                                @if(Auth::user()->admin != 1)
+                                    <div class="profile-designation">{{$usuario->langilea->lana->izena}}</div>
+                                @endif
+
                                 <ul class="profile-info-list">
                                     @if(Auth::user()->admin == 1)
                                         <a href="{{url('/citas')}}" class="profile-info-list-item"> Seccion citas </a>
                                     @else
-                                        <a href="{{url('/cita/usuario' . $usuario->lana_id)}}" class="profile-info-list-item"> Seccion citas </a>
-                                        <a href="{{url('/trabajos' . $usuario->lana_id)}}" class="profile-info-list-item"> Trabajos realizados </a>
+                                        <a href="{{url('/cita/usuario' . $usuario->langilea->lana_id)}}" class="profile-info-list-item"> Seccion citas </a>
+                                        <a href="{{url('/trabajos' . $usuario->langilea->lana_id)}}" class="profile-info-list-item"> Trabajos realizados </a>
 
                                     @endif
 
@@ -62,7 +62,7 @@
                         <div class="card-body">
                             <p class="card-title font-weight-bold text-uppercase">PERFIL DE {{$usuario->langilea->izena}} {{$usuario->langilea->abizena}} </p>
                             <hr>
-                            
+
                             <p class="card-description">Informacion basica</p>
                             <ul class="about">
                                 <li class="about-items"><i class="mdi mdi-account icon-sm "></i><span class="about-item-name">Nombre:</span><span class="about-item-detail">{{$usuario->langilea->izena}}</span></li>
